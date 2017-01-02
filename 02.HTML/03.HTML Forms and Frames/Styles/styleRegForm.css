@@ -1,0 +1,26 @@
+table {
+  border: 1px solid grey;
+  width: 800px;
+  height: 800px;
+  background-color: lightblue;
+}
+td {
+  border: 1px solid grey;
+  text-align: left;
+}
+select{
+  transform: scale(1.2,1.2);
+}
+.boldText {
+  font-weight: bold;
+  text-align: right;
+}
+.alignCenter {
+  text-align: center;
+}
+input[type="button"]{
+  transform: scale(1.2);
+}
+input[type="reset"]{
+  transform: scale(1.2);
+}

@@ -1,0 +1,128 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: arial; sans-serif;
+}
+div#calculator{
+  width: 440px;
+  height: 584px;
+  background: url(../Images/gradientbackground.png);
+  border: 4px solid lightblue;
+  margin: 20px;
+}
+div.boxpart{
+  background: url(../Images/gradientbox.png);
+}
+div.first{
+  width: 420px;
+  height: 10px;
+}
+div.firstfield{
+  margin-top: 5px;
+  display: inline-flex;
+  float: left;
+  width: 420px;
+  height: 40px;
+}
+.input-big{
+  background: url(../Images/gradienttextbox.png);
+
+}
+.main-menu{
+  display: inline;
+list-style-type: none;
+padding: 0;
+}
+div.firstfield > ul.main-menu > li{
+  display: inline;
+}
+.keyboard-shortcut{
+  text-decoration: underline;
+}
+img{
+  width: 25px;
+  height: 25px;
+  display: inline;
+}
+#calcpicture{
+  width: 345px;
+  font-size: 20px;
+}
+ul.main-menu{
+  width: 420px;
+}
+div.first > ul.main-menu{
+width: 420px;
+}
+div.first > ul.main-menu > li{
+  display: inline-flex;
+  width: 20px;
+  height: 30px;
+}
+.end{
+  float: right;
+}
+.input-big{
+  width: 420px;
+  height: 70px;
+  font-size: 28px;
+  border: 2px solid lightblue;
+
+}
+.binary-representation{
+  width: 420px;
+  height: 140px;
+  border: 2px solid lightblue;
+}
+.binary-representation > ul > li{
+  text-align: left;
+  display: inline;
+}
+.unstyled{
+  list-style-type: none;
+  border: 2px solid lightblue;
+  width:85px;
+  height: 110px;
+  padding: 0;
+}
+.functionalities{
+  width:420px;
+  height: 30   0px;
+}
+.row{
+  width: 100px;
+  height: 0;
+}
+.col2{
+  display: inline-block;
+  width: 360px;
+  margin-left: 90px;
+}
+button{
+  width: 40px;
+  height: 40px;
+  border: 1px solid lightblue;
+  background: url(../Images/gradientbutton.png);
+
+}
+.span2{
+  width: 80px;
+}
+.span3{
+  height: 86px;
+}
+.buttons{
+  display: inline-flex;
+  height: 42px;
+  padding: 2px;
+}
+.lastrow{
+  width: 280px;
+  padding: 2px;
+}
+.used{
+  background: url(../Images/usedbutton.png);
+}
+.btn{
+  background: url(../Images/numbers.png);
+}

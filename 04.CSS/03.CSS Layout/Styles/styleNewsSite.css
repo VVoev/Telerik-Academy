@@ -1,0 +1,71 @@
+    body, nav, section, li, a {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+.newsfeed {
+    margin: 5px;
+    padding-top: 5px;
+    width: 1500px;
+    height: 695px;
+    background: url(../Images/newsbackground.png);
+    border-radius: 10px;
+}
+li {
+    list-style: none;
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+    vertical-align: bottom;
+    background-color: #6b7a7f;
+}
+li#selected {
+    background: url(../Images/newsbackground.png);
+    color:
+}
+a {
+    width: 200px;
+    height: 50px;
+    list-style: none;
+    text-decoration: none;
+    color: #bbb;
+    font-size: 24px;
+}
+a#underline {
+    text-decoration: underline;
+}
+.right {
+    justify-content: flex-end;
+}
+div.col {
+    display: block;
+    padding-left: 10px;
+    padding-top: 30px;
+    font-size: 24px;
+    width: 600px;
+    height: 90px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #555;
+    color: #bbb;
+}
+#markednews {
+    background-color: #1bad90;
+}
+img {
+    width: 800px;
+    height: 550px;
+}
+.left {
+    float: left;
+    height: 0px;
+}
+.right {
+    float: right;
+    clear: both;
+    background: url('https://www.youtube.com/watch?v=XgGahKsBtts');
+    padding-right: 90px;
+    border: none;

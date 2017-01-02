@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+		<head>
+				<meta charset="utf-8"/>
+				<title="Registration form">
+				</title>
+				<link rel="stylesheet" type="text/css" href="./Styles/styleRegForm.css">
+		</head>
+		<body>
+				<form name="RegForm"
+				method="post"
+				action="../HTML%20Forms%20And%20Frames/Problem%201%20-%20Registration%20form.html">
+							<table>
+										<tr>
+												<td class="boldText">
+														<label for="lastName">Last Name</label>
+												</td>
+												<td>
+														<input type="text" id="lastName">
+												</td>
+										</tr>
+										<tr>
+												<td class="boldText">
+														<label for="lastName">First Name</label>
+												</td>
+												<td>
+														<input type="text" id="firstName">
+												</td>
+										</tr>
+										<tr>
+												<td class="boldText">
+														<label for="Address">Address</label>
+												</td>
+												<td>
+														<textarea name="Address"></textarea>
+												</td>
+										</tr>
+										<tr>
+												<td class="boldText">
+														<label for="city">City</label>
+												</td>
+												<td>
+														<input type="text" id="city">
+														<label for="state"><strong>State</strong></label>
+														<input type="text" id="state">
+												</td>
+										</tr>
+										<tr>
+												<td class="boldText">
+												<label for="postCode">Zip/Postal Code</label>
+												</td>
+												<td>
+														<input type="text" id="postCode">
+												</td>
+										</tr>
+										<tr>
+												<td class="boldText">
+														<label for="country">Country</label>
+												</td>
+												<td>&nbsp&nbsp
+													<select name="country">
+														<option value="Value 1"
+																selected="selected">Bulgaria</option>
+														<option value="Value 2">United Kingdom</option>
+														<option value="Value 3">USA</option>
+														<option value="Value 4">Turkey</option>
+														<option value="Value 5">France</option>
+														<option value="Value 6">Germany</option>
+														<option value="Value 7">China</option>
+													</select>
+												</td>
+										</tr>
+										<tr>
+												<td class="boldText">Phone (country code, area code, number)</td>
+												<td>
+														<label for="countryCode">(+</label>
+														<input type="number" id="countryCode" max="999">
+														<label for="areaCode">)</label>
+														<input type="number" id="areaCode" max="999">
+														<label for="personNumber">-</label>
+														<input type="number" id="personNumber" max="9999999">
+												</td>
+										</tr>
+										<tr>
+												<td class="boldText">
+														<label for="email">E-mail</label>
+												</td>
+												<td>
+														<input type="text" id="email">
+												</td>
+										</tr>
+										<tr>
+												<td class="boldText">Birth date</td>
+												<td>
+														<label for="month">Month</label>
+														<input type="number" id="month" min="1" max="12">
+														<label for="day">Day</label>
+														<input type="number" id="day" min="1" max="31">
+														<label for="year">Year(4 digit)</label>
+														<input type="number" id="year" min="1945" max="2016">
+												</td>
+										</tr>
+										<tr>
+												<td class="boldText">
+														<label for="gender">Gender</label>
+												</td>
+												<td>&nbsp&nbsp
+													<select name="gender" id="gender">
+														<option value="male"
+																selected="selected">Male</option>
+														<option value="female">Female</option>
+														<option value="empty"></option>
+													</select>
+												</td>
+										</tr>
+										<tr>
+												<td class="boldText">Starting date</td>
+												<td>
+														<input type="radio" name="title" value="Spring 2016" />
+														<label for="spring">Spring 2016</label>
+														<input type="radio" name="title" value="Summer 2016" />
+														<label for="summer">Summer 2016</label>
+												</td>
+										</tr>
+										<tr>
+												<td class="boldText">
+														<label for="comments">Comments/Questions</label>
+												</td>
+												<td>
+														<textarea name="Comments" id="comments"></textarea>
+												</td>
+										</tr>
+										<tr>
+												<td class="alignCenter" colspan="2">
+														<input type="button" value="Submit" alt="Submit">&nbsp&nbsp&nbsp
+														<input type="reset" value="Clear this form">
+												</td>
+										</tr>
+							</table>
+				</form>
+		</body>
+</html>

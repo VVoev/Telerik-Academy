@@ -1,0 +1,42 @@
+body {
+    background-color: #bcb7b7;
+    width: auto;
+    height: auto;
+    font-size: 18px;
+}
+header, nav {
+    text-align: center;
+    font-weight: bold;
+}
+h1, h2{
+    color: #eff2c4;
+}
+li {
+    font-size: 24px;
+    color: #bcb7b7;
+}
+span#underline {
+    text-decoration: underline;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+a#background {
+    background-color: lightgray;
+}
+a#underline{
+  text-decoration: underline;
+}
+a:hover{
+  text-decoration: underline;
+}
+.author {
+    font-size: 12px;
+}
+.bottom{
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

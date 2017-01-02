@@ -1,0 +1,43 @@
+body{
+  font-family: sans-serif;
+  font-size: 24px;
+}
+img{
+  float: left;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+.table{
+  display: table;
+  width: 800px;
+  height: 200px;
+}
+.header, .row{
+  display: table-row;
+}
+.column, .headerCol{
+  display: table-cell;
+  text-align: left;
+  padding-left: 10px;
+}
+.column{
+  border-right: 1px solid #f4f2f2;
+  border-left: 1px solid #9e8f8f;
+}
+.headerCol{
+  border-right: 1px solid #f4f2f2;
+  border-left: 1px solid #12962b;
+}
+.header{
+  color: #f2eded;
+  background-color: #5fd82f;
+}
+.grayBackground{
+  background-color: lightgray;
+}
+input[type=checkbox]{
+  transform: scale(2.5);
+  margin-left: 20px;
+  margin-top: 15px;
+}

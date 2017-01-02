@@ -1,0 +1,9 @@
+div.border {
+    background-color: black;
+    border-radius: 80px;
+    width: 91%;
+}
+div {
+    border: 1px solid red;
+    border-radius: 80px;
+}

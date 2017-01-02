@@ -1,0 +1,43 @@
+.ticket{
+  display: table;
+  width: 400px;
+  height: 300px;
+  font-size: 24px;
+  background-color: #706868;
+  color: #aaa4a4;
+}
+.col{
+  opacity: 0.8;
+}
+img{
+  width: 20px;
+  height: 20px;
+  border-radius: 150px;
+}
+.title{
+  margin-top: 10px;
+}
+.row{
+  display: table-row;
+}
+.col{
+  display: table-cell;
+  font-size: 18px;
+  text-align: left;
+}
+.mailInfo{
+  color: #efedb3;
+}
+.underline{
+  font-style: italic;
+  color: #ededed;
+}
+.statusColor{
+  color: #dd8c21;
+  font-weight: bold;
+}
+#message{
+  color: #e23131;
+  font-weight: bold;
+
+}

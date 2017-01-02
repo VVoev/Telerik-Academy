@@ -1,0 +1,24 @@
+form{
+  width: 700px;
+  height: 500px;
+}
+.border{
+  border: 2px solid black;
+width: 700px;
+}
+#radiusTop{
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
+  width: 700px;
+}
+#radiusBottom{
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+img{
+  width: 100px;
+  height: 80px;
+}
+.width{
+  width: 700px;
+}

@@ -1,0 +1,12 @@
+header, section, nav, main {
+    display: block;
+  }
+  table, td, th{
+    border: 1px solid gray;
+    border-collapse: collapse;
+    border-spacing: 0px 0px;
+  }
+  .welcome{
+    margin-left: 8em;
+    font-size: 22px;
+  }

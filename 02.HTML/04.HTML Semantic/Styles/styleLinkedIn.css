@@ -1,0 +1,12 @@
+body{
+  background-color: lightblue;
+}
+fieldset{
+  background-color: lightyellow;
+}
+legend, label{
+  font-weight: bold;
+}
+footer{
+  text-align: center;
+}

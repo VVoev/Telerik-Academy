@@ -1,0 +1,60 @@
+table {
+    padding: 10px;
+    width: auto;
+    height: auto;
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:14px;
+    font-weight:100;
+    border-spacing: 0px 0px;
+    border: 1px solid lightgrey;
+    box-shadow: 10px 10px 5px #888888;
+}
+td, tr {
+    border: 1px solid grey;
+}
+select, option{
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+a{
+  padding-bottom: 3px;
+  padding-left: 7px;
+}
+input[type="text"]{
+  padding-bottom: 3px;
+  padding-top: 7px;
+}
+input[type="button"]{
+  border: 2px solid red;
+  padding-bottom: 3px;
+  padding-top:7px;
+
+}
+input[type="image"]{
+  padding-bottom: 0px;
+  padding-top: 0px;
+  transform: scale(1.1,1.1);
+}
+input[type="checkbox"]{
+  padding-bottom: 0px;
+  padding-top: 7px;
+  transform: scale(1.2,1.2);
+}
+.backgroundTop {
+    background-color: lightgrey;
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
+}
+.backgroundBottom {
+    background-color: lightgrey;
+    border-bottom-left-radius: 1em;
+    border-right: collapse;
+}
+.alignRight{
+    text-align: right;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    border-left: collapse;
+    border-bottom-right-radius: 1em;
+    background-color: lightgrey;
+}

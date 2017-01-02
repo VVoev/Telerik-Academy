@@ -1,0 +1,12 @@
+table, td, th{
+  border: 1px solid gray;
+  border-collapse: separate;
+  border-spacing: 0px 0px;
+  }
+  #lastRow{
+    border: 1px solid gray;
+  }
+  #width{
+    width: auto;
+    height: auto;
+  }

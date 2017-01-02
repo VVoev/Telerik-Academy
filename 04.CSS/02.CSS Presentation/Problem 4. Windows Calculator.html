@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Windows Calculator</title>
+    <link rel="stylesheet" href="./Styles/styleWindowsCalculator.css" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body>
+    <div id="calculator">
+        <div class="first">
+            <ul class="main-menu">
+                <li id="calcpicture"><img src="./Images/calculatorpicture.png" alt="" />Calculator</li>
+                <li><img class="end" src="./Images/minimaze.png" alt="" /></li>
+                <li><img class="end" src="./Images/maximaze.png" alt="" /></li>
+                <li><img class="end" src="./Images/closeButton.png" alt="" /></li>
+            </ul>
+        </div>
+        <div class="boxpart">
+            <div class="firstfield">
+                <ul class="main-menu inline">
+                    <li><span class="keyboard-shortcut">V</span>iew</li>
+                    <li><span class="keyboard-shortcut">E</span>dit</li>
+                    <li><span class="keyboard-shortcut">H</span>elp</li>
+                </ul>
+            </div>
+            <form class="display box">
+                <input type="text" class="input-big" value="8854455" />
+            </form>
+
+            <div class="binary-representation">
+                <ul>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                </ul>
+                <ul>
+                    <li>63 </li>
+                    <li>47 </li>
+                    <li> 32</li>
+                </ul>
+
+                <ul>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>1000</li>
+                    <li>0111</li>
+                    <li>0001</li>
+                    <li>1011</li>
+                    <li>1011</li>
+                    <li>0111</li>
+                </ul>
+                <ul>
+                    <li>31 </li>
+                    <li>15 </li>
+                    <li> 0</li>
+                </ul>
+            </div>
+            <div class="functionalities">
+                <div class="row">
+                    <ul class="unstyled">
+                        <li>
+                            <label>
+                                <input type="radio" name="numeralSystem" value="hex" /> Hex</label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="numeralSystem" value="dec" checked /> Dec</label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="numeralSystem" value="oct" /> Oct</label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="numeralSystem" value="bin" /> Bin</label>
+                        </li>
+                    </ul>
+
+                    <ul class="unstyled">
+                        <li>
+                            <label>
+                                <input type="radio" name="wordSize" value="qword" checked /> Qword</label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="wordSize" value="dword" /> Dword</label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="wordSize" value="word" /> Word</label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="wordSize" value="byte" /> Byte</label>
+                        </li>
+                    </ul>
+                </div>
+                <span class="col2">
+          <div class="buttons">
+                <button>&nbsp;</button>
+                <button class="btn">Mod</button>
+                <button>A</button>
+                <button>MC</button>
+                <button>MR</button>
+                <button>MS</button>
+                <button>M+</button>
+                <button>M-</button>
+          </div>
+          <div class="buttons">
+                <button class="btn">(</button>
+                <button class="btn">)</button>
+                <button>B</button>
+                <button class="btn">←</button>
+                <button class="used">CE</button>
+                <button class="btn">C</button>
+                <button class="btn">±</button>
+                <button>√</button>
+          </div>
+          <div class="buttons">
+                <button class="btn">RoL</button>
+                <button class="btn">RoR</button>
+                <button>C</button>
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+                <button class="btn">/</button>
+                <button>%</button>
+          </div>
+          <div class="buttons">
+                <button class="btn">Or</button>
+                <button class="btn">Xor</button>
+                <button>D</button>
+                <button class="btn">4</button>
+                <button class="btn">5</button>
+                <button class="btn">6</button>
+                <button class="btn">*</button>
+                <button>1/x</button>
+          </div>
+          <div class="buttons">
+                <button class="btn">Lsh</button>
+                <button class="btn">Rsh</button>
+                <button>E</button>
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="btn">-</button>
+                <button class="span3 btn">=</button>
+
+          </div>
+          <div class="buttons lastrow">
+                <button class="btn">Not</button>
+                <button class="btn">And</button>
+                <button>F</button>
+                <button class="span2 btn">0</button>
+                <button>.</button>
+                <button class="btn">+</button>
+          </div>
+          </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

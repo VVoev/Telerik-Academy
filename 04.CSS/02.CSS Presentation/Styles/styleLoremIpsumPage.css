@@ -1,0 +1,13 @@
+body {
+    font-size: 16px;
+    font-style: normal;
+    color: #0094FF;
+}
+h1, p {
+    font-family: Consolas, sans-serif;
+    ;
+}
+span {
+    font-family: Edwardian Script ITC, sans-serif;
+    font-size: 2.5em;
+}
