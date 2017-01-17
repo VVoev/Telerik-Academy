@@ -19,6 +19,7 @@ function solve(information){
 arr  = ["53 20 1 30 2 40 3 10 1"];
 arr1 = ["53 20 1 30 30 2 40 3 10 1"];
 arr2 = ["53 20 1 30 2 40 3 3 10 1"];
+arr3 = ["5 2 1 4"];
 solve(arr);
 solve(arr1);
 solve(arr2);

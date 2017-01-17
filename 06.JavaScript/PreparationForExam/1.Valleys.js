@@ -37,9 +37,11 @@ function solve(input) {
 
 arr =["5 1 7 6 5 6 4 2 3 8"];
 arr1 =["5 1 7 4 8"];
+arr2= ["5 1 8 20 30 1 40 5 2 1"];
 
 solve(arr);
 solve(arr1);
+solve(arr2);
 
 
 
