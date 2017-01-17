@@ -24,8 +24,7 @@ function solve(input) {
     console.log(maxValleySum)
 
 
-//function PEAK
-    //demo function
+
     function isPeak(index) {
         if (index === 0 || index === numbers.length - 1) {
             return true;
