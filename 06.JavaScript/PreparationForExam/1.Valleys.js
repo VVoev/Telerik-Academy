@@ -25,6 +25,7 @@ function solve(input) {
 
 
 //function PEAK
+    //demo function
     function isPeak(index) {
         if (index === 0 || index === numbers.length - 1) {
             return true;
