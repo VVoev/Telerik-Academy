@@ -55,7 +55,7 @@ function solve(args) {
             deltaCol = +1;
         }
         else {
-            // WTF condition
+            // WTF condition NEVER
         }
 
         let tankRow = tankPositions[id].row;
