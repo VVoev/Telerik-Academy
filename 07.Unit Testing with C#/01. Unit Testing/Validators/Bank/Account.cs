@@ -1,4 +1,4 @@
-﻿namespace Bank
+﻿namespace BankProject
 {
     using System;
     public class Account

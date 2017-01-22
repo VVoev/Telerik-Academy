@@ -1,4 +1,4 @@
-﻿namespace Bank
+﻿namespace BankProject
 {
     using System;
     using System.Collections.Generic;

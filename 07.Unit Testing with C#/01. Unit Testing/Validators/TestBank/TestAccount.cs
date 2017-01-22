@@ -2,7 +2,7 @@
 {
     using System;
     using NUnit.Framework;
-    using Bank;
+    using BankProject;
 
     [TestFixture]
     public class TestAccount
