@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using BankProject;
 
-[TestFixture]
+[TestFixture,Explicit]
 public class TestBanks
 {
     [SetUp]
