@@ -102,6 +102,7 @@
   <ItemGroup>
     <Compile Include="PasswordValidatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsernameValidatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Validators\Validators.csproj">
