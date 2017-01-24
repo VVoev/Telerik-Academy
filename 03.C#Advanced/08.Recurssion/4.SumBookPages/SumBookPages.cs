@@ -26,7 +26,7 @@ namespace _4.SumBookPages
             var differentBooksExamples = new int[]{ 10, 100, 1000 };
             foreach (var book in differentBooksExamples)
             {
-                Console.WriteLine(SumTillNoMorePagesLeftInTheBook(book));
+                Console.WriteLine($"The book with {book} has total of {SumTillNoMorePagesLeftInTheBook(book)} pages");
             }
         }
 
