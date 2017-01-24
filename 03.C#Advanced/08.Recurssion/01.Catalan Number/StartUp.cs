@@ -11,6 +11,9 @@
             {
                 Console.WriteLine(RecussionCatalan(arr[i]));
             }
+
+
+            
           
         }
 

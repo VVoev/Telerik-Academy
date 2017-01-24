@@ -31,7 +31,7 @@ namespace _02.NestedLoops
             //Recurssion bottom
             if (index >= k)
             {
-                //Console.WriteLine(string.Join(" ",arr));
+                Console.WriteLine(string.Join(" ",arr));
                 counter++;
             }
             else

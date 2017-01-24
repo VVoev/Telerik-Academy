@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Catalan Number", "01.Cat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Nested Loop", "02.Nested Loops\02.Nested Loop.csproj", "{D19AAD26-20A6-4B86-AA62-FBB6D75B0BD6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.SumToZero", "03.SumToZero\03.SumToZero.csproj", "{0AAB9FBA-485A-4703-8393-4746C14ED6D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.SumBookPages", "4.SumBookPages\4.SumBookPages.csproj", "{60FC8948-7DFD-4F86-85DE-166791FE2055}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{D19AAD26-20A6-4B86-AA62-FBB6D75B0BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D19AAD26-20A6-4B86-AA62-FBB6D75B0BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D19AAD26-20A6-4B86-AA62-FBB6D75B0BD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AAB9FBA-485A-4703-8393-4746C14ED6D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AAB9FBA-485A-4703-8393-4746C14ED6D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AAB9FBA-485A-4703-8393-4746C14ED6D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AAB9FBA-485A-4703-8393-4746C14ED6D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60FC8948-7DFD-4F86-85DE-166791FE2055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60FC8948-7DFD-4F86-85DE-166791FE2055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60FC8948-7DFD-4F86-85DE-166791FE2055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60FC8948-7DFD-4F86-85DE-166791FE2055}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
