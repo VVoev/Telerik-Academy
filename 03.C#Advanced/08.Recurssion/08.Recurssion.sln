@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.DrawAFigure", "05.DrawAF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.SumBookPages", "04.SumBookPages\04.SumBookPages.csproj", "{60FC8948-7DFD-4F86-85DE-166791FE2055}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.PrintAlfabetZtoA", "06.PrintAlfabetZtoA\06.PrintAlfabetZtoA.csproj", "{9E019446-111E-4360-B628-11BD20215971}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{60FC8948-7DFD-4F86-85DE-166791FE2055}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60FC8948-7DFD-4F86-85DE-166791FE2055}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60FC8948-7DFD-4F86-85DE-166791FE2055}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E019446-111E-4360-B628-11BD20215971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E019446-111E-4360-B628-11BD20215971}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E019446-111E-4360-B628-11BD20215971}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E019446-111E-4360-B628-11BD20215971}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
