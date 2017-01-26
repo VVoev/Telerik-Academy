@@ -21,6 +21,10 @@ describe('Tests for "Task 1"', function () {
 	it('expect solve(["1", "2"]) to be equal to 3', function () {
 		expect(solve(['1', '2'])).to.eql(3);
 	});
+	
+	it('expect solve(["5", "10", "15"]) to be equal to 30', function () {
+		expect(solve(['5', '10','15'])).to.eql(30);
+	});
 
 	it('expect solve(["1", "John"]) to throw Error', function () {
 		function test() {
