@@ -90,7 +90,25 @@ namespace GameEngine.Tests
             //Assert
             Assert.AreEqual(card, deck.TrumpCard);
 
+        }
 
+
+        [Test]
+        [Category("Change Trump")]
+        [TestCase(CardSuit.Club, CardType.Ace)]
+        [TestCase(CardSuit.Diamond, CardType.Jack)]
+        [TestCase(CardSuit.Spade, CardType.King)]
+        [TestCase(CardSuit.Spade, CardType.Queen)]
+        [TestCase(CardSuit.Heart, CardType.Ten)]
+        [TestCase(CardSuit.Diamond, CardType.Nine)]
+        [TestCase(CardSuit.Club, CardType.Jack)]
+        public void TestChangeWtihDifferentTrumps(CardSuit suit, CardType type)
+        {
+            Deck cards = new Deck();
+            Card trump = new Card(suit, type);
+            cards.ChangeTrumpCard(trump);
+
+            Assert.AreEqual(trump.Type.ToFriendlyString() + trump.Suit.ToFriendlyString(), cards.TrumpCard.ToString());
         }
 
 
