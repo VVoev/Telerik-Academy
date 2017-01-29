@@ -4,18 +4,25 @@ function outer() {
 
     function inner() {
         var x = 'INNER';
-        var y = 'it is funny'
+        return x;
+    }
+    function innerY() {
+        var y = "it is funny";
         return y;
     }
+
     inner();
+    innerY();
     return {
         x: x,
         f: inner,
+        y:y,
+        z:innerY
     };
 }
 
 console.log(outer().x);
-console.log(outer().f());/**
- * Created by Vlado on 1/28/2017.
- */
+console.log(outer().y)
+console.log(outer().f());
+console.log(outer().z())
 
