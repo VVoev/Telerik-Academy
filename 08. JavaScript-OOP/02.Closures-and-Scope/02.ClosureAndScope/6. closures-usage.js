@@ -54,12 +54,13 @@ var database = function () {
 database.save({
     name: 'Peter',
     age: 13
-}).save({
+})
+    database.save({
     name: 'Gosho',
     age: 17
 }).save(database);
 
 console.log(database.getAll());
-console.log(database.findById(3));/**
- * Created by Vlado on 1/28/2017.
- */
+console.log("--------------------------------")
+//console.log(database.findById(1));
+console.log(database.findById(3));

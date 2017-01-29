@@ -8,6 +8,16 @@ function outer(x) {
     return middle;
 }
 
+function a(first) {
+    function b(second) {
+        function c(last){
+            return first+' '+second+' '+last;
+        }
+        return c;
+    }
+    return b;
+}
+
 
 var system = outer(4);
 system = system(4);
@@ -20,3 +30,9 @@ names = names('Petrov');
 console.log('Hi! I am ' + names);/**
  * Created by Vlado on 1/28/2017.
  */
+
+var action = a('I');
+action = action('was');
+action = action('here');
+
+console.log(action)
