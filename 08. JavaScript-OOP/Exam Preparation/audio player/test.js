@@ -10,18 +10,35 @@ function solve() {
 
         //Validator
         validator={
+                    validateIfUndefined:function (val,name) {
+                        name = name || "Value";
+                        if(val === undefined){
+                            throw new Error(`${name} cannot be undefined`)
+                        }
+                    },
+
                     validateString:function (val,name) {
                         name = name || 'Value';
-                        if(val===undefined){
-                            throw new Error(`${name} cannot be undefined`);
-                        }
-
+                        this.validateIfUndefined(val,name)
                         if(typeof val!=="string"){
                             throw new Error(`${name} must be a string`);
                         }
 
                         if(val.length<CONSTANTS.TEXT_MIN_LEN || val.length>CONSTANTS.TEXT_MAX_LEN){
                             throw new Error(`${name} must be between ${CONSTANTS.TEXT_MIN_LEN} and ${CONSTANTS.TEXT_MAX_LEN} symbols`)
+                        }
+
+                    },
+
+                    validatePositiveNumber:function (val,name) {
+                        this.validateIfUndefined(val,name);
+
+                        if(typeof val !=='number'){
+                            throw new Error `${name} is not a number`
+                        }
+
+                        if(val<=0){
+                            throw new Error(name + "must be a positive number")
                         }
 
                     }
@@ -81,8 +98,43 @@ function solve() {
         }());
 
         //Module Audio
+        audio = (function (parent){
+            var audio = Object.create(parent);
+
+            //Constructor inherit from base CTOR
+            Object.defineProperty(audio,'init',{
+                value:function (title,author,lenght) {
+                    //using ctor from base class
+                    parent.init.call(this,title,author);
+                    this.lenght = lenght;
+                    return this;
+                }
+            });
+
+            //Properties
+            Object.defineProperty(audio,'lenght',{
+                get:function () {
+                    return this._lenght;
+                },
+                set:function (val) {
+                    validator.validatePositiveNumber(val, "Audio Lenght");
+                    this._lenght = val;
+                }
+            });
+
+            //Methods
+            Object.defineProperty(audio,'play',{
+                value : function () {
+                    return parent.play.call(this) + " - " + this.lenght;
+                }
+            })
+
+            return audio;
+        }(playable));
 
 
+
+        //TODO IMPLEMENT FUNCTIONS
         return {
             getPlayer: function (name) {
                 return Object.create(player).init(name);
@@ -98,5 +150,13 @@ function solve() {
             }
         };
     }());
-        
+
+    return module;
+}
+
+var module = solve();
+
+for( var i = 1; i<=10; i++){
+    var currentAudio = module.getAudio("Audio"+i,"Author"+i,-1);
+    console.log(currentAudio.play())
 }
