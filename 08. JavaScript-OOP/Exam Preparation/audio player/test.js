@@ -1,11 +1,16 @@
 function solve() {
     var module = (function () {
-        var playable,
+        var playlist,
+            playable,
             audio,
+            video,
             validator,
             CONSTANTS = {
                         TEXT_MIN_LEN:3,
-                        TEXT_MAX_LEN:25
+                        TEXT_MAX_LEN:25,
+                        IMDB_MIN_RAT:1,
+                        IMDB_MAX_RAT:5
+
             }
 
         //Validator
@@ -32,17 +37,32 @@ function solve() {
 
                     validatePositiveNumber:function (val,name) {
                         this.validateIfUndefined(val,name);
-
-                        if(typeof val !=='number'){
-                            throw new Error `${name} is not a number`
-                        }
+                        this.validateIfNumber(val,name);
 
                         if(val<=0){
                             throw new Error(name + "must be a positive number")
                         }
 
+                    },
+            
+                    validateIfNumber:function (val,name) {
+                        name = name || 'Value';
+                        if(typeof val !=='number'){
+                            throw new Error `${name} is not a number`
+                        }
+                    },
+            
+                    validateImdbRating:function (val) {
+                        this.validateIfUndefined(val,"IMDB Rating");
+                        this.validateIfNumber(val,'IMDB Rating');
+
+                        if(val<CONSTANTS.IMDB_MIN_RAT || CONSTANTS.IMDB_MAX_RAT<val){
+                            throw new Error(`IMDB Rating must be between ${CONSTANTS.IMDB_MIN_RAT} and ${CONSTANTS.IMDB_MAX_RAT}`)
+                        }
+                        
                     }
         };
+
 
         //Module Playable
          playable = (function () {
@@ -131,6 +151,41 @@ function solve() {
 
             return audio;
         }(playable));
+        
+        //Module Video
+        video = (function (parent){
+            var video = Object.create(parent);
+
+            //Ctor
+            Object.defineProperty(video,'init',{
+                value:function (title,author,imdbRating) {
+                    parent.init.call(this,title,author);
+                    this.imdbRating = imdbRating;
+                    return this;
+                }
+            });
+
+            //Properties
+            Object.defineProperty(video,'imdbRating', {
+                get:function () {
+                    return this._imdbRating;
+                },
+                set:function (val) {
+                    validator.validateImdbRating(val);
+                    this._imdbRating = val;
+                }
+            });
+
+            //Method
+            Object.defineProperty(video,'play',{
+                value:function () {
+                    return parent.play.call(this) + ' - ' +this.imdbRating;
+                }
+            })
+
+            return video;
+        }(playable));
+
 
 
 
@@ -153,10 +208,19 @@ function solve() {
 
     return module;
 }
-
+function makeFreeLines() {
+    console.log("----------------------------------------------");
+}
 var module = solve();
 
+//Test Data
 for( var i = 1; i<=10; i++){
-    var currentAudio = module.getAudio("Audio"+i,"Author"+i,-1);
+    var currentAudio = module.getAudio("Audio"+i,"Author"+i,i);
     console.log(currentAudio.play())
 }
+makeFreeLines()
+for (var i = 1; i<=10;i++){
+    var currentVideo = module.getVideo("Title"+i,"Authir"+i,3.5+(0.+i/10));
+    console.log(currentVideo.play())
+}
+makeFreeLines()
