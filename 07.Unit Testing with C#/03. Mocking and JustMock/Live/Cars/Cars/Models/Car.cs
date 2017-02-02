@@ -1,8 +1,8 @@
 ﻿namespace Cars.Models
 {
-    public class Car
+    public  class Car
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
 
         public string Make { get; set; }
 

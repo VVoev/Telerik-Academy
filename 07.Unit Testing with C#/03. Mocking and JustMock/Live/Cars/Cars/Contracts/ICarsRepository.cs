@@ -1,11 +1,11 @@
-﻿namespace Cars.Contracts
-{
-    using Cars.Models;
-    using System.Collections.Generic;
+﻿using Cars.Models;
+using System.Collections.Generic;
 
+namespace Cars.Contracts
+{
     public interface ICarsRepository
     {
-        int TotalCars{get;}
+        int TotalCars { get; }
 
         void Add(Car car);
 
@@ -20,5 +20,6 @@
         ICollection<Car> SortedByYear();
 
         ICollection<Car> Search(string condition);
+
     }
 }
