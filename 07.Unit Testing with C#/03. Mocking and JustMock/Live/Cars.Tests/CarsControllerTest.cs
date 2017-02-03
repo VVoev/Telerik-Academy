@@ -122,6 +122,7 @@ namespace Cars.Tests
             }
         }
         [TestMethod]
+        [TestCategory("Cars")]
         public void SearchByNullIdShouldThrow()
         {
             var model = (Car)this.GetModel(() => this.controller.Details(int.MaxValue));
