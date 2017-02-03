@@ -53,6 +53,10 @@ namespace Cars.Controllers
 
         public IView Search (string parameters)
         {
+            if (string.IsNullOrEmpty(parameters))
+            {
+                throw new ArgumentException("No such Parameters");
+            }
             var result = this.carsData.Search(parameters);
             return new View(result);
         }

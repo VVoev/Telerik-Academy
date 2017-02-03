@@ -46,7 +46,7 @@ namespace Cars.Data
 
         public Car GetById(int id)
         {
-            var car = this.Data.Cars.FirstOrDefault(x => x.ID == id);
+            var car = this.Data.Cars.First(x => x.ID == id);
             if(car == null)
             {
                 throw new ArgumentException("Car", "Car with such id doest not exist");
