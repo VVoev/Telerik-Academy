@@ -1,3 +1,51 @@
-/**
- * Created by Vladimir on 2/4/2017.
- */
+var controls = (function () {
+
+    //hidden function
+    function formatResult() {
+        return this.name + ' says the result is ' + this.result;
+    }
+
+    class Calculator {
+        constructor(name) {
+            this.name = name;
+            this.result = 0;
+        };
+
+        add(x) {
+            this.result += +x;
+            return this;
+        };
+
+        subtract(x) {
+            this.result -= +x;
+            return this;
+        };
+
+        deduct(x) {
+            x=Number(x);
+            this.result /=x;
+            this.action="deduct";
+            return this;
+        };
+
+        multiply(x) {
+            x=Number(x);
+            this.result *=x;
+            this.action="multiply";
+            return this;
+        };
+
+        showResult() {
+            console.log(formatResult.call(this));
+            return this;
+        };
+    };
+
+    var getCalculator = (name) => new Calculator(name);
+
+    //return only a reference to the function
+    return { getCalculator };
+} ());
+
+var calc = controls.getCalculator('First')
+    .add(7).showResult().subtract(2).showResult();
