@@ -44,137 +44,149 @@
  * 25% the submitted homework (count of submitted homeworks / count of all homeworks) for the course
  */
 
-
 function solve() {
+
 	var Course = (function () {
+
+		//validation functions
 		function isValidTitle(title) {
-			if (typeof (title) !== 'string' ||
-				title.match(/\s{2,}/) ||
-				title.match(/^\s+[^\s]{1}.*$/) ||
-				title.match(/^[^\s]{1}.*\s+$/) ||
-				title === '') {
-				throw new Error('Invalid title')
+			if(title!=='string' ||
+			   title.match(/\s{2,}/)||
+			   title.match(/^\s+[^\s]{1}.*$/) ||
+			   title.match(/^[^\s]{1}.*\s+$/) ||
+			   title===' ')
+			{
+				throw new Error('Invalid Title')
 			}
 		}
 
-		function isValidPresentationTitles(presentations) {
-			if (!Array.isArray(presentations) || presentations.length === 0) {
-				throw new Error('It is not an array')
+		function isValidPresentations(presentation) {
+			if(!Array.isArray(presentation)|| presentation.length===0){
+				throw new Error('It is not a Array');
 			}
-			for (var obj in presentations) {
-				isValidTitle(presentations[obj])
+			for (var obj in presentation){
+				isValidTitle(presentation[obj])
 			}
-		}
+		};
 
 		function isValidStudentName(name) {
-			if (typeof (name) != 'string') {
-				throw new Error('Not valid name')
+			if(typeof (name) !=='string'){
+				throw new Error('Invalid Student name')
 			}
-			var arrNames = name.split(/\s+/);
-			var regexName = /^[A-Z]{1}[a-z]*$/;
-			if (!arrNames[0].match(regexName) || !arrNames[1].match(regexName) || arrNames.length !== 2) {
-				throw new Error('Not valid name')
+			let details = name.split(/[ ]/);
+			let firstName = details[0];
+			let lastName = details[1];
+			let len = details.length;
+			let regex = /^[A-Z]{1}[a-z]*$/;
+			if(!firstName.match(regex)||
+			   !lastName.match(regex)||
+		        len!==2)
+			{
+				throw new Error('Invalid Name')
 			}
-			return arrNames;
+			return details;
+
+
 		}
 
-		function isValidID(id, students) {
-			if (isNaN(id)) {
-				throw new Error("Not valid number")
+		function isValidID(ID,students) {
+			if(isNaN(ID)){
+				throw new Error('Invalid ID')
 			}
-			id = +id;
+			ID=Number(ID);
+			if(ID<0 || ID>students.length){
+				throw new Error('Not Valid ID')
+			}
 
-			if (id <= 0 || id % 1 != 0 || id > students.length) {
-				throw new Error("Not valid id")
-			}
 		}
 
 		function isValidScore(score) {
-			if (isNaN(score)) {
-				throw new Error('Score is not a number')
+			if(isNaN(score)){
+				throw new Error('Score must be a number');
 			}
-			if (!score) {
-				throw new Error('Score does not exist')
+			score = Number(score);
+
+			if(!score){
+				throw new Error('Score does not exist');
 			}
 		}
 
-		function isStudentIdDuplicated(arr){
-			var uniqueArray = arr.filter(function(item, pos) {
-				return arr.indexOf(item) == pos;
-			})
-
-			if(arr.length!=uniqueArray.length){
-				throw new Error('Added student with the same StudentID')
+		function isStudentIDDublicated(arr) {
+			var uniqueArr = arr.filter(function (item,pos) {
+				return arr.indexOf(item==pos)
+			});
+			if(arr.length!==uniqueArr.length){
+				throw new Error('Student with the same ID has been added twice or more');
 			}
 
 		}
 
 		var Course = {
-
-			init: function (title, presentations) {
+			init: function(title, presentations) {
 				this.title = title;
 				this.presentations = presentations;
 				this.students = [];
-				this.id = 0;
+				this.id=0;
 				return this;
 			},
-			addStudent: function (name) {
-				var arrNames = isValidStudentName(name);
-				this.students.push({firstname: arrNames[0].trim(), lastname: arrNames[1].trim(), id: ++this.id});
-				return this.id;
+			addStudent: function(name) {
+				var details = isValidStudentName(name);
+				console.log(this.students)
+				this.students.push({
+					firstname:details[0],
+					lastname:details[1],
+					id:++this.id
+				})
+
+
 			},
-			getAllStudents: function () {
+
+			getAllStudents: function() {
 				return this.students.map(function (student) {
-					return {
-						firstname: student.firstname,
-						lastname: student.lastname,
-						id: student.id
+					return{
+						firstname:student.firstname,
+						lastname:student.lastname,
+						id:student.id
 					}
-				}).slice();
+				}).slice()
 			},
-			submitHomework: function (studentID, homeworkID) {
-				isValidID(studentID, this.students);
-				isValidID(homeworkID, this.students);
 
+			submitHomework: function(studentID, homeworkID) {
+				isValidID(studentID,this.students);
+				isValidID(homeworkID,this.students);
 			},
-			pushExamResults: function (results) {
-				if (!Array.isArray(results)) {
-					throw new Error('The results are not array')
+
+			pushExamResults: function(results) {
+				if(!Array.isArray(results)){
+					throw new Error('Result are not array');
 				}
-				var arr = [];
-				for (var obj in results) {
-					isValidID(results[obj].StudentID,this.students );
-					isValidScore(results[obj].score);
-					arr.push(results[obj].StudentID);
+				var arr = [] ;
+				for(var obj in results) {
+					isValidID(results[obj].StudentID, this.students);
+					isValidScore(results[obj].score)
+					arr.push(results[obj].StudentID)
 				}
-				isStudentIdDuplicated(arr);
+				isStudentIDDublicated(arr);
 			},
-			getTopStudents: function () {
-			},
-			get presentations() {
-				return this._presentations;
-			},
-			set presentations(value) {
-				isValidPresentationTitles(value)
-				this._presentations = value;
-			},
-			get title() {
-				return this._title;
-			},
-			set title(value) {
-				isValidTitle(value);
-				this._title = value;
+
+			getTopStudents: function() {
 			}
+		};
 
-		}
+
 		return Course;
+
 	}());
 	//Course.init('test',['test test']);
-	//Course.addStudent('Pehso Pehsev');
-	//Course.addStudent('Pehsoa Pehseva');
-	//Course.addStudent('Pehsob Pehsevb');
-	//Course.getAllStudents();
-	return Course;
+	//Course.addStudent('Don Kihot');
+	//Course.addStudent('Ivan Magare');
+	//Course.addStudent('Mariq Otvarachkata');
+	//Course.submitHomework(1,3)
+	//console.log(Course.getAllStudents());
+	//Course.pushExamResults([{StudentID: 1, score: 4}, {StudentID: 2, score: 5},
+	//	                    {StudentID: 1, score: 6}]);
+//
 }
-
 solve();
+
+
