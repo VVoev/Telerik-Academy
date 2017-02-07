@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Contracts\IIdProvider.cs" />
+    <Compile Include="Core\Contracts\ILogger.cs" />
+    <Compile Include="Core\Contracts\TaskManager.cs" />
+    <Compile Include="Core\Models\ITask.cs" />
     <Compile Include="Core\Providers\ConsoleLogger.cs" />
     <Compile Include="Core\Providers\IdProvider.cs" />
     <Compile Include="Models\Task.cs" />
@@ -52,9 +56,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\Contracts\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

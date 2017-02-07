@@ -1,8 +1,9 @@
 ﻿using System;
+using Tasker.Core.Models;
 
 namespace Tasker.Models
 {
-    public class Task
+    public class Task : ITask
     {
         private int id;
 

@@ -1,8 +1,9 @@
 ﻿using System;
+using Tasker.Core.Contracts;
 
 namespace Tasker.Core.Providers
 {
-    public class ConsoleLogger
+    public class ConsoleLogger : ILogger
     {
         public void Log(string message)
         {

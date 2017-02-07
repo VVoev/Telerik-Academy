@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Core\Provider\ConsoleLoggerTests\ConsoleLoggerTets.cs" />
     <Compile Include="Core\Provider\IdProviderTests\IdProviderTests.cs" />
+    <Compile Include="Core\TaskManager\AddTests.cs" />
     <Compile Include="Models\TaskTests\CtorTests.cs" />
     <Compile Include="Models\TaskTests\DescriptionTest.cs" />
     <Compile Include="Models\TaskTests\IdTests.cs" />
