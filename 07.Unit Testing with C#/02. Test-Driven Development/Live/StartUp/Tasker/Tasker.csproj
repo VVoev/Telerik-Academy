@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Providers\ConsoleLogger.cs" />
     <Compile Include="Core\Providers\IdProvider.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="StartUp.cs" />
