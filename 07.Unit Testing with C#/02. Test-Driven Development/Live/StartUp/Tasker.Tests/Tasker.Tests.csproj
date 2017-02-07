@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\TaskTests\CtorTests.cs" />
     <Compile Include="Models\TaskTests\DescriptionTest.cs" />
     <Compile Include="Models\TaskTests\IdTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

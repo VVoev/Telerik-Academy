@@ -8,6 +8,16 @@ namespace Tasker.Models
 
         private string description;
 
+        public Task()
+        {
+
+        }
+
+        public Task(string description)
+        {
+            this.Description = description;
+        }
+
         public int ID
         {
             get { return this.id; }
