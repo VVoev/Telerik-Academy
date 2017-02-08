@@ -1,36 +1,33 @@
 ﻿using System;
-using Tasker.Core.Models;
+using Tasker.Models.Contracts;
 
 namespace Tasker.Models
 {
     public class Task : ITask
     {
         private int id;
-
         private string description;
-
-        public Task()
-        {
-
-        }
 
         public Task(string description)
         {
             this.Description = description;
         }
 
-        public int ID
+        public int Id
         {
-            get { return this.id; }
+            get
+            {
+                return this.id;
+            }
             set
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("ID cannot be less than 0");
+                    throw new ArgumentException();
                 }
+
                 this.id = value;
             }
-            
         }
 
         public string Description
@@ -41,10 +38,11 @@ namespace Tasker.Models
             }
             set
             {
-                if(string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Description cannot be null or emptry");
+                    throw new ArgumentNullException();
                 }
+
                 this.description = value;
             }
         }

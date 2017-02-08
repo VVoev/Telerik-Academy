@@ -7,49 +7,40 @@ namespace Tasker.Tests.Models.TaskTests
     [TestFixture]
     public class IdTests
     {
-        [Test]
-        [Category("Task")]
         [TestCase(-1)]
         [TestCase(-10)]
-        public void ArgumentShouldThrowArgumentException_WhenPassedValueIsNegative(int value)
+        public void Id_ShouldThrowArgumentException_WhenPassedValueIsNegative(int value)
         {
-            //Arrange 
-            var sut = new Task();
+            // Arrange
+            var sut = new Task("Valid Description");
 
-            //Act && Assert
-            Assert.Throws<ArgumentException>(() => sut.ID = value);
+            // Act && Assert
+            Assert.Throws<ArgumentException>(() => sut.Id = value);
         }
 
-        [Test]
-        [Category("Task")]
         [TestCase(1)]
         [TestCase(10)]
-        public void ArgumenentShouldNotThrowException_WhenPassedValuesAreValid(int value)
+        public void Id_ShouldNotThrow_WhenPassedPositiveValue(int value)
         {
-            //Arrange 
-            var sut = new Task();
-            //Act && Assert
-            Assert.DoesNotThrow(() => sut.ID = value);
+            // Arrange
+            var sut = new Task("Valid Description");
+
+            // Act && Assert
+            Assert.DoesNotThrow(() => sut.Id = value);
         }
 
-        [Test]
-        [Category("Task")]
         [TestCase(1)]
         [TestCase(10)]
-        public void ArgumentShouldSetPassedValue_WhenPassedValueIsValid(int value)
+        public void Id_ShouldSetPassedValue_WhenPassedValueIsValid(int value)
         {
-            //Arange
-            var sut = new Task();
+            // Arrange
+            var sut = new Task("Valid Description");
 
-            //Act
-            sut.ID = value;
+            // Act
+            sut.Id = value;
 
-            //Assert
-            Assert.IsTrue(sut.ID == value);
+            // Assert
+            Assert.AreEqual(value, sut.Id);
         }
-
-
-
-
     }
 }

@@ -6,19 +6,14 @@ namespace Tasker.Tests.Models.TaskTests
     [TestFixture]
     public class CtorTests
     {
-        [Test]
-        [Category("Constructor")]
-        [TestCase("Input")]
-        [TestCase("CorrectLongDescription1234567890")]
-        public void Ctor_ShouldAssingDescription_WhenInvoked(string value)
+        public void Ctor_ShouldAssignDescription_WhenInvoked()
         {
-            //Arrange && Act
-            var expected = value;
+            // Arrange && Act
+            var expected = "Valid Description";
             var sut = new Task(expected);
-            //Assert
+
+            // Assert
             Assert.AreEqual(expected, sut.Description);
-
-
         }
     }
 }

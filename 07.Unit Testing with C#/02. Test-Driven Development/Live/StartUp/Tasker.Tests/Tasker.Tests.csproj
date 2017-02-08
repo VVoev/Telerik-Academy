@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8C4F9482-9F82-4A48-A659-1C9FFE4D7654}</ProjectGuid>
+    <ProjectGuid>{95DA53F0-ECD3-4313-AC5C-94D8EC9D0C5F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Tasker.Tests</RootNamespace>
     <AssemblyName>Tasker.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -52,22 +52,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Provider\ConsoleLoggerTests\ConsoleLoggerTets.cs" />
-    <Compile Include="Core\Provider\IdProviderTests\IdProviderTests.cs" />
-    <Compile Include="Core\TaskManager\AddTests.cs" />
+    <Compile Include="Core\Provider\ConsoleLoggerTests\LogTests.cs" />
+    <Compile Include="Core\Provider\IdProviderTests\NextIdTests.cs" />
+    <Compile Include="Core\TaskManagerTests\AddTests.cs" />
+    <Compile Include="Core\TaskManagerTests\Fakes\TaskManagerFake.cs" />
     <Compile Include="Models\TaskTests\CtorTests.cs" />
-    <Compile Include="Models\TaskTests\DescriptionTest.cs" />
+    <Compile Include="Models\TaskTests\DescriptionTests.cs" />
     <Compile Include="Models\TaskTests\IdTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
     <ProjectReference Include="..\Tasker\Tasker.csproj">
-      <Project>{dcbb8a68-9a01-4a1a-b7dc-98150258ccfa}</Project>
+      <Project>{075f89ef-989e-416c-acaf-5d88bc7d3ee4}</Project>
       <Name>Tasker</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

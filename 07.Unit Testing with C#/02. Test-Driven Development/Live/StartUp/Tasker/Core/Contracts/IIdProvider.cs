@@ -1,6 +1,6 @@
 ﻿namespace Tasker.Core.Contracts
 {
-    public  interface IIdProvider
+    public interface IIdProvider
     {
         int NextId();
     }

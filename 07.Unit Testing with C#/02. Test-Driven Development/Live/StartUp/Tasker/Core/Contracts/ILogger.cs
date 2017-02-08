@@ -1,7 +1,7 @@
 ﻿namespace Tasker.Core.Contracts
 {
-    public interface ILogger
+    public interface ILogger 
     {
-        void Log(string msg);
+        void Log(string message);
     }
 }
