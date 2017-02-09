@@ -1,4 +1,5 @@
-﻿using ArmyOfCreatures.Logic;
+﻿using Army.Tests.MockedClasses;
+using ArmyOfCreatures.Logic;
 using ArmyOfCreatures.Logic.Battles;
 using ArmyOfCreatures.Logic.Creatures;
 using Moq;
@@ -54,7 +55,7 @@ namespace Army.Tests
             var mockedFactory = new Mock<ICreaturesFactory>();
             var mockedLogger = new Mock<ILogger>();
 
-            var battleManager = new BattleManager(mockedFactory.Object, mockedLogger.Object);
+            var battleManager = new MockedBattleManager(mockedFactory.Object, mockedLogger.Object);
 
 
             var identifier = CreatureIdentifier.CreatureIdentifierFromString("Angel(1)");

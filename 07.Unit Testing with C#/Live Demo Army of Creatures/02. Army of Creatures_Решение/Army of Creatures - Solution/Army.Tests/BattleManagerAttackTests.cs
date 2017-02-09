@@ -42,17 +42,23 @@ namespace Army.Tests
         [Category("BattleManagerAttackTests")]
         public void Attack_WhenAttackIsSuccesfull_ShouldCallWriteLine4Times()
         {
+            //Arrange
+
             var mockedFactory = new Mock<ICreaturesFactory>();
             var mockedLogger = new Mock<ILogger>();
 
             var battleManager = new MockedBattleManager(mockedFactory.Object, mockedLogger.Object);
-            var identifier = CreatureIdentifier.CreatureIdentifierFromString("Angel(3)");
+            var identifier = CreatureIdentifier.CreatureIdentifierFromString("Angel");
 
+            var creature = new Angel();
             mockedLogger.Setup(x => x.WriteLine(It.IsAny<String>()));
+            mockedFactory.Setup(x => x.CreateCreature(It.IsAny<string>())).Returns(creature);
+
+            battleManager.AddCreatures(identifier, 1);
+            //Act
 
             battleManager.Attack(identifier, identifier);
-
-            mockedLogger.Verify(x => x.WriteLine(It.IsAny<string>()), Times.Exactly(4));
+           mockedLogger.Verify(x => x.WriteLine(It.IsAny<string>()), Times.Exactly(4));
         }
 
     }
