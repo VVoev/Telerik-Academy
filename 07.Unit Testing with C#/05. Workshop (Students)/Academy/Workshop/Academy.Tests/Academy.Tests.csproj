@@ -45,7 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\CourseTests\ConstructorTests.cs" />
+    <Compile Include="Models\CourseTests\EndingDateTests.cs" />
+    <Compile Include="Models\CourseTests\LecturesPerWeekTest.cs" />
     <Compile Include="Models\CourseTests\NameTests.cs" />
+    <Compile Include="Models\CourseTests\StartingDateTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
