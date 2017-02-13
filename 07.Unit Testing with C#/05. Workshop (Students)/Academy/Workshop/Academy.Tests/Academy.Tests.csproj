@@ -62,6 +62,7 @@
     <Compile Include="Models\CourseTests\NameTests.cs" />
     <Compile Include="Models\CourseTests\StartingDateTests.cs" />
     <Compile Include="Models\CourseTests\ToStringTests.cs" />
+    <Compile Include="Models\SeasonTests\ListUsersTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
