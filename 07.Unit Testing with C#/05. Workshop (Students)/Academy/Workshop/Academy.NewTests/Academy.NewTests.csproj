@@ -52,12 +52,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Factories\AcademyFactoryTest\CreateLectureResource_Should.cs" />
+    <Compile Include="Models\Abstractions\UserTests\UserMock.cs" />
+    <Compile Include="Models\Abstractions\UserTests\User_Should.cs" />
     <Compile Include="Models\CourseTests\Constructor_Should.cs" />
     <Compile Include="Models\CourseTests\EndingDate_Should.cs" />
     <Compile Include="Models\CourseTests\LecturesPerWeek_Should.cs" />
     <Compile Include="Models\CourseTests\Name_Should.cs" />
     <Compile Include="Models\CourseTests\StartingDate_Should.cs" />
     <Compile Include="Models\CourseTests\ToString_Should.cs" />
+    <Compile Include="Models\SeasonTests\ListCourses_Should.cs" />
+    <Compile Include="Models\SeasonTests\ListUsers_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
