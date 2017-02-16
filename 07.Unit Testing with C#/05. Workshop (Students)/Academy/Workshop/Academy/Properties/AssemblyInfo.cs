@@ -14,6 +14,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: InternalsVisibleTo("Academy.Tests")]
+[assembly: InternalsVisibleTo("Academy.NewTests")]
+
+
 
 
 // Setting ComVisible to false makes the types in this assembly not visible 

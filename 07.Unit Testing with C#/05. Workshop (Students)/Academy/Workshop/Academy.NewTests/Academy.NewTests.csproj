@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\Adding\AddStudentToCourseCommandMock.cs" />
+    <Compile Include="Commands\Adding\AddStudentToCourseCommand_Should.cs" />
+    <Compile Include="Commands\Adding\AddStudentToSeasonCommandMock.cs" />
+    <Compile Include="Commands\Adding\AddStudentToSeasonCommand_Should.cs" />
+    <Compile Include="Commands\ExecuteTests\AddStudentToCourseCommandExecute.cs" />
+    <Compile Include="Commands\ExecuteTests\AddStudentToSeasonCommandExecute.cs" />
     <Compile Include="Core\Factories\AcademyFactoryTest\CreateLectureResource_Should.cs" />
     <Compile Include="Models\Abstractions\UserTests\UserMock.cs" />
     <Compile Include="Models\Abstractions\UserTests\User_Should.cs" />
