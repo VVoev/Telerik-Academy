@@ -1,0 +1,14 @@
+// Where is the bug :)
+
+
+public class CommandsInstallCommandConstructor_Should
+
+Test Name:	BugFoundHere
+Test FullName:	PackageManager.Tests.Commands.InstallCommandTests.CommandsInstallCommandConstructor_Should.BugFoundHere
+
+Solution:
+
+[assembly: InternalsVisibleTo("ToDynamicProxyGenAssembly2")]
+
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
+
