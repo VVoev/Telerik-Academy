@@ -36,7 +36,7 @@ function solve() {
             }
         },
         isNumberBigger(x,min){
-            if(typeof x !== 'number' || x<min){
+            if( x<min){
                 throw 'Not a valid Number';
             }
         },
@@ -64,6 +64,10 @@ function solve() {
 			Validator.isStringInRange(2,40,value,'name')
 			this._name = value;
 		}
+
+        get id(){
+            return this._id;
+        }
 	}
 
 	class Book extends Item{
@@ -200,7 +204,51 @@ function solve() {
 
 	}
 
-	class BookCatalog{
+	class BookCatalog extends Catalog{
+
+        constructor(name){
+            super(name);
+        }
+
+        add(...books){
+            if(Array.isArray(books[0])){
+                books = books[0];
+            }
+            books.forEach(function (book) {
+                if(typeof book !=='object'){
+                    throw 'Item is not an object';
+                }
+                Validator.isISBNValid(book.isbn);
+                Validator.isStringInRange(2,20,book.genre,'book');
+            })
+
+            return super.add(books);
+        }
+        getGenres(){
+            /*
+            var uniqGenres = [];
+            this._items.forEach(function (book) {
+                if(!uniqGenres.includes(book.genre)){
+                    uniqGenres.push(book.genre.toLowerCase());
+                }
+            })
+            return uniqGenres
+            */
+            return this._items.map(book =>book.genre.toLowerCase())
+                .sort()
+                .filter((genre, index, genres) => genre !== genres[index - 1]);
+        }
+
+        find(options){
+            if(typeof options === 'object'){
+                const books = super.find(options);
+                if(options.hasOwnProperty('genre')){
+                    return books.filter(book=>book.genre===options.genre);
+                }
+                return books;
+            }
+            return super.find(options);
+        }
 
 	}
 
@@ -217,7 +265,7 @@ function solve() {
 			return new Media(name,rating,duration,description);
 		},
 		getBookCatalog: function (name) {
-			// return a book catalog instance
+			return new BookCatalog(name)
 		},
 		getMediaCatalog: function (name) {
 			// return a media catalog instance
@@ -244,7 +292,8 @@ console.log(item);
 console.log(item1);
 
 var book = test.getBook('Book About C++','1234567890','IT','Become a Developer');
-var book1 = test.getBook('Book About JavaScript','1234567890123','IT','Become a  JS Developer');
+var book1 = test.getBook('Book About JavaScript','1234567890123','Cooking','Become a  JS Developer');
+var book2 = test.getBook('Book About Java','1234567890123','Java','Become a  Java Developer');
 console.log(book);
 console.log(book1);
 //var invalid = test.getBook('some','123456789','IT',"some");//Invalid ISBN
@@ -261,6 +310,17 @@ catalog.find({name: 'Samsung Galaxy S2'});
 catalog.find({id: 2, name: 'Samsung Galaxy S2'});
 console.log(catalog.find(2));
 console.log(catalog.search('Technology'));
+
+var bookCatalog = test.getBookCatalog('Book Catalog');
+bookCatalog.add(book);
+bookCatalog.add(book1)
+bookCatalog.add(book2);
+console.log(bookCatalog.getGenres())
+console.log(bookCatalog.find(5))
+console.log(bookCatalog.find({name:'Book About C++'}))
+
+
+
 
 
 
