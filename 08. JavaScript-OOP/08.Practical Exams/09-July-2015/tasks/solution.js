@@ -252,7 +252,66 @@ function solve() {
 
 	}
 
-	class MediaCatalog{
+	class MediaCatalog extends Catalog{
+
+        constructor(name){
+            super(name);
+        }
+
+        add(...medias){
+            if(Array.isArray(medias[0])){
+                medias = medias[0];
+            }
+
+            medias.forEach(media=>{
+                if(typeof media !== 'object'){
+                    throw 'Item is not an object';
+                }
+                Validator.isValidDuration(media.duration);
+                Validator.isValidRating(media.rating);
+            })
+            return super.add(medias);
+        }
+
+        getTop(count){
+            if(typeof count !== 'number' || count<1){
+                throw 'Invalid count';
+            }
+
+            return this._items
+                .slice()
+                .sort((x,y)=>y.rating-x.rating)
+                .slice(0,count)
+                .map(x=>{
+                    return{
+                        name:x.name,
+                        id:x.id
+                    }
+                })
+        }
+
+        getSortedByDuration(){
+            return this._items
+                .slice()
+                .sort((x,y)=>{
+                    if(x.duration === y.duration){
+                        return x.id-y.id;
+                    }
+                    return y.duration - x.duration;
+                });
+        }
+
+        find(options){
+            if(typeof options === 'object'){
+                const medias = super.find(options);
+                if(options.hasOwnProperty('rating')){
+                    return medias.filter(media=>media.rating===options.rating)
+                }
+                return medias;
+            }
+
+            return super.find(options);
+        }
 
 	}
 
@@ -268,7 +327,7 @@ function solve() {
 			return new BookCatalog(name)
 		},
 		getMediaCatalog: function (name) {
-			// return a media catalog instance
+			return new MediaCatalog(name);
 		},
 		//TODO TEST DATA FROM HERE
 		getItem : function (description,name) {
@@ -318,6 +377,15 @@ bookCatalog.add(book2);
 console.log(bookCatalog.getGenres())
 console.log(bookCatalog.find(5))
 console.log(bookCatalog.find({name:'Book About C++'}))
+var media1 = test.getMedia('someName',3,120,'media1 description');
+var mediaCatalog = test.getMediaCatalog("Media Catalog");
+mediaCatalog.add(media1);
+mediaCatalog.add(media);
+console.log(mediaCatalog)
+console.log(mediaCatalog.getTop(1))
+
+console.log(mediaCatalog.getSortedByDuration())
+console.log(mediaCatalog.find({name:'someName'}))
 
 
 
