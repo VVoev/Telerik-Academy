@@ -1,0 +1,34 @@
+﻿<html>
+<head>
+    <title>Data types and variables</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">04. Write an expression that checks for given integer if its third digit (right-to-left) is 7. E. g. 1732 -> true.
+
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input a number:</label>
+        <input id="input-one" placeholder="input" type="text">
+        <br>
+    </div>
+    <a href="#" onclick="onCheckButtonClick()">Check</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onCheckButtonClick() {
+            var number = jsConsole.readInteger('#input-one');
+            var numberOne = number / 100;
+            numberOne = Math.floor(numberOne);
+            if (numberOne % 10 == 7) {
+                jsConsole.writeLine(number + "->" + true);
+            }
+            else {
+                jsConsole.writeLine(number + "->" + false)
+            }
+        }
+    </script>
+</body>
+</html>

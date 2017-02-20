@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+    <title>Functions</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">05.Write a function that counts how many times given number appears in given array. Write a test function to check if the function is working correctly.
+
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input comma or space separated list of numbers:</label>
+        <input id="input-one" placeholder="string" type="text">
+        <br>
+        <label for="input-two">Input searched number:</label>
+        <input id="input-two" placeholder="number" type="text">
+    </div>
+    <a href="#" onclick="onCalculateButtonClick()">Count</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function countNumberRepeat(number,array) {
+
+            var arraySplitted = array.split(/[\s,]+/);
+            var counter = 0;
+            for (var i = 0; i < array.length; i++) {
+
+                if (number === arraySplitted[i]) {
+                    counter++;
+                }
+            }
+               return counter;
+        }
+
+        function onCalculateButtonClick() {
+            var array = jsConsole.read('#input-one');
+            var number =jsConsole.read('#input-two');
+
+            jsConsole.writeLine("The searched number is repeated " + countNumberRepeat(number, array) + " times");
+        }
+    </script>
+</body>
+</html>

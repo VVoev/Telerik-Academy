@@ -1,0 +1,33 @@
+﻿<html>
+<head>
+    <title>Arrays</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">02.Write a script that allocates array of 20 integers and initializes each element by its index multiplied by 5. Print the obtained array on the console.
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input comma or space separated list of numbers:</label>
+        <input id="input-one" placeholder="list" type="text">
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onPrintButtonClick() {
+            var list = jsConsole.read('#input-one');
+            var listSplitted = list.split(/[\s,\ ]+/);
+			var listMultiplied = new Array();
+			
+			jsConsole.write("The MULTIPLIED by 5 list is: [ ");
+			for (var i = 0; i<listSplitted.length;i++){
+			listMultiplied[i] = parseInt(listSplitted[i])*5;
+			jsConsole.write(listMultiplied[i]+" ");
+			}
+			jsConsole.writeLine("]");
+        }
+    </script>
+</body>
+</html>

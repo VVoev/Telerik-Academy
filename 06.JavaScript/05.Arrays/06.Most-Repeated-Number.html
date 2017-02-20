@@ -1,0 +1,61 @@
+﻿<html>
+<head>
+    <title>Arrays</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">06.Write a program that finds the most frequent number in an array.<br>
+            Example:
+	        {4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3} -> 4 (5 times)
+
+        </span>
+    </div>
+    <div>
+
+        <label for="input-one">Array:</label>
+        <textarea id="input-one" placeholder="array" disabled> </textarea>
+        <!--<input id="input-one" placeholder="array" type="text" >-->
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        //Implement array.max()
+        Array.prototype.max = function () {
+            var max = this[0];
+            var len = this.length;
+            for (var i = 1; i < len; i++) if (this[i] > max) max = this[i];
+            return max;
+        }
+
+
+        var list = new Array(4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4);
+
+        //Setting the textarea with the array
+        var array = document.getElementById("input-one");
+        array.value = list;
+
+        function onPrintButtonClick() {
+            var counter = 0;
+
+            var arrayCounter = new Array();
+
+            for (var i = 0; i < list.length; i++) {
+                counter = 0;
+
+                for (var j = 0; j < list.length; j++) {
+                    if (list[i] == list[j]) {
+                        counter++;
+                    }
+                }
+                arrayCounter[i] = counter;
+            }
+            list.sort();
+
+            jsConsole.writeLine("The most repeated number is " + list[list.length - 1] + " and it's repeated " + arrayCounter.max() + " times.");
+        }
+    </script>
+</body>
+</html>

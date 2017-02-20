@@ -1,0 +1,110 @@
+﻿<html>
+<head>
+    <title>Functions</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">01.Write functions for working with shapes in  standard Planar coordinate system.<br>
+            Points are represented by coordinates P(X, Y)<br>
+            Lines are represented by two points, marking their beginning and ending<br>
+            L(P1(X1,Y1),P2(X2,Y2))<br>
+            Calculate the distance between two points<br>
+            Check if three segment lines can form a triangle<br>
+        </span>
+    </div>
+    <div>
+        <label for="x-one">X(1):</label>
+        <input id="x-one" placeholder="number" type="text">
+        <label for="y-one">Y(1):</label>
+        <input id="y-one" placeholder="number" type="text"><br>
+        <label for="x-two">X(2):</label>
+        <input id="x-two" placeholder="number" type="text">
+        <label for="y-two">Y(2):</label>
+        <input id="y-two" placeholder="number" type="text"><br>
+        <label for="x-three">X(3):</label>
+        <input id="x-three" placeholder="number" type="text">
+        <label for="y-three">Y(3):</label>
+
+        <input id="y-three" placeholder="number" type="text"><br>
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        //Create point
+        function point(xCoord, yCoord, number) {
+            number = number || null;
+            return {
+
+                xCoord: xCoord,
+                yCoord: yCoord,
+                number: number,
+                toString: function () { return "P" + number + "(" + this.xCoord + "," + this.yCoord + ")" }
+            }
+        }
+
+        //Create line
+        function line(pointOne, pointTwo, number) {
+            number = number || null;
+            return {
+                pointOne: pointOne,
+                pointTwo: pointTwo,
+                length: calculateDistance(pointOne, pointTwo),
+                toString: function () { return "L" + number + "(" + pointOne.toString() + "," + pointTwo.toString() + ")" }
+            }
+        }
+
+        //Calculate distance
+        function calculateDistance(point1, point2) {
+
+            var distance = Math.sqrt(Math.pow((point1.xCoord - point2.xCoord), 2) +
+                                     Math.pow((point1.yCoord - point2.yCoord), 2))
+
+            return distance;
+        }
+
+        //Check if triangle can be formed
+        function isFormTriangle(line1, line2, line3) {
+            if (line1.length<line2.length+line3.length&&line2.length<line1.length+line3.length&&line3.length<line1.length+line2.length) {
+                return true;
+            }
+            else {
+                return false;
+            }
+            }   
+
+        function onPrintButtonClick() {
+            var xOne = jsConsole.readFloat('#x-one');
+            var yOne = jsConsole.readFloat('#y-one');
+            var xTwo = jsConsole.readFloat('#x-two');
+            var yTwo = jsConsole.readFloat('#y-two');
+            var xThree = jsConsole.readFloat('#x-three');
+            var yThree = jsConsole.readFloat('#y-three');
+
+            var pointOne = point(xOne, yOne, 1);
+            var pointTwo = point(xTwo, yTwo, 2);
+            var pointThree = point(xThree, yThree, 3);
+
+            var lineOne = line(pointOne, pointTwo, 1);
+            var lineTwo = line(pointTwo, pointThree, 2);
+            var lineThree = line(pointOne, pointThree, 2);
+
+            jsConsole.writeLine(pointOne.toString());
+            jsConsole.writeLine(pointTwo.toString());
+            jsConsole.writeLine(pointThree.toString());
+            jsConsole.writeLine(lineOne.toString());
+            jsConsole.writeLine(lineTwo.toString());
+            jsConsole.writeLine(lineThree.toString());
+
+            jsConsole.writeLine("The distance betweent points " + pointOne.number + " and " + pointTwo.number + " = " + calculateDistance(pointOne, pointTwo));
+            jsConsole.writeLine("The distance betweent points " + pointTwo.number + " and " + pointThree.number + " = " + calculateDistance(pointTwo, pointThree));
+            jsConsole.writeLine("The distance betweent points " + pointOne.number + " and " + pointThree.number + " = " + calculateDistance(pointOne, pointThree));
+
+            jsConsole.writeLine("Triangle can be formed: " + isFormTriangle(lineOne, lineTwo, lineThree));
+
+        }
+    </script>
+</body>
+</html>

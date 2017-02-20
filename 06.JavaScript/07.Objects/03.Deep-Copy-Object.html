@@ -1,0 +1,81 @@
+﻿<html>
+<head>
+    <title>Objects</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">03.Write a function that makes a deep copy of an object<br>
+                            The function should work for both primitive and reference types
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input element to be deep copied:</label>
+        <input id="input-one" placeholder="array" type="text" disabled><br>
+        
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function deepCopy(obj) {
+            if (Object.prototype.toString.call(obj) === '[object Array]') {
+                var out = [], i = 0, len = obj.length;
+                for (; i < len; i++) {
+                    out[i] = arguments.callee(obj[i]);
+                }
+                return out;
+            }
+            if (typeof obj === 'object') {
+                var out = {}, i;
+                for (i in obj) {
+                    out[i] = arguments.callee(obj[i]);
+                }
+                return out;
+            }
+            return obj;
+        }
+
+        
+        
+
+        function onPrintButtonClick() {
+            var list = [1, 3, 4, 2, 2, 2, 3, 0, 4, 0];
+            var array = document.getElementById("input-one");
+            array.value = list;
+            var listCopy = deepCopy(list);
+            
+            //Checks for deep copy of the list
+            list = list.reverse();
+            jsConsole.writeLine("Original list reversed")
+            for (var i = 0; i < list.length; i++) {
+
+                if (i != list.length - 1) {
+                    jsConsole.write(list[i] + ", ");
+                }
+
+                else {
+                    jsConsole.writeLine(list[i]);
+                }
+            }
+
+            jsConsole.writeLine("Deep copied list")
+            for (var i = 0; i < listCopy.length; i++) {
+
+                if (i != listCopy.length - 1) {
+                    jsConsole.write(listCopy[i] + ", ");
+                }
+
+                else {
+                    jsConsole.writeLine(listCopy[i]);
+                }
+            }
+            
+
+        }
+
+
+    </script>
+</body>
+</html>

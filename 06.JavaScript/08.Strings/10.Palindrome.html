@@ -1,0 +1,49 @@
+﻿<html>
+<head>
+    <title>Strings</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">10.Write a program that extracts from a given text all palindromes, e.g. "ABBA", "lamal", "exe".
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input text:</label>
+        <textarea id="input-one" placeholder="text"></textarea>
+        <!--<label for="input-two">Input substring to count:</label>
+        <input id="input-two" placeholder="count" type="text">-->
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function onPrintButtonClick() {
+            var str = jsConsole.read('#input-one');
+            
+            var strSplitted = str.split(/\W/);
+            var isPalindrome = false;
+           
+            for (var i = 0; i < strSplitted.length; i++) {
+                var len = strSplitted[i].length;
+                for (var j = 0; j < Math.floor(len/2) ; j++) {
+
+                    if ((strSplitted[i][j]).toLowerCase() === (strSplitted[i][len - 1 - j]).toLowerCase()) {
+                        isPalindrome = true;
+                    }
+                    else {
+                        isPalindrome = false;
+                        break;
+                    }
+
+                }
+                if (isPalindrome === true && strSplitted[i] !== "") {
+                    jsConsole.writeLine("The word \"" + strSplitted[i] + "\" is a palindrome.");
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

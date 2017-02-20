@@ -1,0 +1,56 @@
+﻿<html>
+<head>
+    <title>Functions</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">06.Write a function that checks if the element at given position in given array of integers is bigger than its two neighbors (when such exist).
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input comma or space separated list of numbers:</label>
+        <input id="input-one" placeholder="string" type="text">
+        <!--<br>
+        <label for="input-two">Input searched number:</label>
+        <input id="input-two" placeholder="number" type="text">-->
+    </div>
+    <a href="#" onclick="onCalculateButtonClick()">Count</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function biggerThanNeighbours(array) {
+
+            var arraySplitted = array.split(/[\s,]+/);
+            
+            var arrayNew = new Array();
+            var arrayNums = new Array();
+            
+            for (var i = 1; i < arraySplitted.length - 1; i++) {
+
+                if (arraySplitted[i+1] < arraySplitted[i] && arraySplitted[i] > arraySplitted[i-1]) {
+                    arrayNew.push(i);
+                    arrayNums.push(arraySplitted[i]);
+                }
+            }
+            
+            if (arrayNew.length != 0) {
+                jsConsole.writeLine("The element which are bigger than its neighbours are at positions");
+                for (var i = 0; i < arrayNew.length; i++) {
+                        jsConsole.writeLine("array" + "[" + arrayNew[i] + "] = " + arrayNums[i])
+                }
+            }
+            else {
+                jsConsole.writeLine("There are no such elements.");
+            }
+        }
+
+        function onCalculateButtonClick() {
+            var array = jsConsole.read('#input-one');
+            biggerThanNeighbours(array);
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿<html>
+<head>
+    <title>Functions</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">04.Write a function to count the number of divs on the web page
+        </span>
+    </div>                                                                                               
+    <div>
+        <!--<label for="input-one">Input number:</label>
+        <input id="input-one" placeholder="number" type="text">-->
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print number of divs on the page</a>
+    <div id="js-console"></div>
+    <div></div>
+    <div></div>
+
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        //The function which convert the digit to text
+        function countDivs() {
+            var divNumbers = document.getElementsByTagName('div').length;
+            return divNumbers;
+        }
+
+        function onPrintButtonClick() {
+            jsConsole.writeLine("The number of divs on the page is: " + countDivs());
+        }
+    </script>
+</body>
+</html>

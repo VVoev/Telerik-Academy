@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+    <title>Functions</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">07.Write a Function that returns the index of the first element in array that is bigger than its neighbors, or -1, if there’s no such element.<br>
+            Use the function from the previous exercise.
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input comma or space separated list of numbers:</label>
+        <input id="input-one" placeholder="string" type="text">
+        <!--<br>
+        <label for="input-two">Input searched number:</label>
+        <input id="input-two" placeholder="number" type="text">-->
+    </div>
+    <a href="#" onclick="onCalculateButtonClick()">Count</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function biggerThanNeighbours(array) {
+
+            var arraySplitted = array.split(/[\s,]+/);
+            var index = -1;
+            for (var i = 1; i < arraySplitted.length - 1; i++) {
+
+                if (arraySplitted[i + 1] < arraySplitted[i] && arraySplitted[i] > arraySplitted[i - 1]) {
+                    index = i;
+                    break;
+                }
+            }
+            return index;
+        }
+
+        function onCalculateButtonClick() {
+            var array = jsConsole.read('#input-one');
+
+            jsConsole.writeLine("The index of the element is: " + biggerThanNeighbours(array));
+        }
+    </script>
+</body>
+</html>

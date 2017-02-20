@@ -1,0 +1,31 @@
+﻿<html>
+<head>
+    <title>Loops</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">01.Write a script that prints all the numbers from 1 to N
+
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input number:</label>
+        <input id="input-one" placeholder="number" type="text">
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onPrintButtonClick() {
+            var number = jsConsole.readInteger('#input-one');
+
+            for (var i = 1; i < number; i++) {
+                jsConsole.write(i + ", ");
+
+            }
+            jsConsole.write(number);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿<html>
+<head>
+    <title>Arrays</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">02.Write a script that compares two char arrays lexicographically (letter by letter).
+
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Array One:</label>
+        <input id="input-one" placeholder="list" type="text" disabled>
+		<br>
+		<label for="input-two">Array Two:</label>
+        <input id="input-two" placeholder="list" type="text" disabled>
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var listOne = new Array('A', 'a', 'c', 'd', 'w');
+        var listTwo = new Array('a', 'a', 'f', 'x', 'p');
+        var arrayOne = document.getElementById("input-one");
+        arrayOne.value = listOne;
+        var arrayTwo = document.getElementById("input-two");
+        arrayTwo.value = listTwo;
+        function onPrintButtonClick() {
+            
+			for(i=0;i<listOne.length;i++){
+				if(listOne[i]>listTwo[i]){
+					jsConsole.writeLine(listOne[i]+" > "+listTwo[i]);
+				}
+				else if(listOne[i]===listTwo[i]){
+					jsConsole.writeLine(listOne[i]+" = " +listTwo[i]);
+				}
+				else{
+					jsConsole.writeLine(listOne[i]+" < "+listTwo[i]);
+				}
+			}
+			
+        }
+    </script>
+</body>
+</html>

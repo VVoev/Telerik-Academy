@@ -1,0 +1,77 @@
+﻿<html>
+<head>
+    <title>Conditional Statements</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">08.Write a script that converts a number in the range [0...999] to a text corresponding to its English pronunciation.
+            <br>
+            Examples:
+            <br>
+            0 -> "Zero"
+            <br>
+            273 -> "Two hundred seventy three"
+
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input number between 0 and 999:</label>
+        <input id="input-one" placeholder="number" type="text" maxlength="3">
+    </div>
+    <a href="#" onclick="onCalculateButtonClick()">Calculate</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        String.prototype.capitalize = function () {
+            return this.charAt(0).toUpperCase() + this.slice(1);
+        }
+        function onCalculateButtonClick() {
+            
+            var numberText = jsConsole.read('#input-one');
+            var number = parseInt(numberText);
+            var digitArray = new Array();
+            //var hundreds = new Array("", "One hundred", "Two hundred", "Three hundred", "Four hundred", "Five hundred", "Six hundred", "Seven hundred", "Eight hundred", "Nine hundred")
+            var hundreds = new Array("", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
+            var tens = new Array("", "", "twenty", "thirty", "fourty", "fifty", "syxty", "seventy", "eighty", "ninety");
+            var special = new Array("ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen");
+
+            for (var i = 0; i < numberText.length; i++) {
+                digitArray[i] = parseInt(numberText[i]);
+            }
+
+            if (number > 99) {
+                if (digitArray[2] == 0 && digitArray[1] == 0) {
+                    jsConsole.writeLine((hundreds[digitArray[0]]).capitalize()  + " hundred");
+                }
+                else if (digitArray[1] > 0 && digitArray[1] < 2) {
+                    jsConsole.writeLine((hundreds[digitArray[0]]).capitalize() + " hundred and " + special[digitArray[2]]);
+                }
+                else if (digitArray[1] >= 2) {
+                    jsConsole.writeLine(hundreds[digitArray[0]].capitalize() + " hundred and " + tens[digitArray[1]] + " " + hundreds[digitArray[2]]);
+                }
+                else if (digitArray[1] == 0 && digitArray[2] != 0) {
+                    jsConsole.writeLine(hundreds[digitArray[0]].capitalize() + " hundred and " + hundreds[digitArray[2]]);
+                }
+                
+            }
+            else if (number < 100) {
+                if (number < 10&&number>=1) {
+                    jsConsole.writeLine(hundreds[digitArray[0]].capitalize());
+                }
+                else if (number >= 10 && number < 20) {
+                    jsConsole.writeLine(special[digitArray[1]].capitalize());
+                }
+                else if (number == 0) {
+                    jsConsole.writeLine("zero".capitalize());
+                }
+                else {
+                    jsConsole.writeLine(tens[digitArray[0]].capitalize() + " " + hundreds[digitArray[1]]);
+                }
+            }
+            
+
+        }
+    </script>
+</body>
+</html>

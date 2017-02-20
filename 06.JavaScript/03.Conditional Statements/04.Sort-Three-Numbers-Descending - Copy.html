@@ -1,0 +1,80 @@
+﻿<html>
+<head>
+    <title>Conditional Statements</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">02.Write a script that shows the sign (+ or -) of the product of three real numbers without calculating it. Use a sequence of if statements.
+
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input first number:</label>
+        <input id="input-one" placeholder="first" type="text">
+        <br>
+        <label for="input-two">Input second nubmber:</label>
+        <input id="input-two" placeholder="second" type="text">
+        <br>
+        <label for="input-three">Input second nubmber:</label>
+        <input id="input-three" placeholder="third" type="text">
+    </div>
+    <a href="#" onclick="onSortButtonClick()">Sort</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onSortButtonClick() {
+            var numberOne = jsConsole.readFloat('#input-one');
+            var numberTwo = jsConsole.readFloat('#input-two');
+            var numberThree = jsConsole.readFloat('#input-three');
+
+            var biggest;
+            var middle;
+            var smallest;
+
+            if (numberOne > numberTwo) {
+                if (numberThree > numberOne) {
+                    biggest = numberThree;
+                    middle = numberOne;
+                    smallest = numberTwo;
+                }
+                else if (numberThree > numberTwo) {
+                    biggest = numberOne;
+                    middle = numberThree;
+                    smallest = numberTwo;
+                }
+                else {
+                    biggest = numberOne;
+                    middle = numberTwo;
+                    smallest = numberThree;
+                }
+            }
+
+            else {
+                if (numberThree > numberTwo) {
+                    biggest = numberThree;
+                    middle = numberTwo;
+                    smallest = numberOne;
+                }
+                else if (numberThree > numberOne) {
+                    biggest = numberTwo;
+                    middle = numberThree;
+                    smallest = numberOne;
+                }
+                else {
+                    biggest = numberTwo;
+                    middle = numberOne;
+                    smallest = numberThree;
+                }
+            }
+
+
+            jsConsole.writeLine("Sorted descending: " + biggest + ', ' + middle +', ' + smallest);
+
+
+
+
+        }
+    </script>
+</body>
+</html>

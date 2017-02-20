@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+	<title>Data types and variables</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="exercise"><span id="inner">01. Write an expression that checks if given integer is odd or even.</span>
+	</div>
+	<div>
+		<label for="input-one">Input a number:</label>
+		<input id="input-one" placeholder="input" type="text">
+		<br>
+	</div>
+	<a href="#" onclick="onCheckButtonClick()">Check</a>
+	<div id="js-console"></div>				 
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onCheckButtonClick() {
+			var number = jsConsole.readInteger('#input-one');
+			if(number % 2 == 0) {
+				jsConsole.writeLine("The number " + number + " is even")
+			}
+			else{
+				jsConsole.writeLine("The number " + number + " is odd")
+			}
+		}
+	</script>
+</body>
+</html>

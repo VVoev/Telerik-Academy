@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+    <title>Conditional Statements</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">07.Write a script that finds the greatest of given 5 variables.
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input comma or space separated string of five numbers:</label>
+        <input id="input-one" placeholder="string" type="text">
+    </div>
+    <a href="#" onclick="onCalculateButtonClick()">Calculate</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onCalculateButtonClick() {
+            var list = jsConsole.read('#input-one');
+            var listSplitted = list.split(/[\s,]+/);
+            var max = 0;
+            var num = 0;
+            for (var i = 0; i < listSplitted.length; i++) {
+                num = parseInt(listSplitted[i]);
+                if (max < num) {
+                    max = num;
+                }
+            }
+            jsConsole.writeLine("The biggest variable is: " + max);
+            
+            
+
+        }
+    </script>
+</body>
+</html>

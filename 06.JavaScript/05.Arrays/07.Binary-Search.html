@@ -1,0 +1,74 @@
+﻿<html>
+<head>
+    <title>Arrays</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">07.Write a program that finds the index of given element in a sorted array of integers by using the binary search algorithm (find it in Wikipedia).
+
+        </span>
+    </div>
+    <div>
+
+        <label for="input-one">Array:</label>
+        <input id="input-one" placeholder="array" disabled>
+        <br>
+        <label for="input-two">Searched Number:</label>
+        <input id="input-two" placeholder="target value">
+
+        <!--<input id="input-one" placeholder="array" type="text" >-->
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+  
+		//Implement binary search
+		
+        function binarySearch(list,target, low,high) {
+				
+			if(low>high)
+			{
+			return -1;
+			}
+			mid = Math.floor((low+high)/2);
+			if (target === list[mid]) {
+                return mid;
+                }
+			
+            else if (target < list[mid]) {
+                high = mid - 1;
+				return  binarySearch(list,target,low,high); //Recursivly call binarySearch()
+            }
+            else {
+                low = mid + 1;
+				return  binarySearch(list,target,low,high);  //Recursivly call binarySearch()
+            }
+		}
+        	
+		
+		var list = new Array(0, 5, 13, 19, 22, 41, 55, 72, 81);
+
+        //Setting the textarea with the array
+        var array = document.getElementById("input-one");
+        array.value = list;
+		
+		function onPrintButtonClick() {
+            var target = jsConsole.readInteger("#input-two");
+            var low = 0;
+            var high = Math.floor(list.length);
+			                 
+            if(binarySearch(list,target,low,high)!=-1)
+			{
+			jsConsole.writeLine("The index of the searched element is: " + binarySearch(list,target,low,high));
+			}
+			else{
+			jsConsole.writeLine("The searched number is not in the array!");
+			}
+			
+			
+        }
+    </script>
+</body>
+</html>

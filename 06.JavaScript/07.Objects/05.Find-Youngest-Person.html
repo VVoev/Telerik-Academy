@@ -1,0 +1,52 @@
+﻿<html>
+<head>
+    <title>Objects</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">05.Write a function that finds the youngest person in a given array of persons and prints his/hers full name<br>
+            Each person have properties firstname, lastname and age, as shown:<br>
+            var persons = [<br>
+            {firstname : "Gosho", lastname: "Petrov", age: 32},<br>
+            {firstname : "Bay", lastname: "Ivan", age: 81},<br>
+            { firstname: "Joro", lastname: "Jorov", age: 19}];
+
+        </span>
+    </div>
+    <div>
+        <!--<label for="input-one">Array:</label>
+        <input id="input-one" placeholder="array" type="text" disabled><br>
+        <label for="input-two">Input property to search (example: length):</label>
+        <input id="input-two" placeholder="array" type="text">-->
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function onPrintButtonClick() {
+
+            var persons = [
+            { firstname: "Gosho", lastname: "Petrov", age: 32 },
+            { firstname: "Bay", lastname: "Ivan", age: 81 },
+            { firstname: "Joro", lastname: "Jorov", age: 19 }];
+
+            var index = -1;
+
+            for (var i = 0; i < persons.length - 1; i++) {
+                if (persons[i + 1] > persons[i]) {
+                    index = i;
+                }
+                else {
+                    index = i + 1;
+                }
+            }
+
+
+            jsConsole.writeLine("The youngest person is: " + persons[index].firstname + " " + persons[index].lastname + " " + persons[index].age + " years old");
+
+        }
+    </script>
+</body>
+</html>

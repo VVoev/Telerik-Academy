@@ -1,0 +1,65 @@
+﻿<html>
+<head>
+    <title>Functions</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">03.Write a function that finds all the occurrences of word in a text<br>
+                            The search can case sensitive or case insensitive<br>
+                            Use function overloading
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input text:</label>
+        <textarea id="input-one" placeholder="text"></textarea>
+        <br>
+        <label for="input-two">Input searched word:</label>
+        <input id="input-two" placeholder="text" type="text">
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        //The function which convert the digit to text
+        function countWord(word, text, isCaseSensitive) {
+
+            text = text.toString();
+            isCaseSensitive = isCaseSensitive || null;
+
+            var arr = text.split(new RegExp("\\W+"));
+            var counter = 0;
+
+            if (isCaseSensitive === null) {
+
+                for (var i = 0; i < arr.length; i++) {
+                    if (word.toLowerCase() === arr[i].toLowerCase()) {
+                        counter++;
+                    }
+                }
+                return counter;
+            }
+
+            else {
+
+                for (var i = 0; i < arr.length; i++) {
+                    if (word === arr[i]) {
+                        counter++;
+                    }
+                }
+                return counter;
+            }
+        }
+
+        function onPrintButtonClick() {
+            var text = jsConsole.read('#input-one');
+            var word = jsConsole.read('#input-two');
+            jsConsole.write("The searched word (case INsensitive) is: ");
+            jsConsole.writeLine(countWord(word, text));
+            jsConsole.write("The searched word (case sensitive) is: ");
+            jsConsole.writeLine(countWord(word, text, true));
+        }
+    </script>
+</body>
+</html>

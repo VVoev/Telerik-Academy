@@ -1,0 +1,40 @@
+﻿<html>
+<head>
+    <title>Conditional Statements</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">05.Write script that asks for a digit and depending on the input shows the name of that digit (in English) using a switch statement.
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input number:</label>
+        <input id="input-one" placeholder="number" type="text">
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onPrintButtonClick() {
+            var number = jsConsole.readFloat('#input-one');
+
+            switch (number) {
+                case 0: jsConsole.writeLine('Zero'); break;
+                case 1: jsConsole.writeLine('One'); break;
+                case 2: jsConsole.writeLine('Two'); break;
+                case 3: jsConsole.writeLine('Three'); break;
+                case 4: jsConsole.writeLine('Four'); break;
+                case 5: jsConsole.writeLine('Five'); break;
+                case 6: jsConsole.writeLine('Six'); break;
+                case 7: jsConsole.writeLine('Seven'); break;
+                case 8: jsConsole.writeLine('Eight'); break;
+                case 9: jsConsole.writeLine('Nine'); break;
+                default: jsConsole.writeLine('Wrong input! Must be a digit not a number!'); break;
+            }
+
+
+        }
+    </script>
+</body>
+</html>

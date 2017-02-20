@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+	<title>Data types and variables</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="exercise"><span id="inner">03. Write an expression that calculates rectangle’s area by given width and height.</span>
+	</div>
+	<div>
+		<label for="input-one">Input width:</label>
+		<input id="input-one" placeholder="width" type="text">
+		<br>
+		<label for="input-two">Input height:</label>
+		<input id="input-two" placeholder="height" type="text">
+		
+	</div>
+	<a href="#" onclick="onCalculateButtonClick()">Calculate</a>
+	<div id="js-console"></div>				 
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onCalculateButtonClick() {
+			var width = jsConsole.readFloat('#input-one');
+			var heigth = jsConsole.readFloat('#input-two');
+			jsConsole.writeLine("The rectangle area is: " + width * heigth);
+            
+		}
+	</script>
+</body>
+</html>

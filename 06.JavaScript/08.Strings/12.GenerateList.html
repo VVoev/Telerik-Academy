@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+        #container-list {
+            color: white;
+            display: inline-block;
+            margin: 15px;
+            border: 1px solid blue;
+            background-color: dodgerblue;
+            width: auto;
+        }
+
+        h2 {
+            margin: 15px 15px 0px 15px;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 5px 20px;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div data-type="template" id="list-item">
+    <strong>-{name}-</strong> <span>-{age}-</span>
+</div>
+
+
+<script>
+    var people = [{name: 'Peter', age: 14},
+        {name: 'Doncho', age: 30},
+        {name: 'Ivan', age: 24},
+        {name: 'Maria', age: 26},
+        {name: 'Minka', age: 18},
+        {name1: 'Batman', age: 20}]; //not valid properties due to the template. Will not be printed
+
+    var template = document.getElementById('list-item').innerHTML;
+
+    generateList(people, template);
+
+    function generateList(people, template) {
+        var regex = /\-{.+?(?=})}-/g;
+        var match = template.match(regex);
+
+        var div = '<div id="container-list"><h2>Generated List</h2><ul>';
+
+        for (var i in people) {
+            var tmpl = template;
+            var isPrinted = true;
+            for (var obj in match) {
+                var prop = match[obj].substr(2, match[obj].length - 4);
+                if (people[i][prop]) {
+                    tmpl = tmpl.replace(match[obj], people[i][prop]);
+                } else {
+                    isPrinted = false;
+                    break;
+                }
+            }
+            if (isPrinted) {
+                div += '<li>' + tmpl + '</li>';
+            }
+        }
+        div += '</ul></div>';
+
+        document.getElementById('list-item').innerHTML += div;
+
+    }
+</script>
+</body>
+</html>

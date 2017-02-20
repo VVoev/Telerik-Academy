@@ -1,0 +1,50 @@
+﻿<html>
+<head>
+    <title>Data types and variables</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">09. Write an expression that checks for given point (x, y) if it is within the circle K( (1,1), 3) and out of the rectangle R(top=1, left=-1, width=6, height=2).</span>
+    </div>
+    <div>
+        <label for="input-one">Input X:</label>
+        <input id="input-one" placeholder="X" type="text">
+        <br>
+        <label for="input-two">Input Y:</label>
+        <input id="input-two" placeholder="Y" type="text">
+    </div>
+    <a href="#" onclick="onCheckButtonClick()">Check</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onCheckButtonClick() {
+            var xCoord = jsConsole.readFloat('#input-one');
+            var yCoord = jsConsole.readFloat('#input-two');
+            var r = 3;
+
+            var insideCircle = (Math.pow((xCoord-1), 2) + Math.pow((yCoord-1), 2)) <= Math.pow(r, 2);
+            var insideRectangle = (((xCoord >= 1) && (xCoord <= 7)) && ((yCoord >= -3) && (yCoord <= -1)));
+            
+
+            if (insideCircle && insideRectangle) {
+                jsConsole.writeLine("The point is inside the circle and inside the rectangle");
+            }
+
+            else if ((insideCircle == false) && (insideRectangle)) {
+                jsConsole.writeLine("The point is outside the circle and inside the rectangle");
+            }
+
+            else if ((insideCircle) && (insideRectangle == false)) {
+                jsConsole.writeLine("The point is inside the circle and outside the rectangle");
+            }
+
+            else if ((insideCircle == false) && (insideRectangle == false)) {
+                jsConsole.writeLine("The point is outside the circle and outside the rectangle");
+            }
+            
+            
+        }
+    </script>
+</body>
+</html>

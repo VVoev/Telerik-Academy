@@ -1,0 +1,94 @@
+﻿<html>
+<head>
+    <title>Arrays</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">03.Write a script that finds the maximal sequence of equal elements in an array.
+		Example: {2, 1, 1, 2, 3, 3, 2, 2, 2, 1} -> {2, 2, 2}.
+
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Array:</label>
+        <input id="input-one" placeholder="array" type="text" disabled>
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        //Implement array.max()
+        Array.prototype.max = function () {
+            var max = this[0];
+            var len = this.length;
+            for (var i = 1; i < len; i++) if (this[i] > max) max = this[i];
+            return max;
+        }
+
+        //Implement array.indexOf()	
+        if (!Array.prototype.indexOf) {
+            Array.prototype.indexOf = function (searchElement /*, fromIndex */) {
+                "use strict";
+                if (this == null) {
+                    throw new TypeError();
+                }
+                var t = Object(this);
+                var len = t.length >>> 0;
+                if (len === 0) {
+                    return -1;
+                }
+                var n = 0;
+                if (arguments.length > 1) {
+                    n = Number(arguments[1]);
+                    if (n != n) { // shortcut for verifying if it's NaN
+                        n = 0;
+                    } else if (n != 0 && n != Infinity && n != -Infinity) {
+                        n = (n > 0 || -1) * Math.floor(Math.abs(n));
+                    }
+                }
+                if (n >= len) {
+                    return -1;
+                }
+                var k = n >= 0 ? n : Math.max(len - Math.abs(n), 0);
+                for (; k < len; k++) {
+                    if (k in t && t[k] === searchElement) {
+                        return k;
+                    }
+                }
+                return -1;
+            }
+        }
+
+        var list = new Array(1, 3, 4, 2, 2, 2, 3, 0, 4, 0);
+        var array = document.getElementById("input-one");
+        array.value = list;
+
+        function onPrintButtonClick() {
+
+            var counter = 0;
+
+            var arrayCounter = new Array();
+
+            for (i = 0; i < list.length; i++) {
+                counter = 0;
+                for (j = i; j < list.length; j++) {
+                    if (list[j] == list[i]) {
+                        counter++;
+                    }
+                    else {
+                        break;
+                    }
+
+                }
+                arrayCounter[i] = counter;
+            }
+            var max = arrayCounter.max();
+            var maxIndex = arrayCounter.indexOf(max);
+
+            jsConsole.writeLine("The element is " + list[maxIndex] + "<br>Repeated: " + max + " times");
+
+        }
+    </script>
+</body>
+</html>

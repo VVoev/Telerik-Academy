@@ -1,0 +1,70 @@
+﻿<html>
+<head>
+    <title>Objects</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">05.Write a function that finds the youngest person in a given array of persons and prints his/hers full name<br>
+            Each person have properties firstname, lastname and age, as shown:<br>
+            var persons = [<br>
+            {firstname : "Gosho", lastname: "Petrov", age: 32},<br>
+            {firstname : "Bay", lastname: "Ivan", age: 81},<br>
+            { firstname: "Joro", lastname: "Jorov", age: 19}];
+
+        </span>
+    </div>
+    <div>
+        <!--<label for="input-one">Array:</label>
+        <input id="input-one" placeholder="array" type="text" disabled><br>
+        <label for="input-two">Input property to search (example: length):</label>
+        <input id="input-two" placeholder="array" type="text">-->
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+
+         function groupBy(array, predicate) {
+            var grouped = {};
+            for (var i = 0; i < array.length; i++) {
+                var groupKey = predicate(array[i]);
+                if (typeof (grouped[groupKey]) === "undefined")
+                    grouped[groupKey] = [];
+                grouped[groupKey].push(array[i]);
+            }
+
+            return grouped;
+        }
+
+        function onPrintButtonClick() {
+
+
+            var result = [];
+            var persons = [
+              { firstname: "Gosho", lastname: "Petrov", age: 32 },
+              { firstname: "Bay", lastname: "Ivan", age: 32 },
+              { firstname: "Gosho", lastname: "Peshev", age: 22 }];
+            var groupedByFname = groupBy(persons, function (obj) {
+                return obj.firstname;
+            });
+
+            for (var name in groupedByFname) {
+                result.push("Name: " + name + " count: " + groupedByFname[name].length)
+            }
+
+            var groupedByAge = groupBy(persons, function (obj) {
+                return obj.age
+            });
+
+            for (var age in groupedByAge) {
+                result.push("Age: " + age + " count: " + groupedByAge[age].length)
+            }
+
+            jsConsole.writeLine(result.toString());
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+    <title>Strings</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">05.Write a function that replaces non breaking white-spaces in a text with &amp;nbsp;
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input text:</label>
+        <textarea id="input-one" placeholder="text"></textarea>
+        <!--<label for="input-two">Input substring to count:</label>
+        <input id="input-two" placeholder="count" type="text">-->
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function onPrintButtonClick() {
+            var str = jsConsole.read('#input-one');
+            str = str.replace(/\s/g, "&amp;nbsp;");
+            jsConsole.writeLine(str);
+        }
+    </script>
+</body>
+</html>

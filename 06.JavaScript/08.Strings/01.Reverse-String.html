@@ -1,0 +1,26 @@
+﻿<html>
+<head>
+    <title>Strings</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">01Write a JavaScript function reverses string and returns it<br>Example: "sample" -> "elpmas".
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input string:</label>
+        <input id="input-one" placeholder="string" type="text">
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onPrintButtonClick() {
+            var str = jsConsole.read('#input-one');
+            var strReversed = str.split("").reverse().join("");
+            jsConsole.writeLine(str + " -> " + strReversed);
+        }
+    </script>
+</body>
+</html>

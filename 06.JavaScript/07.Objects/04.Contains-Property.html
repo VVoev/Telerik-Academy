@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+    <title>Objects</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">04.Write a function that checks if a given object contains a given property<br>
+            var obj  = …;<br>
+            var hasProp = hasProperty(obj,"length");
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Array:</label>
+        <input id="input-one" placeholder="array" type="text" disabled><br>
+        <label for="input-two">Input property to search (example: length):</label>
+        <input id="input-two" placeholder="array" type="text">
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function hasProperty(obj, property) {
+            if (obj.hasOwnProperty(property)) {
+                jsConsole.writeLine("The object has property " + property);
+            }
+            else {
+
+                jsConsole.writeLine("The object has NOT property " + property);
+            }
+        }
+
+        var list = [1, 3, 4, 2, 2, 2, 3, 0, 4, 0];
+        var array = document.getElementById("input-one");
+        array.value = list;
+
+        function onPrintButtonClick() {
+            var property = jsConsole.read('#input-two');
+
+            hasProperty(list, property);
+        }
+    </script>
+</body>
+</html>

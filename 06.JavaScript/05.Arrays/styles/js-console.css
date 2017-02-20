@@ -1,0 +1,152 @@
+﻿.js-console {
+  margin: 0;
+}
+
+body .js-console {
+  margin: 0;
+  padding: 5px 10px;
+  background-color: black;
+  width: 800px;
+  height: 500px;
+  font-family: Consolas;
+  font-size: 18px;
+  color: white;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  word-break: break-all;
+}
+body .js-console > p {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: block;
+}
+body .js-console > p > span {
+  margin: 0;
+  padding: 0;
+}
+body .js-console > p > br {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+input{
+  font-family: Segoe UI, Verdana, Tahoma, Arial, sans-serif;
+  width: auto;
+  padding: 5px;
+  border-radius: 5px;
+  border-style: inset;
+  background-color: gray;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right:10px;
+  background: rgb(252,255,244); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(252,255,244,1) 0%, rgba(223,229,215,1) 40%, rgba(179,190,173,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,255,244,1)), color-stop(40%,rgba(223,229,215,1)), color-stop(100%,rgba(179,190,173,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */
+}
+textarea{
+  font-family: Segoe UI, Verdana, Tahoma, Arial, sans-serif;
+  width: auto;
+  padding: 5px;
+  border-radius: 5px;
+  border-style: inset;
+  background-color: gray;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  top: 20px;
+  width: 350px;
+  overflow-y: scroll;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  background: rgb(252,255,244); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(252,255,244,1) 0%, rgba(223,229,215,1) 40%, rgba(179,190,173,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,255,244,1)), color-stop(40%,rgba(223,229,215,1)), color-stop(100%,rgba(179,190,173,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */
+}
+
+
+
+::-webkit-input-placeholder {
+   color: grey;
+   font-weight: normal;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: grey;
+   font-weight: normal;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: grey;
+   font-weight: normal;  
+}
+
+:-ms-input-placeholder {  
+   color: grey;
+   font-weight: normal;  
+}
+
+#exercise{
+  width:540px;
+  background-image: url('Background.png');
+  background-repeat: no-repeat;
+  font-family: Corbel, Arial, sans-serif;
+  font-size: 20px;
+  color: rgb(235,255,210);
+  position: relative; 
+  padding-bottom: 30px;
+  padding-top: 50px;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+
+a{
+    color:black;
+    border:1px solid grey;
+    border-radius: 5px;
+    padding:5px 15px; 
+    font-family: Segoe UI, Arial, sans-serif;
+    font-weight: bold;          
+    text-decoration:none;    
+    display:inline-block;    
+    margin: 10px 10px;
+    background: rgb(252,255,244); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(252,255,244,1) 0%, rgba(223,229,215,1) 40%, rgba(179,190,173,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,255,244,1)), color-stop(40%,rgba(223,229,215,1)), color-stop(100%,rgba(179,190,173,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */
+}
+
+a:hover{
+      background: rgb(179,190,173); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(179,190,173,1) 0%, rgba(223,229,215,1) 60%, rgba(252,255,244,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(179,190,173,1)), color-stop(60%,rgba(223,229,215,1)), color-stop(100%,rgba(252,255,244,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(179,190,173,1) 0%,rgba(223,229,215,1) 60%,rgba(252,255,244,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(179,190,173,1) 0%,rgba(223,229,215,1) 60%,rgba(252,255,244,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(179,190,173,1) 0%,rgba(223,229,215,1) 60%,rgba(252,255,244,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(179,190,173,1) 0%,rgba(223,229,215,1) 60%,rgba(252,255,244,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3bead', endColorstr='#fcfff4',GradientType=0 ); /* IE6-9 */
+
+}
+
+label{
+  font-family: Segoe UI, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 10px;
+}

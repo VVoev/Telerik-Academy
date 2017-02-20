@@ -1,0 +1,42 @@
+﻿<html>
+<head>
+    <title>Strings</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">11.Write a function that formats a string using placeholders:
+            <br>
+            var str = stringFormat("Hello {0}!","Peter");<br>
+            //str = "Hello Peter!";
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input text:</label>
+        <textarea id="input-one" placeholder="text" disabled></textarea>
+        <!--<label for="input-two">Input substring to count:</label>
+        <input id="input-two" placeholder="count" type="text">-->
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function format(string) {
+            var currentArgs = arguments;
+
+            return string.replace(/{(\d+)}/g, function(match, p1) {
+                return currentArgs[+p1 + 1]
+            })
+        }
+        
+        var str = "LOOK INSIDE THE SCRIPT :)";
+        var array = document.getElementById('input-one');
+        array.value = str;
+
+        function onPrintButtonClick() {
+            jsConsole.writeLine(format("Hello {0}, {1} from {2}!", "Jorko", "Jorkov","Jorkovo"));
+        }
+    </script>
+</body>
+</html>

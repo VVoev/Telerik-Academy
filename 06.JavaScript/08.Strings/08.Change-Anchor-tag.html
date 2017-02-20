@@ -1,0 +1,36 @@
+﻿<html>
+<head>
+    <title>Strings</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">04.Write a JavaScript function that replaces in a HTML document<br>
+             given as string all the tags &lt;a "href="…"&gt;…&lt;/&lt;a&gt; with corresponding<br>
+             tags [URL=…]…/URL]. Sample HTML fragment:
+
+
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input text:</label>
+        <textarea id="input-one" placeholder="text"></textarea>
+        <!--<label for="input-two">Input substring to count:</label>
+        <input id="input-two" placeholder="count" type="text">-->
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function onPrintButtonClick() {
+            var str = jsConsole.read('#input-one');
+            
+            str = str.replace(/<a href=(.*?)>/g, "[URL=$1]");
+            str = str.replace(/<\/a>/g, "[/URL]");
+
+            jsConsole.writeLine(str);
+        }
+    </script>
+</body>
+</html>

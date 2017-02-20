@@ -1,0 +1,31 @@
+﻿<html>
+<head>
+    <title>Data types and variables</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">05. Write a boolean expression for finding if the bit 3 (counting from 0) of a given integer is 1 or 0.</span>
+    </div>
+    <div>
+        <label for="input-one">Input a number:</label>
+        <input id="input-one" placeholder="input" type="text">
+        <br>
+    </div>
+    <a href="#" onclick="onCheckThirdBitButtonClick()">Check</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onCheckThirdBitButtonClick() {
+            var number = jsConsole.readInteger('#input-one');
+            var check = 1<<3;
+            if ((number & check)>>3 == 1) {
+                jsConsole.writeLine("The third bit is: 1");
+            }
+            else {
+                jsConsole.writeLine("The third bit is: 0");
+            }
+        }
+    </script>
+</body>
+</html>

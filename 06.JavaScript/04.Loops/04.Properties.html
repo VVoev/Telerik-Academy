@@ -1,0 +1,76 @@
+﻿<html>
+<head>
+    <title>Loops</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">04.Write a script that finds the lexicographically smallest and largest property in document, window and navigator objects
+        </span>
+    </div>
+    <div>
+        <!--<label for="input-one">Input first number:</label>
+        <input id="input-one" placeholder="first" type="text">-->
+        
+    </div>
+    <a href="#" onclick="onGetButtonClick()">GET</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onGetButtonClick() {
+
+            //Property in document
+            var min="zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz";
+            var max="0";
+
+            for (var prop in document) {
+                if (prop < min) {
+                    min = prop;
+                }
+                if (prop > max) {
+                    max = prop;
+                }
+            }
+            jsConsole.writeLine("The min property of document is: "+min);
+            jsConsole.writeLine("The max property of document is: " + max);
+            jsConsole.writeLine("");
+
+
+            //Property in window
+            min = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz";
+            max = "0";
+
+            for (var prop in window) {
+                if (prop < min) {
+                    min = prop;
+                }
+                if (prop > max) {
+                    max = prop;
+                }
+            }
+            jsConsole.writeLine("The min property of window is: " + min);
+            jsConsole.writeLine("The max property of window is: " + max);
+            jsConsole.writeLine("");
+
+
+            //Property in navigator
+            min = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz";
+            max = "0";
+
+            for (var prop in navigator) {
+                //jsConsole.writeLine(prop);
+                //jsConsole.writeLine(prop < min);
+                if (prop < min) {
+                    min = prop;
+                }
+                if (prop > max) {
+                    max = prop;
+                }
+            }
+            jsConsole.writeLine("The min property of navigator is: " + min);
+            jsConsole.writeLine("The max property of navigator is: " + max);
+            jsConsole.writeLine("");
+        }
+    </script>
+</body>
+</html>

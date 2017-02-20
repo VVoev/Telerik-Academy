@@ -1,0 +1,30 @@
+﻿<html>
+<head>
+	<title>Data types and variables</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="exercise"><span id="inner">02. Write a boolean expression that checks for given integer if it can be divided (without remainder) by 7 and 5 in the same time.
+</span>
+	</div>
+	<div>
+		<label for="input-one">Input a number:</label>
+		<input id="input-one" placeholder="input" type="text">
+		<br>
+	</div>
+	<a href="#" onclick="onCheckButtonClick()">Check</a>
+	<div id="js-console"></div>				 
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onCheckButtonClick() {
+			var number = jsConsole.readInteger('#input-one');
+			if(number % 7 == 0 & number % 5 == 0) {
+				jsConsole.writeLine("Can be divided by 7 and 5 without reminder: " + true);
+			}
+			else{
+				jsConsole.writeLine("Can be divided by 7 and 5 without reminder: " + false);
+			}
+		}
+	</script>
+</body>
+</html>

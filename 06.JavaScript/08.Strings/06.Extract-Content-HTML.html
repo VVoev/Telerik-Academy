@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+    <title>Strings</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">06.Write a function that extracts the content of a html page<br>
+                            given as text. The function should return anything that<br>
+                            is in a tag, without the tags:
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input text:</label>
+        <textarea id="input-one" placeholder="text" disabled></textarea>
+        <!--<label for="input-two">Input substring to count:</label>
+        <input id="input-two" placeholder="count" type="text">-->
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        //You can input the string here :)
+        var str = "<html><head><title>Sample site</title></head><body><div>text<div>more text</div>and more...</div>in body</body></html>";
+        var array = document.getElementById('input-one');
+        array.value = str;
+
+        function onPrintButtonClick() {
+
+            str = str.replace(/<(.*?)>/g, "");
+
+            jsConsole.writeLine(str);
+        }
+    </script>
+</body>
+</html>

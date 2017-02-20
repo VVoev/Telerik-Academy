@@ -1,0 +1,40 @@
+﻿<html>
+<head>
+    <title>Data types and variables</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">06. Write an expression that checks if given print (x,  y) is within a circle K(0, 5).
+.</span>
+    </div>
+    <div>
+        <label for="input-one">Input X:</label>
+        <input id="input-one" placeholder="X" type="text">
+        <br>
+        <label for="input-two">Input Y:</label>
+        <input id="input-two" placeholder="Y" type="text">
+    </div>
+    <a href="#" onclick="onCheckPositionButtonClick()">Check</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onCheckPositionButtonClick() {
+            var xCoord = jsConsole.readFloat('#input-one');
+            var yCoord = jsConsole.readFloat('#input-two');
+            var r = 5;
+
+            if ((Math.pow(xCoord, 2) + Math.pow(yCoord, 2)) > Math.pow(r,2)) {
+                jsConsole.writeLine("The point is OUTSIDE the circle.");
+            }
+            else if ((Math.pow(xCoord, 2) + Math.pow(yCoord, 2)) < Math.pow(r,2)) {
+                jsConsole.writeLine("The point is INSIDE the circle.");
+            }
+            else {
+                jsConsole.writeLine("The point is ON the circle.");
+            }
+            
+        }
+    </script>
+</body>
+</html>

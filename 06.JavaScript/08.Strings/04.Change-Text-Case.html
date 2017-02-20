@@ -1,0 +1,57 @@
+﻿<html>
+<head>
+    <title>Strings</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">04.You are given a text. Write a function that changes the text in all regions:<br>
+                            &lt;upcase&gt;text&lt;/upcase&gt; to uppercase.<br>
+                            &lt;lowcase&gt;text&lt;/lowcase&gt; to lowercase.<br>
+                            &lt;mixcase&gt;text&lt;/mixcase&gt; to mix casing(random)
+
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input text:</label>
+        <textarea id="input-one" placeholder="text"></textarea>
+        <!--<label for="input-two">Input substring to count:</label>
+        <input id="input-two" placeholder="count" type="text">-->
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        //Generate random LetTeR CasE :)
+        function random(string) {
+
+            var strNew = ""
+            var strLen = string.length;
+            var randomNum;
+
+            for (var i = 0; i < string.length; i++) {
+                randomNum = Math.floor((Math.random() * 4) + 1);
+                if (randomNum % 2 == 0) {
+                    strNew += string[i].toUpperCase();
+                }
+                else {
+                    strNew += string[i].toLowerCase();
+                }
+            }
+            return strNew;
+        }
+
+        function onPrintButtonClick() {
+            var str = jsConsole.read('#input-one');
+
+            str = str.replace(/<upcase>(.*?)<\/upcase>/g, function (string) { return string.toUpperCase() });
+            str = str.replace(/<lowcase>(.*?)<\/lowcase>/g, function (string) { return string.toLowerCase() });
+            str = str.replace(/<mixcase>(.*?)<\/mixcase>/g, function (replace) { return random(replace) });
+            str = str.replace(/<(.*?)>/gi, "");
+
+            jsConsole.writeLine(str);
+        }
+    </script>
+</body>
+</html>

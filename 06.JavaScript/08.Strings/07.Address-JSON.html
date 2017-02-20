@@ -1,0 +1,61 @@
+﻿<html>
+<head>
+    <title>Strings</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">07.Write a script that parses an URL address given in the format:<br> 
+                           [protocol]://[server]/[resource]<br>
+                            and extracts from it the [protocol], [server] and [resource] elements.<br>
+                            Return the elements in a JSON object.For example from<br>
+                             the URL http://www.devbg.org/forum/index.php the <br>
+                            following information should be extracted:<br>
+                             {protocol: "http", server: "www.devbg.org", <br>
+                                resource: "/forum/index.php"}
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input text:</label>
+        <textarea id="input-one" placeholder="text"></textarea>
+        <!--<label for="input-two">Input substring to count:</label>
+        <input id="input-two" placeholder="count" type="text">-->
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function adressAttributesBuild(protocol,server,resource){
+            return {
+                protocol:protocol, 
+                server:server,
+                resource:resource,
+                toString:function (){return "{protocol: \"" + this.protocol +"\",<br>" + 
+                                            "server: \"" + this.server +"\",<br>" +
+                                            "resource: \"" + this.resource +"\"}" }
+            }
+        }
+
+        function onPrintButtonClick() {
+            var adress = jsConsole.read('#input-one');
+            var adressAtt = adress.split(new RegExp(/[\/:]+/));
+
+            var protocol = adressAtt[0];
+            var server = adressAtt[1];
+            var resources = "";
+            for (var i = 2; i < adressAtt.length; i++) {
+                if (i != adressAtt.length - 1) {
+                    resources += adressAtt[i] + "/";
+                }
+                else {
+                    resources += adressAtt[i]
+                }
+            }
+
+            var jsonObject = adressAttributesBuild(protocol, server, resources);
+            jsConsole.writeLine(jsonObject.toString());
+        }
+    </script>
+</body>
+</html>

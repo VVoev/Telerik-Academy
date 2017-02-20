@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+    <title>Functions</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">02.Write a function that reverses the digits of given decimal number. Example: 256 -> 652
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input number:</label>
+        <input id="input-one" placeholder="number" type="text">
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        //The function which convert the digit to text
+        function reverseNumber(number) {
+            var arr = new Array();
+            var remainder;
+            while (number > 0) {
+                remainder = number % 10;
+                arr.push(remainder);
+                number = Math.floor(number/10);
+            }
+
+            for (var i = 0; i < arr.length; i++) {
+
+                jsConsole.write(arr[i]);
+            }
+            
+        }
+
+        function onPrintButtonClick() {
+            var number = jsConsole.readInteger('#input-one');
+            jsConsole.write(number + " -> ");
+            reverseNumber(number)
+            jsConsole.writeLine("");    
+        }
+    </script>
+</body>
+</html>

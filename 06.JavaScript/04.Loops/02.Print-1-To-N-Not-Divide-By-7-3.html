@@ -1,0 +1,35 @@
+﻿<html>
+<head>
+    <title>Loops</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">02.Write a script that prints all the numbers from 1 to N, that are not divisible by 3 and 7 at the same time
+
+        </span>
+    </div>
+    <div>
+        <label for="input-one">Input number:</label>
+        <input id="input-one" placeholder="number" type="text">
+    </div>
+    <a href="#" onclick="onCheckValuesButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onCheckValuesButtonClick() {
+            var number = jsConsole.readInteger('#input-one');
+
+            for (var i = 1; i < number; i++) {
+                if (i % 3 != 0 && i % 7 != 0) {
+                    jsConsole.write(i + ", ");
+                }
+            }
+            if (number % 3 != 0 && number % 7 != 0) {
+                jsConsole.writeLine(number);
+            }
+            
+        }
+    </script>
+</body>
+</html>

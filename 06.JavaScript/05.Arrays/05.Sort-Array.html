@@ -1,0 +1,54 @@
+﻿<html>
+<head>
+    <title>Arrays</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">05.Sorting an array means to arrange its elements in increasing order. Write a script to sort an array. Use the "selection sort" algorithm: Find the smallest element, move it at the first position, find the smallest from the rest, move it at the second position, etc.Hint: Use a second array.
+        </span>
+    </div>
+    <div>
+
+        <label for="input-one">Array:</label>
+        <textarea id="input-one" placeholder="array" disabled> </textarea>
+        <!--<input id="input-one" placeholder="array" type="text" >-->
+    </div>
+    <a href="#" onclick="onPrintButtonClick()">Print</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        var list = new Array(-50, 3, 2, 5, 4, 9023, 6, 11, 127, 37, 426, 2, 57, 34, 6347, 3, 236, 26, 2, 72, 35, 3, 6, 8, 34, 52);
+
+        //Setting the textarea with the array
+        var array = document.getElementById("input-one");
+        array.value = list;
+
+        function onPrintButtonClick() {
+            var min = Math.pow(2, 53);
+            var index;
+
+            var arrayCounter = new Array();
+
+            for (i = 0; i < list.length; i++) {
+
+                for (j = 0; j < list.length; j++) {
+                    if (min > list[j]) {
+                        min = list[j];
+                        index = j;
+                    }
+                }
+                list[index] = Math.pow(2, 53);
+                arrayCounter[i] = min;
+                min = list[index];
+            }
+
+            for (var i = 0; i < arrayCounter.length; i++) {
+
+                jsConsole.write(arrayCounter[i] + " ");
+            }
+        }
+    </script>
+</body>
+</html>

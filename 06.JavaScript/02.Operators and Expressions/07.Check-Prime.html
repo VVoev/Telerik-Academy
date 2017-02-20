@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+    <title>Data types and variables</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="exercise">
+        <span id="inner">07. Write an expression that checks if given positive integer number n (n ≤ 100) is prime. E.g. 37 is prime.
+</span>
+    </div>
+    <div>
+        <label for="input-one">Input a number:</label>
+        <input id="input-one" placeholder="input" type="text">
+        <br>
+    </div>
+    <a href="#" onclick="onCheckButtonClick()">Check</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onCheckButtonClick() {
+            var number = jsConsole.readInteger('#input-one');
+            var numberSqrt = Math.sqrt(number);
+            var counter = 0;
+            for (var i = 2; i < numberSqrt; i++) {
+                
+                if (number % i == 0) {
+                    counter++;
+                }
+            }
+            if (counter != 0) {
+                jsConsole.writeLine(number + " is NOT prime.");
+            }
+            else {
+                jsConsole.writeLine(number + " is PRIME.");
+            }
+        }
+    </script>
+</body>
+</html>
