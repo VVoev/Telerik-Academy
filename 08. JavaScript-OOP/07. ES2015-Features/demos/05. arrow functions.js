@@ -4,6 +4,9 @@ var evens = [2, 3, 5, 6, 1, 3];
 // Expression bodies
 var odds = evens.map(v => v + 1);
 var nums = evens.map((v, i) => v + i);
+console.log(odds)
+console.log(nums)
+
 
 // Statement bodies
 var fives = [];
