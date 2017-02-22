@@ -72,4 +72,70 @@ search(pattern){
             })
         }		
 		
+5. Get specific value from a collection sorted and without dublications
+getGenres() {
+			return this._items
+				.map(book => book.genre.toLowerCase())
+				.sort()
+				.filter((genre, index, genres) => genre !== genres[index - 1]);
+		}
+		getGenres(){
+            var uniqSet = new Set();
+            this._items.forEach(book=>{
+                uniqSet.add(book.genre.toLowerCase())
+            })
+            return Array.from(uniqSet);
+			
+6.GetTop
+
+getTop(count){
+            if(typeof count !== 'number' || count<1){
+                throw 'Invalid count';
+            }
+           var sorted = this.items.sort((a,b)=>a.rating>b.rating);
+            var novi =sorted.map(x=>{
+                return{
+                    name:x.name,
+                    id:x.id
+                }
+            })
+            return novi.slice(0,count)
+        }
+		
+7.SumTotal
+showCost(){
+            return this.products.reduce((a,b)=>a+b.price,0);
+        }
+
+8.GetInfo
+getInfo(){
+
+            let groupedProducts = {};
+            this.products.forEach(p=>{
+                if(groupedProducts.hasOwnProperty(p.name)){
+                    groupedProducts[p.name].quantity +=1;
+                    groupedProducts[p.name].totalPrice += p.price;
+                }
+                else{
+                    groupedProducts[p.name] ={
+                        //type:p.productType,
+                        name:p.name,
+                        quantity:1,
+                        totalPrice:p.price
+                    }
+                }
+            })
+
+            const groups = Object.keys(groupedProducts)
+                .sort()
+                .map(x=>{
+                    return{
+                        name:[x],
+                        quantity:groupedProducts[x].quantity,
+                        totalPrice:groupedProducts[x].totalPrice,
+                        //type:groupedProducts[x].type
+                    }
+                })
+		
+		
 		

@@ -1,81 +1,117 @@
-/* globals module */
-
-"use strict";
-
-function solve() {
-    class Product {
-        constructor(productType, name, price) {
-            this.productType = productType;
-            this.name = name;
-            this.price = +price;
+function solve(){
+    class Product{
+        constructor(productType,name,price){
+            this._productType = productType;
+            this._name = name;
+            this._price = price;
+        }
+        get productType(){
+            return this._productType;
+        }
+        get name(){
+            return this._name;
+        }
+        get price(){
+            return this._price;
         }
     }
 
     class ShoppingCart {
-        constructor() {
-            this.products = [];
+        constructor(){
+            this._products = [];
         }
 
-        add(product) {
-            this.products.push(product);
+        get products(){
+            return this._products;
+        }
+
+        add(product){
+            this._products.push(product);
             return this;
         }
 
-        remove(product) {
-            let index = this.products.findIndex(pr => pr.name === product.name && pr.cost === product.cost && pr.productType === product.productType);
-            if (index < 0) {
-                throw new Error("No such product");
+        remove(product){
+            let index = this._products.findIndex(
+                x=>x.name === product.name &&
+                x.productType === product.productType &&
+                x.price === product.price);
+            if(index<0){
+                throw 'There is no such product'
             }
+            this.products.splice(index,1);
 
-            this.products.splice(index, 1);
             return this;
         }
 
-        showCost() {
-            let cost = this.products.reduce((c, p) => c + p.price, 0);
-            return cost;
+        showCost(){
+            return this.products.reduce((a,b)=>a+b.price,0);
         }
 
-        showProductTypes() {
-            let productTypesMap = {};
-            this.products.forEach(pr => {
-                productTypesMap[pr.productType] = 1;
-            });
-
-            return Object.keys(productTypesMap)
-                .sort((x, y) => x.localeCompare(y));
+        showProductTypes(){
+            let uniq = this.products.map(x=>x.productType).sort().filter((p, i, ps) => i === 0 || p !== ps[i - 1]);
+            return uniq;
         }
 
-        getInfo() {
-            let allProducts = {};
-            this.products.forEach(pr => {
-                if (!allProducts[pr.name]) {
-                    allProducts[pr.name] = {
-                        "name": pr.name,
-                        "totalPrice": 0,
-                        "quantity": 0
-                    };
+        getInfo(){
+
+            let groupedProducts = {};
+            this.products.forEach(p=>{
+                if(groupedProducts.hasOwnProperty(p.name)){
+                    groupedProducts[p.name].quantity +=1;
+                    groupedProducts[p.name].totalPrice += p.price;
                 }
+                else{
+                    groupedProducts[p.name] ={
+                        //type:p.productType,
+                        name:p.name,
+                        quantity:1,
+                        totalPrice:p.price
+                    }
+                }
+            })
 
-                allProducts[pr.name].totalPrice += pr.price;
-                allProducts[pr.name].quantity += 1;
-            });
+            const groups = Object.keys(groupedProducts)
+                .sort()
+                .map(x=>{
+                    return{
+                        name:[x],
+                        quantity:groupedProducts[x].quantity,
+                        totalPrice:groupedProducts[x].totalPrice,
+                        //type:groupedProducts[x].type
+                    }
+                })
 
-            let products = Object.keys(allProducts)
-                .sort((k1, k2) => k1.localeCompare(k2))
-                .map(key => allProducts[key]);
 
-            let totalPrice = products.reduce((tp, pr) => tp + pr.totalPrice, 0);
-            return {
-                products,
-                totalPrice
-            };
+            return{
+                products:groups,
+                totalPrice:this.showCost()
+            }
         }
+
+
+
     }
+
     return {
-        Product,
-        ShoppingCart
+        Product:function (productType,name,price) {
+            return new Product(productType,name,price);
+        },
+        ShoppingCart:function () {
+            return new ShoppingCart();
+        }
     };
 }
 
-module.exports = solve;
+let result = solve();
+var pr1 = result.Product("Alkoxol","Jack Daniels",35);
+var pr2 = result.Product("Drinks","Coca Cola",2.8);
+var pr3 = result.Product("Chips","Pringles",5);
+var pr4 = result.Product("Energy Drinks","Red Bull",3);
+var pr5 = result.Product("Chocolate","Lind",3.3);
+var cart =result.ShoppingCart();
+cart.add(pr1).add(pr2).add(pr3).add(pr4).add(pr5).add(pr1);
+//console.log(cart.showProductTypes());
+//console.log(cart.getInfo().totalPrice)
+console.log(cart.getInfo().products)
+
+
