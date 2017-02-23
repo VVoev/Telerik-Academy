@@ -1,13 +1,16 @@
 
 1.IdGenerator
 
-function* giveId() {
-        var index = 0;
-        while(true)
-            yield ++index;
-    }
-    const idGenerator = giveId();	
-	this._id = idGenerator.next().value;
+function* getId() {
+		let id = 0;
+
+		while(true) {
+			id += 1;
+			yield id;
+		}
+	}
+
+	const idGenerator = getId();
 	
 2.Add
 add(...items){
