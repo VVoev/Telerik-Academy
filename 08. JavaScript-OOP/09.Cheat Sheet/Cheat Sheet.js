@@ -139,6 +139,36 @@ getInfo(){
                         //type:groupedProducts[x].type
                     }
                 })
+				
+				
+9.Pagirane
+listPlaylists(page, size){
+
+			function SortingFunction(firstParameter, secondParameter) {
+				return function (first, second) {
+					if (first[firstParameter] < second[firstParameter]) {
+						return -1;
+					}
+					else if (first[firstParameter] > second[firstParameter]) {
+						return 1;
+					}
+
+					if (first[secondParameter] < second[secondParameter]) {
+						return -1;
+					}
+					else if (first[secondParameter] > second[secondParameter]) {
+						return 1;
+					}
+					else {
+						return 0;
+					}
+				}
+			}
+
+			return this._playlist.slice()
+				.sort(SortingFunction('name','id'))
+				.slice(page*size,size);
+		}
 		
 		
 		
