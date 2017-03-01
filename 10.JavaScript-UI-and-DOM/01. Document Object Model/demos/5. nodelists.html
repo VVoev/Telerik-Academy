@@ -1,44 +1,36 @@
-﻿<!DOCTYPE html>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-	<title>DOM Manipulation - NodeLists</title>
-	<style>
-		div{			  
-			display:inline-block;
-			*display:inline;
-			width:75px;
-			height:75px;
-			zoom:1;
-			border:1px solid black;
-			border-radius:5px;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            display:inline-block;
+            *display:inline;
+            width:75px;
+            height:75px;
+            zoom:1;
+            border:1px solid black;
+            border-radius:5px;
+        }
+    </style>
 </head>
-<body>		
-	<div>
-		text
-	</div>
-	<div>
-		text
-	</div>
-	<div>
-		text
-	</div>
-	<div>
-		text
-	</div>
+<body>
+<div>Text</div>
+<div>Text</div>
+<div>Text</div>
+<div>Text</div>
+<script>
+    var divs = document.getElementsByTagName('div'),
+            index;
 
-	<script> 	
-		var divs = document.getElementsByTagName('div'),
-			index;
-		
-		console.log(divs instanceof Array);
-		console.log(divs instanceof HTMLCollection);
-		
-		for (index in divs) {
-			console.log('divs['+index+'] = ' + divs[index])
-		}
-	</script>
+    console.log(divs instanceof Array);
+    console.log(divs instanceof HTMLCollection);
+
+    for (index in divs) {
+        console.log('divs['+index+'] = ' + divs[index])
+    }
+</script>
+
 </body>
 </html>

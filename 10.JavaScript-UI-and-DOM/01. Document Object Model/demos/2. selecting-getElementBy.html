@@ -1,53 +1,57 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Document Object Model - getElementsBy</title>
-	<script src="scripts/string-extensions.js"></script>
+    <title>Document Object Model - getElementsBy</title>
+    <script src="scripts/string-extensions.js"></script>
 </head>
 <body>
-	<header>
-		<nav id="main-nav">
-			<ul>
-				<li>
-					<a href="#">Home</a>
-				</li>
-				<li>
-					<a href="#">Profile</a>
-				</li>
-				<li>
-					<a href="#">Friends</a>
-				</li>
-			</ul>
-		</nav>
-	</header>
-	<script>		
-		var separatorLine = '-'.repeat(100);
+<header>
+    <nav id="main-nav">
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Profile</a>
+            </li>
+            <li>
+                <a href="#">Friends</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<script>
+   var separatorLine = '-'.repeat(50);
 
-		var mainNav = document.getElementById('main-nav');
-		console.log('#main-nav innerHTML: ');
-		console.log(mainNav.innerHTML);
-		console.log(separatorLine);
+    var mainNav = document.getElementById('main-nav');
+   console.log('#main-nav innerHTML: ');
+   console.log(mainNav.innerHTML);
+   console.log(separatorLine);
 
-		var ul = mainNav.getElementsByTagName('ul')[0];
-		console.log('first UL innerHTML: ');
-		console.log(ul.innerHTML);
-		console.log(separatorLine);
+    var ul = mainNav.getElementsByTagName('ul')[0];
+    console.log('first UL inner HTML')
+    console.log(ul.innerHTML)
+    console.log(separatorLine)
 
-		var navItems = ul.getElementsByTagName('li');
-		console.log('All LIs innerHTML: ')		
-		for (var i = 0,len=navItems.length; i < len; i++) {
-			console.log('LIs['+i+'] innerHTML: ');
-			console.log(navItems[i].innerHTML.trim());
-		}
-		console.log(separatorLine);
+    var navItems = mainNav.getElementsByTagName('li');
+    console.log('All Lis InnerHTML:')
+    let k = 0;
+    for(let i of navItems){
+        console.log(`Li with position ${k}`)
+        console.log(i.innerHTML.trim());
+        k+=1;
+    }
+    k = 0 ;
+    console.log(separatorLine);
 
-		var navButtons = mainNav.getElementsByTagName('a');
-		console.log('All As innerHTML: ')		
-		for (var i = 0, len = navButtons.length; i < len; i++) {
-			console.log('As['+i+'] innerHTML: ');
-			console.log(navButtons[i].innerHTML);
-		}
-		console.log(separatorLine);
-	</script>
+    var navigationButtons = mainNav.getElementsByTagName('a');
+    console.log(`All as inner HTML`);
+
+    for(let i of navigationButtons){
+        console.log(`<a> with position ${k}`)
+        console.log(i.innerHTML)
+        k+=1;
+    }
+</script>
 </body>
 </html>
