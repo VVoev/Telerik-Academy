@@ -1,10 +1,9 @@
-﻿using Bunnies_Refactoring.Contracts;
-using Bunnies_Refactoring.Enums;
-using High.Quality.Code.BadExample;
-using System.Text;
-
-namespace Bunnies_Refactoring.Models
+﻿namespace Bunnies_Refactoring.Models
 {
+    using System.Text;
+    using Bunnies_Refactoring.Contracts;
+    using Bunnies_Refactoring.Enums;
+
     public class Bunny
     {
         public int Age { get; set; }
@@ -15,8 +14,8 @@ namespace Bunnies_Refactoring.Models
 
         public void Introduce(IWriter writer)
         {
-            writer.WriteLine($"{this.Name} - \"I am {this.Age} years old!\"");
-            writer.WriteLine($"{this.Name} - \"And I am {this.FurType.ToString().SplitToSeparateWordsByUppercaseLetter()}");
+            writer.WriteLine($@"{this.Name} - I am {this.Age} year old!");
+            writer.WriteLine($@"{this.Name} - And I am {this.FurType.ToString().SplitToSeparateWordsByUppercaseLetter()}");
         }
 
         public override string ToString()
@@ -30,6 +29,5 @@ namespace Bunnies_Refactoring.Models
 
             return builder.ToString();
         }
-
     }
 }
