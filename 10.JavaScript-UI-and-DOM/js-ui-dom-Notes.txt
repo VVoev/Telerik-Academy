@@ -1,0 +1,11 @@
+1.document fragment
+2.element.cloneNode - The Node.cloneNode() method returns a duplicate of the node on which this method was called.
+ Warning: cloneNode() may lead to duplicate element IDs in a document.
+ 
+3.// Shallow copy
+var newObject = jQuery.extend({}, oldObject);
+
+// Deep copy
+var newObject = jQuery.extend(true, {}, oldObject);
+
+4.
