@@ -20,5 +20,21 @@ Create a function that takes an id or DOM element and an array of contents
 module.exports = function () {
 
   return function (element, contents) {
+
+    if(typeof element !== 'string'){
+      throw new Error();
+    }
+
+    if(typeof element === 'string'){
+      if(!document.getElementById(element)){
+        throw new Error();
+      }
+    }
+
+    if(element === undefined || contents === undefined){
+      throw new Error();
+    }
+
+
   };
 };
