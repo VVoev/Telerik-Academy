@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input id="input-value" type="text"/>
+<input type="button" value="CLICK ME" onclick="getInput(this)"/>
+<div id="div-info" style="display: none">LOOK AT THE CONSOLE MATE ;)</div>
+<script>
+    function getInput() {
+        let input = document.getElementById('input-value');
+        let div = document.getElementById('div-info');
+        let text = input.value;
+        div.innerText = text;
+        div.style.display='block';
+        div.style.color = 'red';
+
+    }
+</script>
+</body>
+</html>
