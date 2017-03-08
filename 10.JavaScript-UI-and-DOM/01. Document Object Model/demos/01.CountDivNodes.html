@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div>
+        <div>
+            <div>
+                <div></div>
+                <div></div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <div>
+                                            <div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <div>
+                                                        <div>
+                                                            <div>
+                                                                <div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div></div>
+            <div></div></div>
+        <div></div>
+        <div></div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<div>
+    <div>
+
+    </div>
+</div>
+<script>
+    function countDivInDivQuerySelector(){
+        let count = document.querySelectorAll('div div');
+        return count.length;
+    }
+    function countDivInDivGetElement() {
+        let count = document.getElementsByTagName('div');
+        let counter = 0;
+        let len = count.length;
+        for(let i = 0; i<len; i+=1){
+            if(count[i].parentNode){
+                if(count[i].parentNode.nodeName.toLowerCase() === 'div'){
+                    counter+=1;
+                }
+            }
+        }
+        return counter;
+    }
+    console.log('Count with querySelectorAll');
+    console.log(countDivInDivQuerySelector())
+    console.log('Count with getElementByTagName');
+    console.log(countDivInDivGetElement())
+</script>
+
+</body>
+</html>
