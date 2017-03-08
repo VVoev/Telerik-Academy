@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Please change background as you want</p>
+<input type="text" value="enter Colour and press button">
+<button id="changeColor" onclick="changeColor()">Change Now</button>
+<script>
+function changeColor() {
+    let inputField = document.querySelectorAll("input")[0];
+    let choise = inputField.value;
+    document.body.style.backgroundColor = choise;
+}
+</script>
+
+</body>
+</html>
