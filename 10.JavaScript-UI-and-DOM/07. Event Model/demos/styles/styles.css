@@ -1,0 +1,39 @@
+﻿a.button {
+    border: 1px solid #008000;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+}
+
+    a.button:hover {
+        text-decoration: underline;
+    }
+
+#output .output-element {
+    border: 1px solid black;
+    margin: 0;
+    padding: 5px 15px;
+    display: inline-block;
+}
+
+h1 {
+    text-align: center;
+    color: #1e90ff;
+}
+#cars{
+    width: 500px;
+    height: 300px;
+}
+.alphabet{
+    border: 1px solid black;
+    text-decoration: none;
+    margin: 3px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+}
