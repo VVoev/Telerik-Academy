@@ -50,6 +50,15 @@ ctx.moveTo(240,180);
 ctx.lineTo(400,300);
 ctx.stroke();
 
+//Frame
+
+ctx.moveTo(290,220);
+ctx.lineTo(200,centerY);
+ctx.lineTo(centerX,centerY);
+ctx.lineTo(530,210);
+ctx.lineTo(290,220);
+ctx.stroke();
+
 
 
 
