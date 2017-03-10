@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Tennis Ranking</title>
+    <style>
+        body,img,tr,th,td{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+            color: red;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            position: fixed;
+        }
+        .rating{
+            font-family: "Century Gothic";
+            font-size: large;
+        }
+        .rating:hover{
+            font-style: italic;
+        }
+        button{
+            display: inline-block;
+            width: 150px;
+        }
+        input{
+            text-indent: 10px;
+            margin-left: 100px;
+            margin-top: 5px;
+            padding: 5px;
+            width: 100px;
+        }
+        #addPlayer, #addP{
+            background-color: aqua;
+            border: 3px solid black;
+        }
+        #addRating, #addR{
+            background-color: hotpink;
+            border: 3px solid black;
+        }
+        #video{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+<body>
+<table>
+    <tr>
+        <th>Players</th>
+        <th>Rating Points</th>
+        <th>Country</th>
+        <th>Best Points</th>
+    </tr>
+    <tr>
+        <td class="players">Ma Long</td>
+        <td class="rating">3500</td>
+        <td>China</td>
+        <td><a href="">Highlight</a></td>
+    </tr>
+    <tr>
+        <td class="players">Xu Xin</td>
+        <td class="rating">3600</td>
+        <td>China</td>
+        <td><a href="">click here</a></td>
+    </tr>
+    <tr>
+        <td class="players">Fang Bo</td>
+        <td class="rating">3400</td>
+        <td>China</td>
+        <td><a href="">click here</a></td>
+    </tr>
+    <tr>
+        <td class="players">Fan Zhendong</td>
+        <td class="rating">4022</td>
+        <td>China</td>
+        <td><a href=>click here</a></td>
+    </tr>
+</table>
+<button id="sort">Sort by Rating</button>
+<button id="addP">Add Player</button>
+<button id="addR">Add Rating</button>
+<br>
+<input type="text" value="Add Player" id="addPlayer">
+<input type="text" value="Add Rating" id="addRating">
+<br>
+<button id="search">Search for Video</button>
+<br>
+<input type="text" id="video" value="enter video">
+
+
+</body>
+<script src="../scripts/tennis.js"></script>
+</html>
