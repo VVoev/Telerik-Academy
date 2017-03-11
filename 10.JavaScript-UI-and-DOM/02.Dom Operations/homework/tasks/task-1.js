@@ -15,61 +15,26 @@
  * In that case, the content of the element **must not be** changed
  */
 
-module.exports = function () {
-  'use strict';
-  return function (element, contents) {
 
-    if (typeof element !== 'string' && element.nodeType !== 1) {
-      throw new Error();
-    }
+ //SOLUTION WITH ES6
+ module.exports = function () {
 
+   return function (element, contents) {
+     
+     let dFrag = document.createDocumentFragment()
+     if (typeof element === 'string') element = document.getElementById(element);
 
-    if (typeof element === 'string') {
-      if (!document.getElementById(element)) {
-        throw new Error();
-      }
-    }
+     if (contents.some(function (x) { return typeof x !== 'string' && typeof x !== 'number'; })
+       || !(element instanceof HTMLElement)
+       || !Array.isArray(contents)) throw Error;
 
-    if (element === undefined || contents === undefined) {
-      throw new Error();
-    }
+     contents.forEach(x => {
+       let newDiv = document.createElement('div');
+       newDiv.innerHTML = x;
+       dFrag.appendChild(newDiv);
+     });
 
-    if (contents === null) {
-      throw new Error();
-    }
-
-    if (!Array.isArray(contents)) {
-      throw new Error();
-    }
-
-
-    contents.forEach(function (item) {
-      if (typeof item !== 'string' && isNaN(item)) {
-        throw new Error();
-      }
-
-      if (typeof item === 'object') {
-        throw new Error();
-      }
-    });
-
-    var el;
-
-    if (typeof element === 'string') {
-      el = document.getElementById(element);
-    } else {
-      el = document.getElementById(element.id);
-    }
-
-    while (el.firstChild) {
-      el.removeChild(el.firstChild);
-    }
-
-    contents.forEach(function (item) {
-      var div = document.createElement('div');
-      div.innerHTML = item;
-      el.appendChild(div);
-    });
-
-  };
-};
+     element.innerHTML = '';
+     element.appendChild(dFrag);
+   }
+ }
