@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Handlebars.js demos: Creating templates</title>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/x-handlebars-template" id="post-template">
+    <div class='post' data-id='{{id}}'>
+        <h1 class="post-title">Welcome to {{tag}} <br>
+            <a href="#/posts/{{id}}">{{title}}</a>
+        </h1>
+        <p class="post-content">{{content}}</p>
+    </div>
+</script>
+<script src='..\libs\handlebars.min.js'></script>
+<script src="script.js">
+
+</script>
+</body>
+</html>

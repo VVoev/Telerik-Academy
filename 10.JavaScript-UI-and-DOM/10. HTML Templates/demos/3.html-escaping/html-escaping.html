@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Handlebars.js demos: Creating templates</title>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/x-handlebars-template" id="template">
+    <div>
+        <p>
+            <strong>Normal</strong> (escaped):<br/><span>{{htmlString}}</span>
+        </p>
+        <hr />
+        <p>
+            <strong>Not escaped</strong> (in the template): <span>{{{htmlString}}}</span>
+        </p>
+        <hr />
+        <p>
+            <strong>Not escaped</strong> (in the value):<span>{{{escapedHtmlString}}}</span>
+        </p>
+        <hr />
+    </div>
+</script>
+<script src='..\libs\handlebars.min.js'></script>
+<script src="script.js">
+
+</script>
+</body>
+</html>

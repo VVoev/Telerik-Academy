@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Handlebars demos: Setup and Usage</title>
+    <style>
+        .post{
+            width: 500px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            padding: 15px;
+        }
+        .post-title{
+            margin-top: 0;
+            font-size: 1.9em;
+        }
+        .post-content{
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/x-handlebars-template" id="post-template">
+    <div class='post'>
+        <h1 class="post-title">{{title}}</h1>
+        <p class="post-content">{{{content}}}</p>
+    </div>
+</script>
+<script src='../libs/handlebars.min.js'></script>
+<script src="script.js"></script>
+</body>
+</html>
