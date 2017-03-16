@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.ClassSize", "1.ClassSize\1.ClassSize.csproj", "{B753202A-9D7B-47CB-92AB-AFD3BD95A7B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mathematics", "Mathematics", "{79C6C186-BEC1-400F-8A5E-0EBADB36BCFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Statistics", "Statistics", "{0970C132-AFCA-4184-88DA-3F67234BCB1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.StatisticProblem", "StatisticProblem\02.StatisticProblem.csproj", "{A6D09213-97E2-4C22-8C26-A9FF8598D34F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B753202A-9D7B-47CB-92AB-AFD3BD95A7B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B753202A-9D7B-47CB-92AB-AFD3BD95A7B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B753202A-9D7B-47CB-92AB-AFD3BD95A7B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B753202A-9D7B-47CB-92AB-AFD3BD95A7B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6D09213-97E2-4C22-8C26-A9FF8598D34F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6D09213-97E2-4C22-8C26-A9FF8598D34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6D09213-97E2-4C22-8C26-A9FF8598D34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6D09213-97E2-4C22-8C26-A9FF8598D34F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B753202A-9D7B-47CB-92AB-AFD3BD95A7B7} = {79C6C186-BEC1-400F-8A5E-0EBADB36BCFC}
+		{A6D09213-97E2-4C22-8C26-A9FF8598D34F} = {0970C132-AFCA-4184-88DA-3F67234BCB1B}
+	EndGlobalSection
+EndGlobal
