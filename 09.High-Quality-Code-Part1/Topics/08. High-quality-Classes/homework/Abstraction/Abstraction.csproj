@@ -35,10 +35,13 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Circle.cs" />
-    <Compile Include="Figure.cs" />
+    <Compile Include="Abstract\Figure.cs" />
+    <Compile Include="Contracts\IFigure.cs" />
+    <Compile Include="Exceptions\FigureException.cs" />
+    <Compile Include="Models\Circle.cs" />
     <Compile Include="FiguresExample.cs" />
-    <Compile Include="Rectangle.cs" />
+    <Compile Include="Models\Rectangle.cs" />
+    <Compile Include="Validations\Validator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
