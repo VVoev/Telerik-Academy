@@ -33,7 +33,9 @@ namespace _3.RefactorLoop
             if (isValueFound)
             {
                 Console.WriteLine("Value Found");
+                return;
             }
+            Console.WriteLine("Value has not been Found");
         }
     }
 }
