@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Handlebars.js demos: Block expressions</title>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/x-handlebars-template" id="categories-list-template">
+    <h1>Categories:</h1>
+    <ul class="categories-list">
+        {{#categories}}
+        <li class="category-item">
+            <a href="#/categories/{{id}}">{{name}}</a>
+        </li>
+        {{/categories}}
+    </ul>
+</script>
+
+<script type="text/x-handlebars-template" id="post-template">
+    <h1>Post:</h1>
+    <article class='post' data-id='{{id}}'>
+        <header>
+            <h1 class="post-title">
+                <a href="#/posts/{{id}}">{{title}}</a>
+            </h1>
+            <p class="category">
+                <a href="#/categories/{{category.id}}">{{category.name}}</a>
+            </p>
+        </header>
+        <p class="post-content">{{{content}}}</p>
+        <footer>
+				<span>Tags:
+				<ul>
+					{{#tags}}
+						<li class='tag'>
+							{{name}}
+						</li>
+					{{/tags}}
+				</ul>
+        </footer>
+    </article>
+</script>
+<script src='..\libs\handlebars.min.js'></script>
+<script src="script.js"></script>
+</body>
+</html>
