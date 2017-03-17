@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\FileUtils.cs" />
     <Compile Include="UtilsExamples.cs" />
-    <Compile Include="Utils.cs" />
+    <Compile Include="Models\GeometryUtils.cs" />
+    <Compile Include="Validations\Validator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
