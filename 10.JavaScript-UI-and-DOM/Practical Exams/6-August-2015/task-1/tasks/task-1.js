@@ -38,8 +38,6 @@ function solve() {
             li.innerText = names[i];
             divContainer.appendChild(li);
             divContainer.appendChild(closeButton);
-
-
             ul.appendChild(divContainer);
         }
 
@@ -66,15 +64,17 @@ function solve() {
             closeButton.className = 'delete-item';
             closeButton.innerText = "X";
 
+
+
             divContainer.appendChild(li);
             divContainer.appendChild(closeButton);
             ul.appendChild(divContainer);
             inputForAdd.value = "";
         })
-
         let closedButtons = document.getElementsByClassName('delete-item');
         for (let i = 0; i < closedButtons.length; i += 1) {
             closedButtons[i].addEventListener('click', function (ev) {
+                closedButtons = document.getElementsByClassName('delete-item');
                 let target = ev.target;
                 let div = target.parentNode;
                 ul.removeChild(div);
