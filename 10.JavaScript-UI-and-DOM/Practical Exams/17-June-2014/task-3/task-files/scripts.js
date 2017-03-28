@@ -8,7 +8,7 @@
      }, {
 		 name: "Ивайло Кенов",
 		 image: "images/ivo.jpg",
-		 titles: ["Technical <b>Trainer</b>", "Rapper"],
+             titles: ["Technical <b>Trainer</b>", "Rapper"],
 		 urls: ["http://ivaylo.bgcoder.com", "https://github.com/ivaylokenov"],
          right: true,
      }, {
