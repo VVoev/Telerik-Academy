@@ -1,5 +1,14 @@
 function startApp() {
 
+    const kinveyBaseUrl = "https://baas.kinvey.com/";
+    const kinveyAppKey = "kid_Hy6bk5m6l";
+    const kinveyAppSecret = "b0c665b064fd49d8ba0220311adab351";
+    const kinveyAppAuthHeaders = {
+        'Authorization': "Basic " +
+        btoa(kinveyAppKey + ":" + kinveyAppSecret),
+    };
+
+
     sessionStorage.clear(); // Clear user auth data
 
     showHideMenuLinks();
@@ -16,16 +25,19 @@ function startApp() {
     });
 
     // Bind the info / error boxes: hide on click
-    $("#infoBox, #errorBox").click(function() {
+    $("#infoBox, #errorBox").click(function () {
         $(this).fadeOut();
     });
 
     // Attach AJAX "loading" event listener
     $(document).on({
-        ajaxStart: function() { $("#loadingBox").show() },
-        ajaxStop: function() { $("#loadingBox").hide() }
+        ajaxStart: function () {
+            $("#loadingBox").show()
+        },
+        ajaxStop: function () {
+            $("#loadingBox").hide()
+        }
     });
-
 
 
     // Bind the form submit buttons
@@ -42,25 +54,70 @@ function startApp() {
     $("#linkListBooks").click(listBooks);
     $("#linkCreateBook").click(showCreateBookView);
     $("#linkLogout").click(logoutUser);
-    
+
     function registerUser() {
-        
+        let userData = {
+            username: $('#formRegister input[name=username]').val(),
+            password: $('#formRegister input[name=passwd]').val()
+        };
+        console.log(userData);
+        $.ajax({
+            method: "POST",
+            url: kinveyBaseUrl + "user/" + kinveyAppKey + "/",
+            headers: kinveyAppAuthHeaders,
+            data: userData,
+            success: registerSuccess,
+            error: handleAjaxError
+        })
+
     }
     
+    function saveAuthInSession(userInfo) {
+        let b = userInfo;
+        let userAuth = userInfo._kmd.authtoken;
+        sessionStorage.setItem('authToken', userAuth);
+        let userId = userInfo._id;
+        //TODO might lead to a problem cause we are keeping name instead of id
+        sessionStorage.setItem('userName', userInfo.username);
+        $('#loggedInUser').text(`Welcome, ${userInfo.username}`);
+    }
+
+    function showInfo(message) {
+        $('#infoBox').text(message);
+        $('#infoBox').show();
+        setTimeout(function() {
+            $('#infoBox').fadeOut();
+        }, 3000);
+    }
+
+
+    function registerSuccess(userInfo) {
+        saveAuthInSession(userInfo);
+        showHideMenuLinks();
+        listBooks();
+        showInfo(`${userInfo.username} succesfully registered`);
+    }
+
+    function handleAjaxError() {
+        alert('problem');
+    }
+
     function createBook() {
-        
+
     }
-    
+
     function editBook() {
-        
+
     }
 
     function showLoginView() {
-
+        showView('viewLogin');
+        $('#formLogin').trigger('reset');
     }
 
     function showRegisterView() {
-
+        showView('viewRegister');
+        $('#formRegister').trigger('reset');
     }
 
     function listBooks() {
@@ -68,7 +125,8 @@ function startApp() {
     }
 
     function showCreateBookView() {
-
+        $('#formCreateBook').trigger('reset');
+        showView('viewCreateBook');
     }
 
     function logoutUser() {
@@ -79,14 +137,14 @@ function startApp() {
 
         $('#menu a').hide();
         //If we are logged
-        if(sessionStorage.getItem('authToken')){
+        if (sessionStorage.getItem('authToken')) {
             $('#linkHome').show();
             $('#linkListBooks').show();
             $('#linkCreateBook').show();
-            $('#linkRegister').show();
+            $('#linkLogout').show();
         }
         //If we are not logged
-        else{
+        else {
             $('#linkHome').show();
             $('#linkLogin').show();
             $('#linkLogout').show();
@@ -95,11 +153,15 @@ function startApp() {
     }
 
     function showView(viewName) {
+        // Hide all views and show the selected view only
+        $('main > section').hide();
+        $('#' + viewName).show();
 
     }
 
     function showHomeView() {
         showView('viewHome');
+        $('#formLogin').trigger('reset');
     }
 
     function loginUser() {

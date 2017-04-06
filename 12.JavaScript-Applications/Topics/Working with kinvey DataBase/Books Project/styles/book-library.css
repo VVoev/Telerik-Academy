@@ -38,6 +38,7 @@ table td {
     background: #EEE;
 }
 #infoBox, #errorBox, #loadingBox {
+    display: none;
     width: 80%;
     margin: 10px auto;
     color: white;
