@@ -76,9 +76,10 @@ function startApp() {
         let b = userInfo;
         let userAuth = userInfo._kmd.authtoken;
         sessionStorage.setItem('authToken', userAuth);
-        let userId = userInfo._id;
         //TODO might lead to a problem cause we are keeping name instead of id
         sessionStorage.setItem('userName', userInfo.username);
+        sessionStorage.setItem('userID', userInfo._id);
+
         $('#loggedInUser').text(`Welcome, ${userInfo.username}`);
     }
 
@@ -265,17 +266,21 @@ function startApp() {
                     </tr>
                 </table>`);
                 console.log(books);
-
                 for (let book of books) {
-                    let tr = $('<tr>');
                     let links = [];
-                    let deleteLink = $('<a href="#">[Delete]</a>').click(function () {
-                        deleteBook(book);
-                    })
-                    let updateLink = $('<a href="#">[Update]</a>');
-                    links.push(deleteLink)
-                    links.push(' ');
-                    links.push(updateLink);
+                    let tr = $('<tr>');
+                    let id = sessionStorage.getItem('userID');
+                    if(book._acl.creator === id ){
+                        let deleteLink = $('<a href="#">[Delete]</a>').click(function () {
+                            deleteBook(book);
+                        })
+                        let updateLink = $('<a href="#">[Update]</a>');
+                        links.push(deleteLink)
+                        links.push(' ');
+                        links.push(updateLink);
+                    }
+
+
                     tr.append(
                         $('<td>').text(book.title),
                         $('<td>').text(book.author),
