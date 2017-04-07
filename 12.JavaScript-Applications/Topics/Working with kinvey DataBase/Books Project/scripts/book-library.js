@@ -140,6 +140,8 @@ function startApp() {
     }
 
     function logoutUser() {
+        let check = loginUser();
+        console.log(check)
         sessionStorage.clear();
         $('#loggedInUser').text('');
         showView('viewHome');
@@ -179,6 +181,115 @@ function startApp() {
     }
 
     function loginUser() {
+        let userData = {
+            username: $('#formLogin input[name=username]').val(),
+            password: $('#formLogin input[name=passwd]').val()
+        };
+        $.ajax({
+            method: "POST",
+            url: kinveyBaseUrl + "user/" + kinveyAppKey + "/login",
+            headers: kinveyAppAuthHeaders,
+            data: userData,
+            success: loginSuccess,
+            error: handleAjaxError
+
+        })
+
+        function loginSuccess(userInfo) {
+            saveAuthInSession(userInfo);
+            showHideMenuLinks();
+            listBooks();
+            showInfo('Login successful.');
+        }
 
     }
+
+    function listBooks() {
+        $('#books').empty();
+        showView('viewBooks');
+        $.ajax({
+            method: "GET",
+            url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/bookStore",
+            headers: getKinveyUserAuthHeaders(),
+            success: loadBooksSuccess,
+            error: handleAjaxError
+        });
+
+        function loadBooksSuccess(books) {
+            showInfo('Books loaded.');
+            if (books.length == 0) {
+                $('#books').text('No books in the library.');
+            }
+            else {
+                let table = $(`
+                <table>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </table>`);
+                console.log(books);
+
+                for(let book of books){
+                    let tr = $('<tr>');
+                    tr.append(
+                        $('<td>').text(book.title),
+                        $('<td>').text(book.author),
+                        $('<td>').text(book.information),
+                        $('<td>').append($('<a href="#">[Delete]</a>')).append($('<a href="#">[Edit]</a>')),
+                        $('</tr>')
+                    );
+                    table.append(tr);
+                }
+
+
+                $('#books').append(table);
+                
+
+            }
+
+            //TODO implement handlebars
+
+            // (function solve() {
+            //         var template = '<div class="event-calendar">' +
+            //             '<h2 class="header">Appointments for <span class="month">{{month}}</span> <span class="year">{{year}}</span></h2>' +
+            //             '{{#days}}' +
+            //             '<div class="col-date">' +
+            //             '<div class="date">{{day}}</div>' +
+            //             '<div class="events">' +
+            //             '{{#each events}}' +
+            //             '{{#if title}}' +
+            //             '<div class="event {{importance}}" title="duration: {{duration}}">' +
+            //             '<div class="title">{{title}}</div>' +
+            //             '<span class="time">at: {{time}}</span>' +
+            //             '</div>' +
+            //             '{{else}}' +
+            //             '<div class="event {{importance}}">' +
+            //             '<div class="title">Free slot</div>' +
+            //             '</div>' +
+            //             '{{/if}}' +
+            //             '{{/each}}' +
+            //             '</div>' +
+            //             '</div>' +
+            //             '{{/days}}' +
+            //             '</div>';
+            //        let books =  document.getElementById('books');
+            //     books.innerText = template;
+            //
+            // }())
+
+        }
+
+
+        function getKinveyUserAuthHeaders() {
+            return {
+                'Authorization': "Kinvey " +
+                sessionStorage.getItem('authToken'),
+            };
+        }
+
+    }
+
 }
