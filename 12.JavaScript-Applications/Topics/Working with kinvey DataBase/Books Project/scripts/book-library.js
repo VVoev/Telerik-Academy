@@ -113,7 +113,30 @@ function startApp() {
     }
 
     function createBook() {
+        let url = `${kinveyBaseUrl}appdata/${kinveyAppKey}/bookStore`;
+        let postmanurl = 'https://baas.kinvey.com/appdata/kid_Hy6bk5m6l/bookStore';
+        console.log(url === postmanurl);
+        let bookData = {
+            title: $('#formCreateBook input[name=title]').val(),
+            author: $('#formCreateBook input[name=author]').val(),
+            information: $('#formCreateBook textarea[name=descr]').val()
+        };
 
+
+        console.log(bookData)
+        $.ajax({
+            method: "POST",
+            url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/bookStore",
+            headers: getKinveyUserAuthHeaders(),
+            data: bookData,
+            success: createBookSuccess,
+            error: handleAjaxError
+        });
+
+        function createBookSuccess(books) {
+            showInfo('Book Created');
+            listBooks();
+        }
     }
 
     function editBook() {
@@ -130,23 +153,34 @@ function startApp() {
         $('#formRegister').trigger('reset');
     }
 
-    function listBooks() {
-
-    }
-
     function showCreateBookView() {
         $('#formCreateBook').trigger('reset');
         showView('viewCreateBook');
     }
 
     function logoutUser() {
-        let check = loginUser();
-        console.log(check)
-        sessionStorage.clear();
-        $('#loggedInUser').text('');
-        showView('viewHome');
-        showInfo('Logout Success');
-        showHideMenuLinks();
+        if (sessionStorage.getItem('authToken')) {
+            showInfo("Are you sure you want to quit YES/NO");
+        }
+        $('#infoBox').click(function (ev) {
+            if (ev.originalEvent.screenX < 1050) {
+                if (sessionStorage.getItem('authToken')) {
+                    sessionStorage.clear();
+                    $('#loggedInUser').text('');
+                    showView('viewHome');
+                    showInfo('Logout Success');
+                    showHideMenuLinks();
+                }
+                else {
+                    showView('viwHome');
+                    showHideMenuLinks();
+                }
+            }
+            else {
+
+            }
+        })
+
     }
 
     function showHideMenuLinks() {
@@ -232,22 +266,42 @@ function startApp() {
                 </table>`);
                 console.log(books);
 
-                for(let book of books){
+                for (let book of books) {
                     let tr = $('<tr>');
+                    let links = [];
+                    let deleteLink = $('<a href="#">[Delete]</a>').click(function () {
+                        deleteBook(book);
+                    })
+                    let updateLink = $('<a href="#">[Update]</a>');
+                    links.push(deleteLink)
+                    links.push(' ');
+                    links.push(updateLink);
                     tr.append(
                         $('<td>').text(book.title),
                         $('<td>').text(book.author),
                         $('<td>').text(book.information),
-                        $('<td>').append($('<a href="#">[Delete]</a>')).append($('<a href="#">[Edit]</a>')),
+                        $('<td>').append(links),
                         $('</tr>')
                     );
                     table.append(tr);
                 }
-
-
                 $('#books').append(table);
-                
+            }
 
+            function deleteBook(book) {
+                let id = book._id;
+                $.ajax({
+                    method: "DELETE",
+                    url: kinveyBookUrl = kinveyBaseUrl + "appdata/" +
+                        kinveyAppKey + "/bookStore/" + book._id,
+                    headers: getKinveyUserAuthHeaders(),
+                    success: deleteBookSuccess,
+                    error: handleAjaxError
+                });
+                function deleteBookSuccess() {
+                    showInfo('Book Deleted');
+                    listBooks();
+                }
             }
 
             //TODO implement handlebars
@@ -283,13 +337,13 @@ function startApp() {
         }
 
 
-        function getKinveyUserAuthHeaders() {
-            return {
-                'Authorization': "Kinvey " +
-                sessionStorage.getItem('authToken'),
-            };
-        }
+    }
 
+    function getKinveyUserAuthHeaders() {
+        return {
+            'Authorization': "Kinvey " +
+            sessionStorage.getItem('authToken'),
+        };
     }
 
 }
