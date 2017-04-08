@@ -55,6 +55,25 @@ function startApp() {
     $("#linkCreateBook").click(showCreateBookView);
     $("#linkLogout").click(logoutUser);
 
+    function showHideMenuLinks() {
+
+        $('#menu a').hide();
+        //If we are logged
+        if (sessionStorage.getItem('authToken')) {
+            $('#linkHome').show();
+            $('#linkListBooks').show();
+            $('#linkCreateBook').show();
+            $('#linkLogout').show();
+        }
+        //If we are not logged
+        else {
+            $('#linkHome').show();
+            $('#linkLogin').show();
+            $('#linkLogout').show();
+            $('#linkRegister').show();
+        }
+    }
+
     function registerUser() {
         let userData = {
             username: $('#formRegister input[name=username]').val(),
@@ -144,6 +163,28 @@ function startApp() {
 
     }
 
+    function loadBookForEdit(book) {
+        console.log(book);
+        $.ajax({
+            method: "GET",
+            url: kinveyBookUrl = kinveyBaseUrl + "appdata/" +
+                kinveyAppKey + "/bookStore/" + book._id,
+            headers: getKinveyUserAuthHeaders(),
+            success: loadBookForEditSuccess,
+            error: handleAjaxError
+        });
+
+        function loadBookForEditSuccess(book) {
+            $('#formEditBook input[name=id]').val(book._id);
+            $('#formEditBook input[name=title]').val(book.title);
+            $('#formEditBook input[name=author]')
+                .val(book.author);
+            $('#formEditBook textarea[name=descr]')
+                .val(book.information);
+            showView('viewEditBook');
+        }
+    }
+
     function showLoginView() {
         showView('viewLogin');
         $('#formLogin').trigger('reset');
@@ -155,7 +196,7 @@ function startApp() {
     }
 
     function showCreateBookView() {
-         $('#viewCreateBook').trigger('reset');
+        $('#viewCreateBook').trigger('reset');
         showView('viewCreateBook');
     }
 
@@ -179,25 +220,6 @@ function startApp() {
             }
         })
 
-    }
-
-    function showHideMenuLinks() {
-
-        $('#menu a').hide();
-        //If we are logged
-        if (sessionStorage.getItem('authToken')) {
-            $('#linkHome').show();
-            $('#linkListBooks').show();
-            $('#linkCreateBook').show();
-            $('#linkLogout').show();
-        }
-        //If we are not logged
-        else {
-            $('#linkHome').show();
-            $('#linkLogin').show();
-            $('#linkLogout').show();
-            $('#linkRegister').show();
-        }
     }
 
     function showView(viewName) {
@@ -267,11 +289,13 @@ function startApp() {
                     let links = [];
                     let tr = $('<tr>');
                     let id = sessionStorage.getItem('userID');
-                    if(book._acl.creator === id ){
-                        let deleteLink = $('<a href="#">[Delete]</a>').click(function () {
+                    if (book._acl.creator === id) {
+                            let deleteLink = $('<a href="#">[Delete]</a>').click(function () {
                             deleteBook(book);
                         })
-                        let updateLink = $('<a href="#">[Update]</a>');
+                        let updateLink = $('<a href="#">[Update]</a>').click(function () {
+                            loadBookForEdit(book);
+                        })
                         links.push(deleteLink)
                         links.push(' ');
                         links.push(updateLink);
@@ -347,5 +371,4 @@ function startApp() {
             sessionStorage.getItem('authToken'),
         };
     }
-
 }
