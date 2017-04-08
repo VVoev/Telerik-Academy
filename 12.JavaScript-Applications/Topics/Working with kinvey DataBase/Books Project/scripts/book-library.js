@@ -8,8 +8,8 @@ function startApp() {
         btoa(kinveyAppKey + ":" + kinveyAppSecret),
     };
 
-
-    sessionStorage.clear(); // Clear user auth data
+    // Clear user auth data
+    sessionStorage.clear();
 
     showHideMenuLinks();
 
@@ -39,13 +39,11 @@ function startApp() {
         }
     });
 
-
     // Bind the form submit buttons
     $("#buttonLoginUser").click(loginUser);
     $("#buttonRegisterUser").click(registerUser);
     $("#buttonCreateBook").click(createBook);
     $("#buttonEditBook").click(editBook);
-
 
     // Bind the navigation menu links
     $("#linkHome").click(showHomeView);
@@ -143,7 +141,6 @@ function startApp() {
         };
 
 
-        console.log(bookData)
         $.ajax({
             method: "POST",
             url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/bookStore",
@@ -161,6 +158,28 @@ function startApp() {
 
     function editBook() {
 
+        let bookData = {
+            title: $('#formEditBook input[name=title]').val(),
+            author: $('#formEditBook input[name=author]').val(),
+            information: $('#formEditBook textarea[name=descr]').val()
+        };
+        let nameid = $('#formEditBook input[name=id]').val();
+        console.log(bookData)
+        console.log(nameid);
+
+        $.ajax({
+            method: "PUT",
+            url: "https://baas.kinvey.com/appdata/kid_Hy6bk5m6l/bookStore/58e61bb9d437db220c5e7f8b"+nameid,
+            headers: getKinveyUserAuthHeaders(),
+            data: bookData,
+            success: editBookSuccess,
+            error: handleAjaxError
+        });
+
+        function editBookSuccess(books) {
+            showInfo('Book Edited');
+            listBooks();
+        }
     }
 
     function loadBookForEdit(book) {
