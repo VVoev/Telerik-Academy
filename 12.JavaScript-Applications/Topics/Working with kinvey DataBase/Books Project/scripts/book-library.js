@@ -155,7 +155,7 @@ function startApp() {
     }
 
     function showCreateBookView() {
-        $('#formCreateBook').trigger('reset');
+         $('#viewCreateBook').trigger('reset');
         showView('viewCreateBook');
     }
 
@@ -176,9 +176,6 @@ function startApp() {
                     showView('viwHome');
                     showHideMenuLinks();
                 }
-            }
-            else {
-
             }
         })
 
