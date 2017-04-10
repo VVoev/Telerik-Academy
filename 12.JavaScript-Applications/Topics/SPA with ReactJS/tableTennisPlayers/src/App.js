@@ -167,8 +167,8 @@ export default class App extends Component {
         }
     }
 
-    editPlayer(playerId, name, blade, rubbers,rating) {
-        KinveyRequester.editPlayer(playerId, name, blade, rubbers,rating)
+    editPlayer(playerId, name, blade, rubbers, rating) {
+        KinveyRequester.editPlayer(playerId, name, blade, rubbers, rating)
             .then(editPlayerSuccess.bind(this));
 
         function editPlayerSuccess() {
@@ -205,14 +205,9 @@ export default class App extends Component {
         }
     }
 
-
-
-
-
     showCreatePlayerView() {
         this.showView(<CreatePlayer onsubmit={this.createPlayer.bind(this)}/>);
     }
-
 
     createPlayer(name, blade, rubbers, rating) {
         KinveyRequester.createPlayer(name, blade, rubbers, rating)
