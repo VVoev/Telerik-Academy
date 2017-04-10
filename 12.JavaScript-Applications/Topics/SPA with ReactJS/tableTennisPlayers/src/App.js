@@ -105,12 +105,12 @@ export default class App extends Component {
 
     login(username,password){
         KinveyRequester.loginUser(username, password)
-            .then(loginSuccess.bind(this));
+            .then(loginSuccess.bind(this))
 
         function loginSuccess(userInfo) {
             this.saveAuthInSession(userInfo);
             this.showInfo("Login successful.");
-            this.showView(<Players/>)
+            this.showPlayersView();
         }
     }
 
@@ -125,11 +125,25 @@ export default class App extends Component {
         function registerSuccess(userInfo) {
             this.saveAuthInSession(userInfo);
             this.showInfo("User registration successful.");
+            this.showHomeView();
         }
     }
 
     showPlayersView() {
-        this.showView(<Players />);
+        KinveyRequester.findAllPlayers()
+            .then(loadPlayersSuccess.bind(this));
+
+        function loadPlayersSuccess(players) {
+            this.showInfo("Players loaded.");
+            this.showView(
+                <Players
+                    players={players}
+                    userId={this.state.userId}
+                    // editBookClicked={this.prepareBookForEdit.bind(this)}
+                    // deleteBookClicked={this.confirmBookDelete.bind(this)}
+                />
+            );
+        }
     }
 
     showCreatePlayerView() {

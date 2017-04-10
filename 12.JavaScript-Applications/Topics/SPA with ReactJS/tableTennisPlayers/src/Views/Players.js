@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 
 export default class Players extends Component {
     render() {
-        // let playerRows = this.props.books.map(player =>
-        //     <tr key={player._id}>
-        //         <td>{player.title}</td>
-        //         <td>{player.author}</td>
-        //         <td>{player.description}</td>
-        //         {this.getActions(player, this.props.userId)}
-        //     </tr>
-        // );
+        let playerRows = this.props.players.map(player =>
+            <tr key={player._id}>
+                <td>{player.name}</td>
+                <td>{player.rating}</td>
+                <td>{player.blade}</td>
+                <td>{player.rubbers}</td>
+                {/*{this.getActions(book, this.props.userId)}*/}
+            </tr>
+        );
+        debugger;
 
         return (
             <div className="players-view">
@@ -24,7 +26,7 @@ export default class Players extends Component {
                     </tr>
                     </thead>
                     <tbody>
-                    {/*{playerRows}*/}
+                    {playerRows}
                     </tbody>
                 </table>
             </div>

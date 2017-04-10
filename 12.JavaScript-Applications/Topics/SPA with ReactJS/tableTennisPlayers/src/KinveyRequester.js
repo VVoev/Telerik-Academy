@@ -1,7 +1,6 @@
-
 import $ from 'jquery';
 
-const KinveyRequester = (function() {
+const KinveyRequester = (function () {
     const baseUrl = "https://baas.kinvey.com/";
     const appKey = "kid_HJ7Mn_m6l";
     const appSecret = "213e413341544445a845f31502d3bd41";
@@ -14,7 +13,7 @@ const KinveyRequester = (function() {
             method: "POST",
             url: baseUrl + "user/" + appKey + "/login",
             headers: kinveyAppAuthHeaders,
-            data: { username, password }
+            data: {username, password}
         });
     }
 
@@ -23,7 +22,7 @@ const KinveyRequester = (function() {
             method: "POST",
             url: baseUrl + "user/" + appKey + "/",
             headers: kinveyAppAuthHeaders,
-            data: { username, password }
+            data: {username, password}
         });
     }
 
@@ -41,51 +40,51 @@ const KinveyRequester = (function() {
         });
     }
 
-    function findAllBooks() {
+    function findAllPlayers() {
         return $.ajax({
             method: "GET",
-            url: baseUrl + "appdata/" + appKey + "/books",
+            url: baseUrl + "appdata/" + appKey + "/table-tennis-players",
             headers: getKinveyUserAuthHeaders()
         });
     }
 
-    function findBookById(bookId) {
+    function findPlayerById(playerId) {
         return $.ajax({
             method: "GET",
-            url: baseUrl + "appdata/" + appKey + "/books/" + bookId,
+            url: baseUrl + "appdata/" + appKey + "/table-tennis-players/" + playerId,
             headers: getKinveyUserAuthHeaders()
         });
     }
 
-    function createBook(title, author, description) {
+    function createPlayer(title, author, description) {
         return $.ajax({
             method: "POST",
-            url: baseUrl + "appdata/" + appKey + "/books",
+            url: baseUrl + "appdata/" + appKey + "/table-tennis-players",
             headers: getKinveyUserAuthHeaders(),
-            data: { title, author, description }
+            data: {title, author, description}
         });
     }
 
-    function editBook(bookId, title, author, description) {
+    function editPlayer(playerId, title, author, description) {
         return $.ajax({
             method: "PUT",
-            url: baseUrl + "appdata/" + appKey + "/books/" + bookId,
+            url: baseUrl + "appdata/" + appKey + "/table-tennis-players/" + playerId,
             headers: getKinveyUserAuthHeaders(),
-            data: { title, author, description }
+            data: {title, author, description}
         });
     }
 
-    function deleteBook(bookId) {
+    function deletePlayer(playerId) {
         return $.ajax({
             method: "DELETE",
-            url: baseUrl + "appdata/" + appKey + "/books/" + bookId,
+            url: baseUrl + "appdata/" + appKey + "/table-tennis-players/" + playerId,
             headers: getKinveyUserAuthHeaders()
         });
     }
 
     return {
         loginUser, registerUser, logoutUser,
-        findAllBooks, createBook, findBookById, editBook, deleteBook
+        findAllPlayers, createPlayer, findPlayerById, editPlayer, deletePlayer
     }
 })();
 
