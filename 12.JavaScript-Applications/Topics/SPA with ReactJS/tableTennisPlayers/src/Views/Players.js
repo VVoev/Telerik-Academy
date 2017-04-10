@@ -8,10 +8,23 @@ export default class Players extends Component {
                 <td>{player.rating}</td>
                 <td>{player.blade}</td>
                 <td>{player.rubbers}</td>
-                {/*{this.getActions(book, this.props.userId)}*/}
+                {this.getActions(player, this.props.userId)}
             </tr>
         );
-        debugger;
+        function getActions(player,playerId) {
+            if (player._acl.creator === playerId)
+                return (
+                    <td>
+                        <input type="button" value="Edit"
+                               onEdit={this.props.loadPlayerForEdit.bind(this, player._id)} />
+                        &nbsp;
+                        <input type="button" value="Delete"
+                               onDelete={this.props.loadPlayerForDelete.bind(this, player._id)} />
+                    </td>
+                );
+            else
+                return <td></td>;
+        }
 
         return (
             <div className="players-view">
@@ -23,6 +36,7 @@ export default class Players extends Component {
                         <th>Rating</th>
                         <th>Blade</th>
                         <th>Rubbers</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>

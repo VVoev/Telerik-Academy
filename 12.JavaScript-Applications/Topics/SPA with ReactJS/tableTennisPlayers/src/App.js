@@ -12,6 +12,9 @@ import Home from './Views/Home';
 import Login from './Views/Login';
 import Register from './Views/Register';
 import Players from './Views/Players';
+import CreatePlayer from "./Views/CreatePlayer";
+import EditPlayer from './Views/EditPlayer';
+import DeletePlayer from './Views/DeletePlayer'
 
 
 export default class App extends Component {
@@ -100,10 +103,10 @@ export default class App extends Component {
     }
 
     showLoginView() {
-        this.showView(<Login onsubmit={this.login.bind(this)} />);
+        this.showView(<Login onsubmit={this.login.bind(this)}/>);
     }
 
-    login(username,password){
+    login(username, password) {
         KinveyRequester.loginUser(username, password)
             .then(loginSuccess.bind(this))
 
@@ -115,7 +118,7 @@ export default class App extends Component {
     }
 
     showRegisterView() {
-        this.showView(<Register onsubmit={this.register.bind(this)} />);
+        this.showView(<Register onsubmit={this.register.bind(this)}/>);
     }
 
     register(username, password) {
@@ -139,15 +142,34 @@ export default class App extends Component {
                 <Players
                     players={players}
                     userId={this.state.userId}
-                    // editBookClicked={this.prepareBookForEdit.bind(this)}
-                    // deleteBookClicked={this.confirmBookDelete.bind(this)}
+                    onEdit={this.loadPlayerForEdit.bind(this)}
+                    onDelete={this.loadPlayerForDelete.bind(this)}
                 />
             );
         }
     }
 
-    showCreatePlayerView() {
+    loadPlayerForEdit(playerId) {
+        alert(playerId);
+    }
 
+    loadPlayerForDelete(playerId) {
+        alert(playerId);
+    }
+
+    showCreatePlayerView() {
+        this.showView(<CreatePlayer onsubmit={this.createPlayer.bind(this)}/>);
+    }
+
+
+    createPlayer(name, blade, rubbers, rating) {
+        KinveyRequester.createPlayer(name, blade, rubbers, rating)
+            .then(createBookSuccess.bind(this));
+
+        function createBookSuccess() {
+            this.showPlayersView();
+            this.showInfo("Player created.");
+        }
     }
 
     logoutScreen() {

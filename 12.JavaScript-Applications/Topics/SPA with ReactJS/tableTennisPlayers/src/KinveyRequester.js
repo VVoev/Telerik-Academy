@@ -56,12 +56,12 @@ const KinveyRequester = (function () {
         });
     }
 
-    function createPlayer(title, author, description) {
+    function createPlayer(name, blade, rubbers,rating) {
         return $.ajax({
             method: "POST",
             url: baseUrl + "appdata/" + appKey + "/table-tennis-players",
             headers: getKinveyUserAuthHeaders(),
-            data: {title, author, description}
+            data: {name, blade, rubbers,rating}
         });
     }
 
