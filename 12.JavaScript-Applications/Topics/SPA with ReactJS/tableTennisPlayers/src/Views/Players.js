@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 export default class Players extends Component {
     render() {
@@ -11,20 +11,7 @@ export default class Players extends Component {
                 {this.getActions(player, this.props.userId)}
             </tr>
         );
-        function getActions(player,playerId) {
-            if (player._acl.creator === playerId)
-                return (
-                    <td>
-                        <input type="button" value="Edit"
-                               onEdit={this.props.loadPlayerForEdit.bind(this, player._id)} />
-                        &nbsp;
-                        <input type="button" value="Delete"
-                               onDelete={this.props.loadPlayerForDelete.bind(this, player._id)} />
-                    </td>
-                );
-            else
-                return <td></td>;
-        }
+
 
         return (
             <div className="players-view">
@@ -47,5 +34,18 @@ export default class Players extends Component {
         );
     }
 
-
+    getActions(player, playerId) {
+        if (player._acl.creator === playerId)
+            return (
+                <td>
+                    <input type="button" value="Edit"
+                           onClick={this.props.editPlayerClicked.bind(this, player._id)} />
+                    &nbsp;
+                    <input type="button" value="Delete"
+                           onClick={this.props.deletePlayerClicked.bind(this, player._id)} />
+                </td>
+            );
+        else
+            return <td></td>;
+    }
 }

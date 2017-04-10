@@ -142,20 +142,72 @@ export default class App extends Component {
                 <Players
                     players={players}
                     userId={this.state.userId}
-                    onEdit={this.loadPlayerForEdit.bind(this)}
-                    onDelete={this.loadPlayerForDelete.bind(this)}
+                    editPlayerClicked={this.loadPlayerForEdit.bind(this)}
+                    deletePlayerClicked={this.loadPlayerForDelete.bind(this)}
                 />
             );
         }
     }
 
     loadPlayerForEdit(playerId) {
-        alert(playerId);
+        KinveyRequester.findPlayerById(playerId)
+            .then(loadPlayersSuccess.bind(this));
+
+        function loadPlayersSuccess(playerInfo) {
+            this.showView(
+                <EditPlayer
+                    onsubmit={this.editPlayer.bind(this)}
+                    playerId={playerInfo._id}
+                    name={playerInfo.name}
+                    blade={playerInfo.blade}
+                    rubbers={playerInfo.rubbers}
+                    rating={playerInfo.rating}
+                />
+            );
+        }
+    }
+
+    editPlayer(playerId, name, blade, rubbers,rating) {
+        KinveyRequester.editPlayer(playerId, name, blade, rubbers,rating)
+            .then(editPlayerSuccess.bind(this));
+
+        function editPlayerSuccess() {
+            this.showPlayersView();
+            this.showInfo("Player edited.");
+        }
     }
 
     loadPlayerForDelete(playerId) {
-        alert(playerId);
+        KinveyRequester.findPlayerById(playerId)
+            .then(loadPlayerForDeleteSuccess.bind(this));
+
+        function loadPlayerForDeleteSuccess(playerInfo) {
+            this.showView(
+                <DeletePlayer
+                    onsubmit={this.deletePlayer.bind(this)}
+                    playerId={playerInfo._id}
+                    name={playerInfo.name}
+                    blade={playerInfo.blade}
+                    rubbers={playerInfo.rubbers}
+                    rating={playerInfo.rating}
+                />
+            );
+        }
     }
+
+    deletePlayer(playerId) {
+        KinveyRequester.deletePlayer(playerId)
+            .then(deletePlayerSuccess.bind(this));
+
+        function deletePlayerSuccess() {
+            this.showPlayersView();
+            this.showInfo("Played deleted.");
+        }
+    }
+
+
+
+
 
     showCreatePlayerView() {
         this.showView(<CreatePlayer onsubmit={this.createPlayer.bind(this)}/>);

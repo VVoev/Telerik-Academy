@@ -8,7 +8,8 @@ export default class DeletePlayer extends Component {
                 <label>
                     <div>Name:</div>
                     <input type="text" name="title" disabled
-                           defaultValue={this.props.name} />
+                           defaultValue={this.props.name}
+                           ref={e => this.nameField = e} />
                 </label>
                 <label>
                     <div>Blade:</div>
@@ -17,8 +18,13 @@ export default class DeletePlayer extends Component {
                 </label>
                 <label>
                     <div>Rubbers:</div>
-                    <textarea name="description" rows="10" disabled
-                              defaultValue={this.props.rubbers} />
+                    <input type="text" name="author" disabled
+                           defaultValue={this.props.rubbers} />
+                </label>
+                <label>
+                    <div>Rating:</div>
+                    <input type="text" name="author" disabled
+                           defaultValue={this.props.rating} />
                 </label>
                 <div>
                     <input type="submit" value="Delete" />

@@ -23,6 +23,12 @@ export default class EditPlayer extends Component {
                               defaultValue={this.props.rubbers}
                               ref={e => this.rubbersField = e} />
                 </label>
+                <label>
+                    <div>Rating:</div>
+                    <input type="text" name="title" required
+                           defaultValue={this.props.rating}
+                           ref={e => this.ratingField = e} />
+                </label>
                 <div>
                     <input type="submit" value="Edit" />
                 </div>
@@ -37,6 +43,7 @@ export default class EditPlayer extends Component {
             this.nameField.value,
             this.bladeField.value,
             this.rubbersField.value,
+            this.ratingField.value
         );
     }
 }

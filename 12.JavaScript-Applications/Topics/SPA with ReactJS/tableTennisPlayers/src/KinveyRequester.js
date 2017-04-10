@@ -65,12 +65,12 @@ const KinveyRequester = (function () {
         });
     }
 
-    function editPlayer(playerId, title, author, description) {
+    function editPlayer(playerId, name, blade, rubbers,rating) {
         return $.ajax({
             method: "PUT",
             url: baseUrl + "appdata/" + appKey + "/table-tennis-players/" + playerId,
             headers: getKinveyUserAuthHeaders(),
-            data: {title, author, description}
+            data: {name, blade, rubbers,rating}
         });
     }
 
