@@ -4,7 +4,7 @@ export default class CreatePlayer extends Component {
     render() {
         return (
             <form className="create-player-form" onSubmit={this.submitForm.bind(this)}>
-                <h1>Create Player</h1>
+                <h1>Add new Player</h1>
                 <label>
                     <div>Name:</div>
                     <input type="text" name="title" required
