@@ -1,54 +1,57 @@
 (function () {
     let counter = 0;
+
     function pause(delay) {
         setTimeout(function () {
             console.log(`pauses for ${delay}ms`)
-        },delay)
+        }, delay)
     }
-    console.log("start")
+
+    console.log("Start")
     let delay = 200;
-    setTimeout(()=>{
+    setTimeout(() => {
         console.log(`paused for ${delay}ms`)
         console.log(++counter);
-        setTimeout(()=>{
+        setTimeout(() => {
             console.log(`paused for ${delay}ms`)
             console.log(++counter);
-            setTimeout(()=>{
+            setTimeout(() => {
                 console.log(`paused for ${delay}ms`)
                 console.log(++counter);
-                setTimeout(()=>{
+                setTimeout(() => {
                     console.log(`paused for ${delay}ms`)
                     console.log(++counter);
-                    setTimeout(()=>{
+                    setTimeout(() => {
                         console.log(`paused for ${delay}ms`)
                         console.log(++counter);
-                        setTimeout(()=>{
+                        setTimeout(() => {
                             console.log(`paused for ${delay}ms`)
                             console.log(++counter);
-                            setTimeout(()=>{
+                            setTimeout(() => {
                                 console.log(`paused for ${delay}ms`)
                                 console.log(++counter);
-                                setTimeout(()=>{
+                                setTimeout(() => {
                                     console.log(`paused for ${delay}ms`)
                                     console.log(++counter);
-                                    setTimeout(()=>{
+                                    setTimeout(() => {
                                         console.log(`paused for ${delay}ms`)
                                         console.log(++counter);
-                                        setTimeout(()=>{
+                                        setTimeout(() => {
                                             console.log(`paused for ${delay}ms`)
                                             console.log(++counter);
-                                            setTimeout(()=>{
+                                            setTimeout(() => {
                                                 console.log(`paused for ${delay}ms`)
                                                 console.log(++counter);
-                                            },delay)
-                                        },delay)
-                                    },delay)
-                                },delay)
-                            },delay)
-                        },delay)
-                    },delay)
-                },delay)
-            },delay)
-        },delay)
-    },delay)
+                                                console.log("End")
+                                            }, delay)
+                                        }, delay)
+                                    }, delay)
+                                }, delay)
+                            }, delay)
+                        }, delay)
+                    }, delay)
+                }, delay)
+            }, delay)
+        }, delay)
+    }, delay)
 })()
