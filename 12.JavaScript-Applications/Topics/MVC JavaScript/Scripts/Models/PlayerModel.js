@@ -7,23 +7,23 @@ class PlayerModel {
     }
 
     getPlayer(id) {
-        let requestUrl = this._baseUrl+"appdata/"+this._appKey+"/table-tennis-players/"+id;
+        let requestUrl = this._baseUrl + "appdata/" + this._appKey + "/WhiskeyShop/" + id;
         let requestHeaders = this._authorizationService.getHeaders();
 
-        return this._requester.get(requestUrl,requestHeaders);
+        return this._requester.get(requestUrl, requestHeaders);
     }
 
     getPlayers() {
-        let requestUrl = this._baseUrl+"appdata/"+this._appKey+"/table-tennis-players";
+        let requestUrl = this._baseUrl + "appdata/" + this._appKey + "/WhiskeyShop";
         let requestHeaders = this._authorizationService.getHeaders();
 
-        return this._requester.get(requestUrl,requestHeaders);
+        return this._requester.get(requestUrl, requestHeaders);
     }
 
-    postPlayer(data){
-        let requestUrl = this._baseUrl+"appdata/"+this._appKey+"/table-tennis-players";
+    postPlayer(data) {
+        let requestUrl = this._baseUrl + "appdata/" + this._appKey + "/WhiskeyShop";
         let requestHeaders = this._authorizationService.getHeaders();
 
-        return this._requester.post(requestUrl,requestHeaders,data);
+        return this._requester.post(requestUrl, requestHeaders, data);
     }
 }

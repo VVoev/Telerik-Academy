@@ -12,7 +12,7 @@ class AuthenticationService {
 
         let headers = {
             "contentType": "application/json"
-        }
+        };
 
         if (this.isLoggedIn()) {
             headers["Authorization"] = "Basic " + this.isLoggedIn();

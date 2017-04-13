@@ -1,7 +1,7 @@
 (function () {
     let baseUrl = "https://bass.kinvey.com/";
-    let appKey = "kid_HJ7Mn_m6l";
-    let appSecret = "213e413341544445a845f31502d3bd41";
+    let appKey = "kid_BkZElJp6x";
+    let appSecret = "f28b29d97c554c13ac9e3e9341b1b809";
 
     let requester = new Requester();
     let authentificationService = new AuthenticationService(appKey, appSecret);
