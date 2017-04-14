@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop: Simple Forum with Sammy.js, jQuery and Handlebars</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<script src=""></script>
+<body>
+
+
+<div id="root">
+    <header>
+        <div class="container">
+            <div class="row">
+                <h1 class="col-md-9">Simple Forum</h1>
+                <div id="login-controls" class="col-md-3">
+                    <a href="#/login">Login or Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="row">
+                <h1 class="col-md-9">Items For Sale</h1>
+                <div id="items-controls" class="col-md-3">
+                    <a href="#/items">Items</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div id="loginout-controls" class="col-md-3">
+                    <a href="#/quit">Logout</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="content">
+        <!--Sammy Visualize all information here-->
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.js"></script>
+<script src="libs/sammy.js"></script>
+<script src="../public/templates/template.js"></script>
+<script src="app.js">
+
+</script>
+</body>
+</html>
