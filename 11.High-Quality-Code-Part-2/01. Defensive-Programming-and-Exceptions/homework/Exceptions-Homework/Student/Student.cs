@@ -1,27 +1,55 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using Exceptions_Homework.Validator;
 
 public class Student
 {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public IList<Exam> Exams { get; set; }
+    private string firstName;
+    private string lastname;
+    private IList<Exam> exams;
+
+    public string FirstName
+    {
+        get
+        {
+            return this.firstName;
+        }
+
+        set
+        {
+            Validator.IsStringNullOrEmptry(value, "Firstname");
+            this.firstName = value;
+        }
+    }
+    public string LastName
+    {
+        get
+        {
+            return this.lastname;
+        }
+
+        set
+        {
+            Validator.IsStringNullOrEmptry(value, "LastName");
+            this.lastname = value;
+        }
+    }
+    public IList<Exam> Exams
+    {
+        get
+        {
+            return this.exams;
+        }
+        set
+        {
+            Validator.IsArrayNullOrEmpty(exams);
+            this.exams = value;
+        }
+    }
 
     public Student(string firstName, string lastName, IList<Exam> exams = null)
     {
-        if (firstName == null)
-        {
-            Console.WriteLine("Invalid first name!");
-            Environment.Exit(0);
-        }
-
-        if (lastName == null)
-        {
-            Console.WriteLine("Invalid first name!");
-            Environment.Exit(0);
-        }
-
         this.FirstName = firstName;
         this.LastName = lastName;
         this.Exams = exams;
@@ -29,16 +57,6 @@ public class Student
 
     public IList<ExamResult> CheckExams()
     {
-        if (this.Exams == null)
-        {
-            throw new Exception("Wow! Error happened!!!");
-        }
-
-        if (this.Exams.Count == 0)
-        {
-            Console.WriteLine("The student has no exams!");
-            return null;
-        }
 
         IList<ExamResult> results = new List<ExamResult>();
         for (int i = 0; i < this.Exams.Count; i++)
@@ -51,17 +69,6 @@ public class Student
 
     public double CalcAverageExamResultInPercents()
     {
-        if (this.Exams == null)
-        {
-            // Cannot calculate average on missing exams
-            throw new Exception();
-        }
-
-        if (this.Exams.Count == 0)
-        {
-            // No exams --> return -1;
-            return -1;
-        }
 
         double[] examScore = new double[this.Exams.Count];
         IList<ExamResult> examResults = CheckExams();

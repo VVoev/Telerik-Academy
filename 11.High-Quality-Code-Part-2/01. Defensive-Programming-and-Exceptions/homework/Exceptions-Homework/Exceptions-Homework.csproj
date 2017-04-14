@@ -42,11 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CSharpExam.cs" />
-    <Compile Include="ExamResult.cs" />
-    <Compile Include="SimpleMathExam.cs" />
+    <Compile Include="CustomException\NumberISNotPrime.cs" />
+    <Compile Include="CustomException\ScoreOutOfRangeException.cs" />
+    <Compile Include="Exams\ExamResult.cs" />
+    <Compile Include="Exams\SimpleMathExam.cs" />
     <Compile Include="ExceptionsHomework.cs" />
-    <Compile Include="Exam.cs" />
-    <Compile Include="Student.cs" />
+    <Compile Include="Exams\Exam.cs" />
+    <Compile Include="Student\Student.cs" />
+    <Compile Include="Utilities\Utilities.cs" />
+    <Compile Include="Validator\Validator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
