@@ -3,6 +3,7 @@ let sammyApp = Sammy('#root', function () {
 
     //this => sammy.application
     this.get('#/login', function () {
+        console.log(templates)
         templates.get('login')
             .then(function (template) {
                 //template -> handlebars.compile(tempalteString)
