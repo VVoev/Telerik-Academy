@@ -57,6 +57,18 @@ let sammyApp = Sammy('#root', function () {
                     username: $('#tb-username').val(),
                     password: $('#tb-password').val(),
                 }
+                $.ajax({
+                    method: "POST",
+                    url: kinveyBaseUrl + "user/" + kinveyAppKey + "/",
+                    headers: kinveyAppAuthHeaders,
+                    data: user,
+                    success: registerSuccess,
+                    error: handleAjaxError
+                })
+
+                function registerSuccess() {
+                    alert("Succesfully Registered")
+                }
 
 
             })
@@ -65,6 +77,14 @@ let sammyApp = Sammy('#root', function () {
 
     this.get('#/Home', function () {
         templates.get('home')
+            .then(function (template) {
+                //template -> handlebars.compile(tempalteString)
+                content.html(template());
+            });
+    })
+
+    this.get('#/Buy', function () {
+        templates.get('buy')
             .then(function (template) {
                 //template -> handlebars.compile(tempalteString)
                 content.html(template());
