@@ -87,6 +87,13 @@ footer {
     float: right;
 }
 
+.whiskeyList{
+    width: 300px;
+    display: inline;
+    float: left;
+    background-color: yellow;
+}
+
 
 
 

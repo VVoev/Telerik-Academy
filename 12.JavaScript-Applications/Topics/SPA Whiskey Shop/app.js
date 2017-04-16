@@ -10,7 +10,6 @@ let sammyApp = Sammy('#root', function () {
     };
 
 
-
     //this => sammy.application
     this.get('#/Login', function () {
         templates.get('login')
@@ -23,21 +22,21 @@ let sammyApp = Sammy('#root', function () {
                     username: $('#tb-username').val(),
                     password: $('#tb-password').val(),
                 }
-                    $.ajax({
-                        method: "POST",
-                        url: kinveyBaseUrl + "user/" + kinveyAppKey + "/login",
-                        headers: kinveyAppAuthHeaders,
-                        data: user,
-                        success: loginSuccess,
-                        error: handleAjaxError
-                    })
+                $.ajax({
+                    method: "POST",
+                    url: kinveyBaseUrl + "user/" + kinveyAppKey + "/login",
+                    headers: kinveyAppAuthHeaders,
+                    data: user,
+                    success: loginSuccess,
+                    error: handleAjaxError
+                })
             })
 
             function loginSuccess(user) {
                 templates.get('home')
                     .then(function (template) {
                         content.html(template());
-                        sessionStorage.setItem("authToken",user._kmd.authtoken);
+                        sessionStorage.setItem("authToken", user._kmd.authtoken);
                         $('#loggedInUser').text(`Welcome, ${user.username}`)
                     });
             }
@@ -84,18 +83,37 @@ let sammyApp = Sammy('#root', function () {
     })
 
     this.get('#/Buy', function () {
-        templates.get('buy')
-            .then(function (template) {
-                //template -> handlebars.compile(tempalteString)
-                content.html(template());
-            });
+
+
+        $.ajax({
+            method: "GET",
+            url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/WhiskeyShop",
+            headers: getKinveyUserAuthHeaders(),
+            success: loadWhiskey,
+            error: handleAjaxError
+        });
+
     })
+
+    function loadWhiskey(items) {
+        templates.fillItems('buy',items)
+            .then(function (template) {
+                content.html(tem);
+            })
+    }
 
 
 });
 
 function handleAjaxError(error) {
     console.log(error)
+}
+
+function getKinveyUserAuthHeaders() {
+    return {
+        'Authorization': "Kinvey " +
+        sessionStorage.getItem('authToken'),
+    };
 }
 
 $(function () {

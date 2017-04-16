@@ -14,9 +14,25 @@ let templates = (function () {
         return promise;
     }
 
+    function fillItems(name,items) {
+
+        let promise = new Promise((resolve, reject) => {
+            let url = `templates/${name}.handlebars`;
+            $.get(url,function (templateHtml) {
+                let template = handlebars.compile(templateHtml);
+                let result = template(items);
+                let content = $('#content').html(result)
+            })
+        })
+        return promise;
+    }
+
+
+
 
     return {
-        get
+        get,
+        fillItems
     }
 
 }());
