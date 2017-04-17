@@ -9,6 +9,21 @@ let sammyApp = Sammy('#root', function () {
         btoa(kinveyAppKey + ":" + kinveyAppSecret),
     };
 
+    function changeView(view) {
+        templates.get(view)
+            .then(function (template) {
+                //template -> handlebars.compile(tempalteString)
+                content.html(template());
+            })
+    }
+
+    function userIsNowLogged() {
+        $('#linkLogin').hide();
+        $('#linkRegister').hide();
+    }
+
+    //default view whenever you open the App
+    changeView('home');
 
     //this => sammy.application
     this.get('#/Login', function () {
@@ -37,7 +52,10 @@ let sammyApp = Sammy('#root', function () {
                     .then(function (template) {
                         content.html(template());
                         sessionStorage.setItem("authToken", user._kmd.authtoken);
-                        $('#loggedInUser').text(`Welcome, ${user.username}`)
+                        $('#loggedInUser').text(`Welcome, ${user.username}`);
+                        showInfo("Loggin Success");
+                        changeView('home');
+                        userIsNowLogged();
                     });
             }
 
@@ -66,7 +84,9 @@ let sammyApp = Sammy('#root', function () {
                 })
 
                 function registerSuccess() {
-                    alert("Succesfully Registered")
+                    userIsNowLogged();
+                    showInfo("Register Success");
+                    changeView('home');
                 }
 
 
@@ -83,8 +103,6 @@ let sammyApp = Sammy('#root', function () {
     })
 
     this.get('#/Buy', function () {
-
-
         $.ajax({
             method: "GET",
             url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/WhiskeyShop",
@@ -92,18 +110,65 @@ let sammyApp = Sammy('#root', function () {
             success: loadWhiskey,
             error: handleAjaxError
         });
-
+        function loadWhiskey(items) {
+            templates.fillItems('buy', items)
+                .then(function (template) {
+                    content.html(tem);
+                })
+        }
     })
 
-    function loadWhiskey(items) {
-        templates.fillItems('buy',items)
-            .then(function (template) {
-                content.html(tem);
-            })
-    }
+    this.get('#/Sell', function () {
+        let token = sessionStorage.getItem('authToken');
+        if (token !== null) {
+            changeView('sell');
+        }
+        else {
+            showInfo('You need to be login/register in order to sell');
+            changeView('login');
+        }
+    })
 
+    $('#content').on('click', function (ev) {
+        if(ev.target.id === "btn-sell"){
+            let data = {};
+            data.Brand = $('#tb-brand').val();
+            data.Name = $('#tb-name').val();
+            data.YearsOld = $('#tb-years').val();
+            data.Price = $('#tb-price').val();
+
+            $.ajax({
+                method: "POST",
+                url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/WhiskeyShop",
+                headers: getKinveyUserAuthHeaders(),
+                data: data,
+                success: createNewWhiskey,
+                error: handleAjaxError
+            });
+
+            function createNewWhiskey() {
+                showInfo("Whiskey Created");
+            }
+        }
+    })
 
 });
+
+
+
+
+function showInfo(message) {
+    $('#infoBox').text(message);
+    $('#infoBox').show();
+    setTimeout(function () {
+        $('#infoBox').fadeOut();
+    }, 3000);
+}
+
+$('#linkLogout').on('click', function () {
+    sessionStorage.clear();
+    showInfo("Logout succesfully you are now redirecting to Home")
+})
 
 function handleAjaxError(error) {
     console.log(error)

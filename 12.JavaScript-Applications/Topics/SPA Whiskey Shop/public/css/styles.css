@@ -89,9 +89,9 @@ footer {
 
 .whiskeyList{
     width: 300px;
+    height: 200px;
     display: inline;
     float: left;
-    background-color: yellow;
 }
 
 
