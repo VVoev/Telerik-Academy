@@ -2,9 +2,8 @@
 {
     using Manufacturers;
     using System;
-    using System.Collections.Generic;
 
-    public class Computers
+    public static class Program
     {
         private static PersonalComputer pc;
         private static Laptop laptop;

@@ -10,8 +10,6 @@
         int hardDrivesInRaid;
         int capacity;
         List<HardDriver> hds;
-        SortedDictionary<int, string> info;
-
         Dictionary<int, string> data;
 
         internal HardDriver(int capacity, bool isInRaid, int hardDrivesInRaid, List<HardDriver> hardDrives)
@@ -24,11 +22,7 @@
             this.data = (Dictionary<int, string>)new Dictionary<int, string>(capacity);
             this.hds = new List<HardDriver>();
             this.hds = hardDrives;
-        }
-
-        internal HardDriver() { }
-
-        public bool IsMonochrome { get; set; }
+        } 
 
         internal HardDriver(int capacity, bool isInRaid, int hardDrivesInRaid)
         {
@@ -40,6 +34,10 @@
 
             this.hds = new List<HardDriver>();
         }
+
+        internal HardDriver() { }
+
+        public bool IsMonochrome { get; set; }
 
         int Capacity
         {

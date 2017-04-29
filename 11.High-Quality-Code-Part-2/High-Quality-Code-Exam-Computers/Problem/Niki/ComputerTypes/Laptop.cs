@@ -4,13 +4,13 @@
 
     public class Laptop : Computer
     {
-        readonly LaptopBattery battery;
+        private readonly LaptopBattery battery;
 
         public Laptop(
          Cpu cpu,
-         Rammstein ram,
+         Ram ram,
          IEnumerable<HardDriver> hardDrives,
-         HardDriver videoCard,
+         VideoCard videoCard,
          LaptopBattery battery)
             : base(cpu, ram, hardDrives, videoCard)
         {
@@ -23,6 +23,5 @@
 
             this.VideoCard.Draw(string.Format("Battery status: {0}", this.battery.Percentage));
         }
-
     }
 }

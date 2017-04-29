@@ -1,49 +1,41 @@
 ﻿namespace Computers.UI.Common
 {
-    using Manufacturers;
     using System.Collections.Generic;
+    using Manufacturers;
 
     public class DellComputerFactory : IComputersFactory
     {
         public Laptop CreateLaptop()
         {
-            var ram2 = new Rammstein(8);
-            var videoCard1 = new HardDriver()
-            {
-                IsMonochrome = false
-            };
+            var ram = new Ram(8);
+            var videoCard = new VideoCard() { IsMonochrome = false };
             var laptop = new Laptop(
-                new Cpu(8 / 2, ((32)), ram2, videoCard1),
-                ram2,
+                new Cpu(8 / 2, 32, ram, videoCard),
+                ram,
                 new[] { new HardDriver(1000, false, 0) },
-                videoCard1,
+                videoCard,
                 new LaptopBattery());
             return laptop;
         }
 
         public PersonalComputer CreatePersonalComputer()
         {
-            var ram = new Rammstein(8);
-            var videoCard = new HardDriver() { IsMonochrome = false };
+            var ram = new Ram(8);
+            var videoCard = new VideoCard() { IsMonochrome = false };
             var pc = new PersonalComputer(new Cpu(8 / 2, 64, ram, videoCard), ram, new[] { new HardDriver(1000, false, 0) }, videoCard);
             return pc;
         }
 
         public Server CreateServer()
         {
-            var ram1 = new Rammstein(8 * 8);
-            var card = new HardDriver();
+            var ram = new Ram(8 * 8);
+            var card = new VideoCard();
             var server = new Server(
-                 new Cpu(8, 64, ram1, card),
-                 ram1,
-                 new List<HardDriver>
-                            {
-                                new HardDriver(0, true, 2, new List<HardDriver>
-                                { new HardDriver(2000, false, 0), new HardDriver(2000, false, 0) }
-                            )
-                            }, card);
+                 new Cpu(8, 64, ram, card),
+                 ram,
+                 new List<HardDriver> { new HardDriver(0, true, 2, new List<HardDriver> { new HardDriver(2000, false, 0), new HardDriver(2000, false, 0) }) },
+                 card);
             return server;
         }
     }
-
 }

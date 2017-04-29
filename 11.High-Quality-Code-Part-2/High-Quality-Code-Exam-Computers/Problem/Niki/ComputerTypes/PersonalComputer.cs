@@ -1,25 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Computers.UI.Common
+﻿namespace Computers.UI.Common
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public class PersonalComputer : Computer
     {
         public PersonalComputer(
               Cpu cpu,
-            Rammstein ram,
+            Ram ram,
             IEnumerable<HardDriver> hardDrives,
-            HardDriver videoCard)
+            VideoCard videoCard)
             : base(cpu, ram, hardDrives, videoCard)
         {
         }
 
         public void Play(int guessNumber)
         {
-            Cpu.rand(1, 10);
+            Cpu.Rand(1, 10);
             var number = this.Ram.LoadValue();
             if (number + 1 != guessNumber + 1)
             {
@@ -30,6 +30,5 @@ namespace Computers.UI.Common
                 this.VideoCard.Draw("You win!");
             }
         }
-
     }
 }
