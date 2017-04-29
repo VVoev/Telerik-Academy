@@ -1,49 +1,19 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using C = System.Console;
-
-namespace Computers.UI.Common
+﻿namespace Computers.UI.Common
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
-    class HardDriver
+    public class HardDriver
     {
-
         bool isInRaid;
-
         int hardDrivesInRaid;
-
+        int capacity;
+        List<HardDriver> hds;
         SortedDictionary<int, string> info;
 
-        internal HardDriver() { }
-        public bool IsMonochrome { get; set; }
-
-
-        List<HardDriver> hds;
-        internal HardDriver(int capacity, bool isInRaid, int hardDrivesInRaid)
-        {
-            this.isInRaid = isInRaid;
-            this.hardDrivesInRaid = hardDrivesInRaid;
-
-
-
-            this.capacity = capacity;
-                    this.data = new Dictionary<int, string>(capacity);
-
-
-
-
-
-
-            this.hds = new List<HardDriver>();
-        }
-
-
-
-
-        int capacity;
         Dictionary<int, string> data;
+
         internal HardDriver(int capacity, bool isInRaid, int hardDrivesInRaid, List<HardDriver> hardDrives)
         {
             this.isInRaid = isInRaid;
@@ -51,13 +21,31 @@ namespace Computers.UI.Common
             this.capacity = capacity;
 
 
-            this.data = (Dictionary<int, string>)new Dictionary<int, string>(capacity); this.hds = new List<HardDriver>(); this.hds = hardDrives;
+            this.data = (Dictionary<int, string>)new Dictionary<int, string>(capacity);
+            this.hds = new List<HardDriver>();
+            this.hds = hardDrives;
         }
+
+        internal HardDriver() { }
+
+        public bool IsMonochrome { get; set; }
+
+        internal HardDriver(int capacity, bool isInRaid, int hardDrivesInRaid)
+        {
+            this.isInRaid = isInRaid;
+            this.hardDrivesInRaid = hardDrivesInRaid;
+
+            this.capacity = capacity;
+            this.data = new Dictionary<int, string>(capacity);
+
+            this.hds = new List<HardDriver>();
+        }
+
         int Capacity
         {
             get
             {
-                if (isInRaid)
+                if (this.isInRaid)
                 {
                     if (!this.hds.Any())
                     {
@@ -65,18 +53,31 @@ namespace Computers.UI.Common
                     }
                     return this.hds.First().Capacity;
                 }
-                else {
-                    return capacity;
+                else
+                {
+                    return this.capacity;
                 }
             }
         }
+
         void SaveData(int addr, string newData)
         {
-            if (isInRaid) foreach (var hardDrive in this.hds) hardDrive.SaveData(addr, newData); else this.data[addr] = newData;
+            if (this.isInRaid)
+            {
+                foreach (var hardDrive in this.hds)
+                {
+                    hardDrive.SaveData(addr, newData);
+                }
+            }
+            else
+            {
+                this.data[addr] = newData;
+            }
         }
+
         string LoadData(int address)
         {
-            if (isInRaid)
+            if (this.isInRaid)
             {
                 if (!this.hds.Any())
                 {
@@ -90,24 +91,24 @@ namespace Computers.UI.Common
                 return this.data[address];
             }
         }
+
         public void Draw(string a)
         {
             if (this.IsMonochrome)
             {
-                C.ForegroundColor = ConsoleColor.Gray;
-                C.WriteLine(a);
-                C.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine(a);
+                Console.ResetColor();
             }
 
             else
             {
-                C.ForegroundColor = ConsoleColor.Green;
-                C.WriteLine(a);
-                C.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(a);
+                Console.ResetColor();
             }
 
         }
-
     }
 
 }

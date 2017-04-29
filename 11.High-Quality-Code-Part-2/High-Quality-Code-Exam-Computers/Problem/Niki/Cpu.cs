@@ -1,8 +1,8 @@
-﻿using System;
-namespace Computers.UI.Common
+﻿namespace Computers.UI.Common
 {
+    using System;
 
-    class Cpu
+    public class Cpu
     {
         private readonly byte numberOfBits;
 
@@ -23,8 +23,14 @@ namespace Computers.UI.Common
 
         public void SquareNumber()
         {
-            if (this.numberOfBits == 32) SquareNumber32();
-            if (this.numberOfBits == 64) SquareNumber64();
+            if (this.numberOfBits == 32)
+            {
+                this.SquareNumber32();
+            }
+            if (this.numberOfBits == 64)
+            {
+                this.SquareNumber64();
+            }
         }
 
         void SquareNumber32()
