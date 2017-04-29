@@ -12,7 +12,7 @@
             var laptop = new Laptop(
                 new Cpu(8 / 2, 32, ram, videoCard),
                 ram,
-                new[] { new HardDriver(1000, false, 0) },
+                new[] { new HardDrive(1000, false, 0) },
                 videoCard,
                 new LaptopBattery());
             return laptop;
@@ -22,7 +22,7 @@
         {
             var ram = new Ram(8);
             var videoCard = new VideoCard() { IsMonochrome = false };
-            var pc = new PersonalComputer(new Cpu(8 / 2, 64, ram, videoCard), ram, new[] { new HardDriver(1000, false, 0) }, videoCard);
+            var pc = new PersonalComputer(new Cpu(8 / 2, 64, ram, videoCard), ram, new[] { new HardDrive(1000, false, 0) }, videoCard);
             return pc;
         }
 
@@ -33,7 +33,7 @@
             var server = new Server(
                  new Cpu(8, 64, ram, card),
                  ram,
-                 new List<HardDriver> { new HardDriver(0, true, 2, new List<HardDriver> { new HardDriver(2000, false, 0), new HardDriver(2000, false, 0) }) },
+                 new List<HardDrive> { new HardDrive(0, true, 2, new List<HardDrive> { new HardDrive(2000, false, 0), new HardDrive(2000, false, 0) }) },
                  card);
             return server;
         }

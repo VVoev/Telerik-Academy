@@ -9,7 +9,7 @@
         public Laptop(
          Cpu cpu,
          Ram ram,
-         IEnumerable<HardDriver> hardDrives,
+         IEnumerable<HardDrive> hardDrives,
          VideoCard videoCard,
          LaptopBattery battery)
             : base(cpu, ram, hardDrives, videoCard)

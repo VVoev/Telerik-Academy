@@ -4,27 +4,26 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class HardDriver
+    public class HardDrive
     {
-        bool isInRaid;
-        int hardDrivesInRaid;
-        int capacity;
-        List<HardDriver> hds;
-        Dictionary<int, string> data;
+        private bool isInRaid;
+        private int hardDrivesInRaid;
+        private int capacity;
+        private List<HardDrive> hds;
+        private Dictionary<int, string> data;
 
-        internal HardDriver(int capacity, bool isInRaid, int hardDrivesInRaid, List<HardDriver> hardDrives)
+        internal HardDrive(int capacity, bool isInRaid, int hardDrivesInRaid, List<HardDrive> hardDrives)
         {
             this.isInRaid = isInRaid;
             this.hardDrivesInRaid = hardDrivesInRaid;
             this.capacity = capacity;
 
-
             this.data = (Dictionary<int, string>)new Dictionary<int, string>(capacity);
-            this.hds = new List<HardDriver>();
+            this.hds = new List<HardDrive>();
             this.hds = hardDrives;
         } 
 
-        internal HardDriver(int capacity, bool isInRaid, int hardDrivesInRaid)
+        internal HardDrive(int capacity, bool isInRaid, int hardDrivesInRaid)
         {
             this.isInRaid = isInRaid;
             this.hardDrivesInRaid = hardDrivesInRaid;
@@ -32,14 +31,16 @@
             this.capacity = capacity;
             this.data = new Dictionary<int, string>(capacity);
 
-            this.hds = new List<HardDriver>();
+            this.hds = new List<HardDrive>();
         }
 
-        internal HardDriver() { }
+        internal HardDrive()
+        {
+        }
 
         public bool IsMonochrome { get; set; }
 
-        int Capacity
+        public int Capacity
         {
             get
             {
@@ -49,6 +50,7 @@
                     {
                         return 0;
                     }
+
                     return this.hds.First().Capacity;
                 }
                 else
@@ -58,7 +60,23 @@
             }
         }
 
-        void SaveData(int addr, string newData)
+        public void Draw(string a)
+        {
+            if (this.IsMonochrome)
+            {
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine(a);
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(a);
+                Console.ResetColor();
+            }
+        }
+
+        private void SaveData(int addr, string newData)
         {
             if (this.isInRaid)
             {
@@ -73,7 +91,7 @@
             }
         }
 
-        string LoadData(int address)
+        private string LoadData(int address)
         {
             if (this.isInRaid)
             {
@@ -89,24 +107,5 @@
                 return this.data[address];
             }
         }
-
-        public void Draw(string a)
-        {
-            if (this.IsMonochrome)
-            {
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Console.WriteLine(a);
-                Console.ResetColor();
-            }
-
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine(a);
-                Console.ResetColor();
-            }
-
-        }
     }
-
 }

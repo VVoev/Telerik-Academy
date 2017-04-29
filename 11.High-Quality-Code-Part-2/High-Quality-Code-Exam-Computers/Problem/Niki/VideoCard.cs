@@ -1,5 +1,4 @@
-﻿
-namespace Computers.UI.Common
+﻿namespace Computers.UI.Common
 {
     using System;
 
@@ -15,16 +14,12 @@ namespace Computers.UI.Common
                 Console.WriteLine(a);
                 Console.ResetColor();
             }
-
             else
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine(a);
                 Console.ResetColor();
             }
-
         }
-
-
     }
 }

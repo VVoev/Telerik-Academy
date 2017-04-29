@@ -6,7 +6,6 @@
     {
         public InvalidArgumentException(string message) : base(message)
         {
-
         }
     }
 }

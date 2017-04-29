@@ -7,7 +7,7 @@
         internal Computer(
         Cpu cpu,
         Ram ram,
-        IEnumerable<HardDriver> hardDrives,
+        IEnumerable<HardDrive> hardDrives,
         VideoCard videoCard)
         {
             this.Cpu = cpu;
@@ -16,7 +16,7 @@
             this.VideoCard = videoCard;
         }
 
-        protected IEnumerable<HardDriver> HardDrives { get; set; }
+        protected IEnumerable<HardDrive> HardDrives { get; set; }
 
         protected VideoCard VideoCard { get; set; }
 

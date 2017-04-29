@@ -7,7 +7,7 @@
         public Server(
             Cpu cpu,
           Ram ram,
-          IEnumerable<HardDriver> hardDrives,
+          IEnumerable<HardDrive> hardDrives,
           VideoCard videoCard)
             : base(cpu, ram, hardDrives, videoCard)
         {

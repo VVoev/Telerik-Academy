@@ -1,7 +1,7 @@
 ﻿namespace Computers.UI.Common
 {
-    using Manufacturers;
     using System;
+    using Manufacturers;
 
     public static class Program
     {
@@ -53,6 +53,7 @@
                 {
                     break;
                 }
+
                 var cp = command.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 if (cp.Length != 2)
                 {
@@ -66,17 +67,14 @@
                 {
                     laptop.ChargeBattery(commandArguments);
                 }
-
                 else if (commandName == "Process")
                 {
                     server.Process(commandArguments);
                 }
-
                 else if (commandName == "Play")
                 {
                     pc.Play(commandArguments);
                 }
-
                 else
                 {
                     Console.WriteLine("Invalid command!");
