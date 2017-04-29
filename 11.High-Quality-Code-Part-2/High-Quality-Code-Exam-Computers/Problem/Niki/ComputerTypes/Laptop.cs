@@ -4,6 +4,8 @@
 
     public class Laptop : Computer
     {
+        readonly LaptopBattery battery;
+
         public Laptop(
          Cpu cpu,
          Rammstein ram,
@@ -14,8 +16,6 @@
         {
             this.battery = battery;
         }
-
-        readonly LaptopBattery battery;
 
         internal void ChargeBattery(int percentage)
         {

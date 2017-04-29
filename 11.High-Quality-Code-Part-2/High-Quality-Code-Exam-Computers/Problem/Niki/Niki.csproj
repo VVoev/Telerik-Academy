@@ -49,8 +49,12 @@
     <Compile Include="ComputerTypes\Server.cs" />
     <Compile Include="Cpu.cs" />
     <Compile Include="HardDriver.cs" />
+    <Compile Include="IMotherBoard.cs" />
     <Compile Include="InvalidArgumentException.cs" />
     <Compile Include="LaptopBattery.cs" />
+    <Compile Include="Manufacturers\DellComputerFactory.cs" />
+    <Compile Include="Manufacturers\HpComputerFactory.cs" />
+    <Compile Include="Manufacturers\IComputersFactory.cs" />
     <Compile Include="Rammstein.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
