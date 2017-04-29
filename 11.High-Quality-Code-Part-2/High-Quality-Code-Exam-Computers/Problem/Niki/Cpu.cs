@@ -33,6 +33,11 @@
             {
                 this.SquareNumber(1000);
             }
+
+            if (this.numberOfBits == 128)
+            {
+                this.SquareNumber(2000);
+            }
         }
 
         internal void Rand(int a, int b)
