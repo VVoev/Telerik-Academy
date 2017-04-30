@@ -1,7 +1,7 @@
-﻿namespace Computers.UI.Common
+﻿namespace Computers.Logic.ComputerTypes
 {
     using System.Collections.Generic;
-
+    using VideoCards;
     public class Laptop : Computer
     {
         private readonly LaptopBattery battery;
@@ -17,7 +17,7 @@
             this.battery = battery;
         }
 
-        internal void ChargeBattery(int percentage)
+        public void ChargeBattery(int percentage)
         {
             this.battery.Charge(percentage);
 

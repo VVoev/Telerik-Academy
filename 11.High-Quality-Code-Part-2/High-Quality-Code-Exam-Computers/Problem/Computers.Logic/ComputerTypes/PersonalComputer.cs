@@ -1,11 +1,7 @@
-﻿namespace Computers.UI.Common
+﻿namespace Computers.Logic.ComputerTypes
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
+    using VideoCards;
     public class PersonalComputer : Computer
     {
         public PersonalComputer(

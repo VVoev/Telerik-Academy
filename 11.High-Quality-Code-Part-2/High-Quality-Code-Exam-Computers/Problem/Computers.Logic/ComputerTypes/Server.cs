@@ -1,20 +1,19 @@
-﻿namespace Computers.UI.Common
+﻿namespace Computers.Logic.ComputerTypes
 {
     using System.Collections.Generic;
-
+    using VideoCards;
     public class Server : Computer
     {
         public Server(
             Cpu cpu,
           Ram ram,
           IEnumerable<HardDrive> hardDrives,
-          VideoCard videoCard)
+          ColorfulVideoCard videoCard)
             : base(cpu, ram, hardDrives, videoCard)
         {
-            this.VideoCard.IsMonochrome = true;
         }
 
-        internal void Process(int data)
+        public void Process(int data)
         {
             this.Ram.SaveValue(data);
             //// TODO: Fix it

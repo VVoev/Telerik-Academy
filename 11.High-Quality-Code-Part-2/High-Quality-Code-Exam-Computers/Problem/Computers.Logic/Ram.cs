@@ -1,4 +1,4 @@
-﻿namespace Computers.UI.Common
+﻿namespace Computers.Logic
 {
     public class Ram
     {

@@ -1,7 +1,9 @@
 ﻿namespace Computers.UI.Common
 {
     using System;
-    using Manufacturers;
+    using Logic;
+    using Logic.ComputerTypes;
+    using Logic.Manufacturers;
 
     public static class Program
     {
@@ -15,34 +17,7 @@
             ProcessCommands();
         }
 
-        private static void CreateComputers()
-        {
-            var manufacturer = Console.ReadLine();
-            IComputersFactory computerFactory;
-
-            if (manufacturer == "HP")
-            {
-                computerFactory = new HpComputerFactory();
-            }
-            else if (manufacturer == "Dell")
-            {
-                computerFactory = new DellComputerFactory();
-            }
-            else if (manufacturer == "Lenovo")
-            {
-                computerFactory = new LenovoComputerFactory();
-            }
-            else
-            {
-                throw new InvalidArgumentException("Invalid manufacturer!");
-            }
-
-            pc = computerFactory.CreatePersonalComputer();
-            laptop = computerFactory.CreateLaptop();
-            server = computerFactory.CreateServer();
-        }
-
-        private static void ProcessCommands()
+        public static void ProcessCommands()
         {
             while (true)
             {
@@ -84,6 +59,33 @@
                     Console.WriteLine("Invalid command!");
                 }
             }
+        }
+
+        private static void CreateComputers()
+        {
+            var manufacturer = Console.ReadLine();
+            IComputersFactory computerFactory;
+
+            if (manufacturer == "HP")
+            {
+                computerFactory = new HpComputerFactory();
+            }
+            else if (manufacturer == "Dell")
+            {
+                computerFactory = new DellComputerFactory();
+            }
+            else if (manufacturer == "Lenovo")
+            {
+                computerFactory = new LenovoComputerFactory();
+            }
+            else
+            {
+                throw new InvalidArgumentException("Invalid manufacturer!");
+            }
+
+            pc = computerFactory.CreatePersonalComputer();
+            laptop = computerFactory.CreateLaptop();
+            server = computerFactory.CreateServer();
         }
     }
 }
