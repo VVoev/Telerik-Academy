@@ -3,6 +3,7 @@
     using ComputerTypes;
     using Cpus;
     using VideoCards;
+
     public class LenovoComputerFactory : IComputersFactory
     {
         public Laptop CreateLaptop()

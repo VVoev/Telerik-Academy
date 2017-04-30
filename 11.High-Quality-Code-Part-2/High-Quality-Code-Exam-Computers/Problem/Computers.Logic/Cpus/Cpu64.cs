@@ -1,7 +1,7 @@
-﻿using Computers.Logic.VideoCards;
-
-namespace Computers.Logic.Cpus
+﻿namespace Computers.Logic.Cpus
 {
+    using Computers.Logic.VideoCards;
+
     public class Cpu64 : Cpu
     {
         internal Cpu64(byte numberOfCores, Ram ram, VideoCard videoCard) : base(numberOfCores, ram, videoCard)

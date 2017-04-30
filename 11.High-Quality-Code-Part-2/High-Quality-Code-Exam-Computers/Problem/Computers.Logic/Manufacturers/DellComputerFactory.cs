@@ -4,6 +4,7 @@
     using ComputerTypes;
     using Cpus;
     using VideoCards;
+
     public class DellComputerFactory : IComputersFactory
     {
         public Laptop CreateLaptop()

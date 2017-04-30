@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using VideoCards;
+
     public class Laptop : Computer
     {
         private readonly LaptopBattery battery;
