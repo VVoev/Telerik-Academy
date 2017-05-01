@@ -16,6 +16,7 @@
             var motherBoardMock = new Mock<IMotherboard>();
 
             motherBoardMock.Setup(x => x.LoadRamValue()).Returns(-15);
+            motherBoardMock.When()
             cpu.SquareNumber();
             motherBoardMock.Verify(x => x.DrawOnVideoCard(It.Is<string>(para => para.Contains("23"))));
         }
