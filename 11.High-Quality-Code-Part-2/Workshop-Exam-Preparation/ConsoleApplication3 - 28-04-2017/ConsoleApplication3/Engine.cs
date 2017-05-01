@@ -27,29 +27,29 @@
             {
                 try
                 {
-                    var cmd = System.Console.ReadLine();
-                    if (cmd == "End")
+                    var command = Console.ReadLine();
+                    if (command == "End")
                     {
                         break;
                     }
 
-                    var aadeshName = cmd.Split(' ')[0];
+                    var commandName = command.Split(' ')[0];
 
                     // When I wrote this, only God and I understood what it was doing
                     // Now, only God knows
-                    var assembli = GetType().GetTypeInfo().Assembly;
-                    var tpyeinfo = assembli.DefinedTypes
+                    var assemly = GetType().GetTypeInfo().Assembly;
+                    var typeInfo = assemly.DefinedTypes
                         .Where(type => type.ImplementedInterfaces.Any(inter => inter == typeof(ICommand)))
-                        .Where(type => type.Name.ToLower().Contains(aadeshName.ToLower()))
+                        .Where(type => type.Name.ToLower().Contains(commandName.ToLower()))
                         .FirstOrDefault();
-                    if (tpyeinfo == null)
+                    if (typeInfo == null)
                     {
                         // throw exception when typeinfo is null
                         throw new ArgumentException("The passed command is not found!");
                     }
 
-                    var aadesh = Activator.CreateInstance(tpyeinfo) as ICommand;
-                    var paramss = cmd.Split(' ').ToList();
+                    var aadesh = Activator.CreateInstance(typeInfo) as ICommand;
+                    var paramss = command.Split(' ').ToList();
                     paramss.RemoveAt(0);
                     this.WriteLine(aadesh.Execute(paramss));
                 }
@@ -60,24 +60,12 @@
             }
         }
 
-        public void WriteLine(string m)
+        public void WriteLine(string message)
         {
-            var p = m.Split();
-            var s = string.Join(" ", p);
+            var messageParams = message.Split();
+            var s = string.Join(" ", messageParams);
 
-            for (double i = 0; i < 0x105; i++)
-            {
-                try
-                {
-                    Console.Write(s[int.Parse(i.ToString())]);
-                }
-                catch (Exception)
-                {
-                }
-            }
-
-            Console.Write("\n");
-            Thread.Sleep(350);
+            Console.WriteLine(message);
         }
     }
 }

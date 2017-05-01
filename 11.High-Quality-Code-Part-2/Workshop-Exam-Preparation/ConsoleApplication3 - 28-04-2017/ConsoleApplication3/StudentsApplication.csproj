@@ -49,14 +49,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICommand.cs" />
-    <Compile Include="CreateStudentCommand.cs" />
+    <Compile Include="Common\Commands\CreateStudentCommand.cs" />
+    <Compile Include="Common\Commands\CreateTeacherCommand.cs" />
+    <Compile Include="Common\Commands\RemoveStudentCommand.cs" />
+    <Compile Include="Common\Commands\StudentListMarksCommand.cs" />
+    <Compile Include="Common\Commands\TeacherAddMarkCommand.cs" />
+    <Compile Include="ConsoleReaderProvider.cs" />
+    <Compile Include="Contracts\ICommand.cs" />
+    <Compile Include="Engine.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Grade.cs" />
-    <Compile Include="Subject.cs" />
-    <Compile Include="Mark.cs" />
-    <Compile Include="Student.cs" />
-    <Compile Include="Teachers.cs" />
+    <Compile Include="Enums\Grade.cs" />
+    <Compile Include="Enums\Subject.cs" />
+    <Compile Include="Models\Mark.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\Teacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BusinessLogicService.cs" />
   </ItemGroup>
@@ -66,7 +72,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Docs\Documentation.txt" />

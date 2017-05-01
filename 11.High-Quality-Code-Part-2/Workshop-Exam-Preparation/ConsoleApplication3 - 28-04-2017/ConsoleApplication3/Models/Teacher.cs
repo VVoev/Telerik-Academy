@@ -1,21 +1,16 @@
-﻿namespace StudentApplication.Models
+﻿using StudentApplication.Abstract;
+
+namespace StudentApplication.Models
 {
-    public class Teacher
+    public class Teacher : Person, ITeacher
     {
-        private string firstName;
-        private string lastName;
         private Subject subject;
 
-        public Teacher(string firstName, string lastname, Subject subject)
+        public Teacher(string firstName, string lastname, Subject subject) : base(
+            firstName, lastname)
         {
-            this.FirstName = firstName;
-            this.LastName = lastname;
             this.Subject = subject;
         }
-
-        public string FirstName { get; set; }
-
-        public string LastName { get; set; }
 
         public Subject Subject
         {

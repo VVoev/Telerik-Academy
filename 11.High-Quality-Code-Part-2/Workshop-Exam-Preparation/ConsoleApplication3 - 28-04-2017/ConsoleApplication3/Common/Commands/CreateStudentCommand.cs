@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ConsoleApplication3.Common.Commands
 {
-    public class CreateStudentCommand
+    public class CreateStudentCommand : ICommand
     {
         private static int studentId = 0;
 
