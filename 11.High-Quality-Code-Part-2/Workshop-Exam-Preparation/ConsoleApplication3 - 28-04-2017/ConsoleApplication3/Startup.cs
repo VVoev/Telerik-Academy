@@ -1,27 +1,19 @@
-﻿using ConsoleApplication3;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Threading;
-using ConsoleApplication3;
 using System;
 
-using ConsoleApplication3;
-using System;
-using System.Collections.Generic;
-using System.Reflection;using System.Threading;
-
-namespace ConsoleApplication3
+namespace StudentApplication
 {
 
 
     // I am not responsible of this code.
     // They made me write it, against my will.
     // - Steven, October 2016, Telerik Academy
-    
+
     using System.Linq;
-    using ConsoleApplication3;
     using System.Collections.Generic;
-    using System.Linq;
-    class Startup
+    using Models;
+    public class Startup
     {
         static void Main()
         {
@@ -32,7 +24,7 @@ namespace ConsoleApplication3
             service.Execute(padhana);
         }
     }
-    class ConsoleReaderProvider
+    public class ConsoleReaderProvider
     {
         // TODO: make ConsoleReaderProvider implement IReader
         public string PadhanaLine()
@@ -40,7 +32,7 @@ namespace ConsoleApplication3
             return Console.ReadLine();
         }
     }
-    class Engine
+    public class Engine
     {
         // TODO: change param to IReader instead ConsoleReaderProvider
         // mujhe tum par vishvaas hai
@@ -48,7 +40,7 @@ namespace ConsoleApplication3
         {
             read = readed;
         }
-        public void BrumBrum()
+        public void Start()
         {
             while (true)
             {
@@ -89,7 +81,10 @@ namespace ConsoleApplication3
 
         void WriteLine(string m)
         {
-            var p = m.Split(); var s = string.Join(" ", p); var c = 0d;
+            var p = m.Split();
+            var s = string.Join(" ", p);
+            var c = 0d;
+
             for (double i = 0; i < 0x105; i++)
             {
                 try
@@ -103,8 +98,9 @@ namespace ConsoleApplication3
             }
             Console.Write("\n");
             Thread.Sleep(350);
+        }
 
-        internal static Dictionary<int, Teachers> teachers { get; set; } = new Dictionary<int, Teachers>();
-        internal static Dictionary<int, Student> students { get; set; } = new Dictionary<int, Student>();
+        public static Dictionary<int, Teacher> teachers { get; set; } = new Dictionary<int, Teacher>();
+        public static Dictionary<int, Student> students { get; set; } = new Dictionary<int, Student>();
     }
 }
