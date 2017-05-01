@@ -1,10 +1,15 @@
 ﻿namespace StudentApplication.Models
 {
     public class Mark
-    {
-      
+    {     
         private float currentMark;
         private Subject subject;
+
+        public Mark(Subject subject, float value)
+        {
+            this.Subject = subject;
+            this.CurrentMark = value;
+        }
 
         public float CurrentMark
         {
@@ -12,6 +17,7 @@
             {
                 return this.currentMark;
             }
+
             private set
             {
                 this.currentMark = value;
@@ -24,16 +30,11 @@
             {
                 return this.subject;
             }
+
             private set
             {
                 this.subject = value;
             }
-        }
-
-        public Mark(Subject subject, float value)
-        {
-            this.Subject = subject;
-            this.CurrentMark = value;
         }
     }
 }

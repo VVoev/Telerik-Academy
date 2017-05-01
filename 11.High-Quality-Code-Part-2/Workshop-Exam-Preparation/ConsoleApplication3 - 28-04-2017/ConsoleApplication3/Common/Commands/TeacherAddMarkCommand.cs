@@ -10,8 +10,8 @@ namespace ConsoleApplication3.Common.Commands
             var teecherid = int.Parse(parameters[0]);
             var studentid = int.Parse(parameters[1]);
 
-            var student = Engine.students[teecherid];
-            var teacher = Engine.teachers[studentid];
+            var student = Engine.Students[teecherid];
+            var teacher = Engine.Teachers[studentid];
 
             teacher.AddMark(student, float.Parse(parameters[2]));
 

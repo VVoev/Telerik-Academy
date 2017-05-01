@@ -6,6 +6,13 @@
         private string lastName;
         private Subject subject;
 
+        public Teacher(string firstName, string lastname, Subject subject)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastname;
+            this.Subject = subject;
+        }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -16,18 +23,11 @@
             {
                 return this.subject;
             }
+
             set
             {
                 this.subject = value;
             }
-        }
-
-
-        public Teacher(string firstName, string lastname, Subject subject)
-        {
-            this.FirstName = firstName;
-            this.LastName = lastname;
-            this.Subject = subject;
         }
 
         public void AddMark(Student student, float studentMark)

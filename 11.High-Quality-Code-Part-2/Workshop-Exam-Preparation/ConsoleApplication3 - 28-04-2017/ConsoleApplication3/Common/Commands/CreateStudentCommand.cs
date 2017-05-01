@@ -14,7 +14,7 @@ namespace ConsoleApplication3.Common.Commands
             string lastName = parameters[2];
             Grade grade = (Grade)int.Parse(parameters[2]);
 
-            Engine.students.Add(studentId, new Student(firstName, lastName, grade));
+            Engine.Students.Add(studentId, new Student(firstName, lastName, grade));
 
             return $"A new student with name {parameters[0]} {parameters[1]}, grade {(Grade)int.Parse(parameters[2])} and ID {studentId++} was created.";
         }

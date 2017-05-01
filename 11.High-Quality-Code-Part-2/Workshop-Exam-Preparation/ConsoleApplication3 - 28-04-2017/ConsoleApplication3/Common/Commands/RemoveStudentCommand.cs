@@ -11,7 +11,7 @@ namespace ConsoleApplication3.Common.Commands
     {
         public string Execute(IList<string> paras)
         {
-            Engine.students.Remove(int.Parse(paras[0]));
+            Engine.Students.Remove(int.Parse(paras[0]));
             return $"Student with ID {int.Parse(paras[0])} was sucessfully removed.";
         }
     }

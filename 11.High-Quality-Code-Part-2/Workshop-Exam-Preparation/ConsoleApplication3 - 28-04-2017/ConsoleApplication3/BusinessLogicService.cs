@@ -1,4 +1,6 @@
-﻿namespace StudentApplication
+﻿using ConsoleApplication3;
+
+namespace StudentApplication
 {
     public class BusinessLogicService
     {
