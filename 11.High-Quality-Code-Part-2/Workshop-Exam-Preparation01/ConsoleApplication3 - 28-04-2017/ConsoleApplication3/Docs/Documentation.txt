@@ -1,5 +1,6 @@
 ﻿Bottleneck description: --------------------
 #1:Remove Thread Sleep 350
+#2:Removed the for-loop in Engine
 
 
 Bug reports: --------------------

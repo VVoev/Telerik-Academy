@@ -1,18 +1,24 @@
 ﻿using SchoolSystemCli;
-using System;
+using SchoolSystemCli.Models;
+using SchoolSystemCli.Models.Enums;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolSystem.CLI.Core.Commands
 {
     public class CreateTeacherCommand : ICommand
     {
-        public string Execute(IList<string> para)
+        private int id = 0;
+
+        public string Execute(IList<string> parameters)
         {
-            // TODO: too drunk, implement later
-            throw new NotImplementedException();
+            var firstName = parameters[0];
+            var lastName = parameters[1];
+            var subject = (Subject)int.Parse(parameters[2]);
+
+            var teacher = new Teacher(firstName, lastName, subject);
+            Engine.Teachers.Add(id, teacher);
+
+            return $@"A new teacher with name {firstName} {lastName}, subject {subject} and ID {id++} was created.";
         }
     }
 }

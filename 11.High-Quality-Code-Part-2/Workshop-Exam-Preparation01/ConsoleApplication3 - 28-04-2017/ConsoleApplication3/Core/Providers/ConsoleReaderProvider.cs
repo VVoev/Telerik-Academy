@@ -2,10 +2,10 @@
 
 namespace SchoolSystem.CLI.Core.Providers
 {
-    public class ConsoleReaderProvider
+    public class ConsoleReaderProvider 
     {
         // TODO: make ConsoleReaderProvider implement IReader
-        public string PadhanaLine()
+        public string Read()
         {
             return Console.ReadLine();
         }

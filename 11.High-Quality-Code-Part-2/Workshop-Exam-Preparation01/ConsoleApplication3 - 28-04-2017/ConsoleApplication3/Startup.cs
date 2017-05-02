@@ -10,7 +10,6 @@
     {
         public static void Main()
         {
-            // TODO: abstract at leest 2 mor provider like thiso ne
             var reader = new ConsoleReaderProvider();
 
             var service = new BusinessLogicService();

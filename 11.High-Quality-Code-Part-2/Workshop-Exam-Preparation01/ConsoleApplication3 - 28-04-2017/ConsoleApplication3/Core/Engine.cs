@@ -5,8 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolSystem.CLI.Core
 {
@@ -66,19 +64,17 @@ namespace SchoolSystem.CLI.Core
 
         public void WriteLine(string message)
         {
-            var p = message.Split();
-            var s = string.Join(" ", p);
-            for (double i = 0; i < 0x105; i++)
-            {
+            var separator = message.Split();
+            var information = string.Join(" ", separator);
+        
                 try
                 {
-                    Console.Write(s[int.Parse(i.ToString())]);
+                    Console.Write(information);
                 }
                 catch (Exception ex)
                 {
                     throw new ArgumentException($@"Unsucesfull Parse:[{ex}] command");
                 }
-            }
 
             Console.Write("\n");
         }       
