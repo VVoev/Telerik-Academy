@@ -7,6 +7,6 @@
         public const string RegexPattern = "^[A-Za-z]+$";
 
         public const int MarkMinValue = 2;
-        public const int MarkMaxValue = 2;
+        public const int MarkMaxValue = 6;
     }
 }

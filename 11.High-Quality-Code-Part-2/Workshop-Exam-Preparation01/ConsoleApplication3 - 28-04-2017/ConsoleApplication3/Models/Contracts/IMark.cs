@@ -7,7 +7,7 @@
     /// </summary>
     public interface IMark
     {   
-         float MarkExam { get; }
+         float MarkExam { get;  }
 
          Subject Subject { get; }
     }
