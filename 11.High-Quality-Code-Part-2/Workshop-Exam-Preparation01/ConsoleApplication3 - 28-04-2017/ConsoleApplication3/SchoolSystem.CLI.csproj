@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Constant.cs" />
+    <Compile Include="Core\Commands\Contracts\IReader.cs" />
+    <Compile Include="Core\Commands\Contracts\IWriter.cs" />
     <Compile Include="Core\Commands\RemoveTeacherCommand.cs" />
     <Compile Include="Core\Commands\CreateTeacherCommand.cs" />
     <Compile Include="Core\Commands\RemoveStudentCommand.cs" />
@@ -57,6 +59,7 @@
     <Compile Include="Core\Commands\TeacherAddMarkCommand.cs" />
     <Compile Include="Core\Engine.cs" />
     <Compile Include="Core\Providers\ConsoleReaderProvider.cs" />
+    <Compile Include="Core\Providers\ConsoleWriterProvider.cs" />
     <Compile Include="Exceptions\NameExceptions.cs" />
     <Compile Include="Core\Commands\Contracts\ICommand.cs" />
     <Compile Include="Core\Commands\CreateStudentCommand.cs" />

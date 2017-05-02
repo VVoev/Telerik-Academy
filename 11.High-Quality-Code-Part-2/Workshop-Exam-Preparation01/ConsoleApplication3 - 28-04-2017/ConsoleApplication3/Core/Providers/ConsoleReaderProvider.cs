@@ -1,11 +1,11 @@
-﻿using System;
+﻿using SchoolSystem.CLI.Core.Commands.Contracts;
+using System;
 
 namespace SchoolSystem.CLI.Core.Providers
 {
-    public class ConsoleReaderProvider 
+    public class ConsoleReaderProvider : IReader
     {
-        // TODO: make ConsoleReaderProvider implement IReader
-        public string Read()
+        public string ReadLine()
         {
             return Console.ReadLine();
         }
