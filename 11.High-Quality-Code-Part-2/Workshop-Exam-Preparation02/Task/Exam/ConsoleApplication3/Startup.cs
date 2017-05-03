@@ -1,27 +1,10 @@
-﻿using ConsoleApplication3;
-using System.Reflection;
-using System.Threading;
-using ConsoleApplication3;
-using System;
-
-using ConsoleApplication3;
-using System;
-using System.Collections.Generic;
-using System.Reflection;using System.Threading;
-
-namespace ConsoleApplication3
+﻿namespace SchoolSystem
 {
-
-
-    // I am not responsible of this code.
-    // They made me write it, against my will.
-    // - Steven, October 2016, Telerik Academy
-    // P.S.: Send help!
-    
+    using System.Reflection;
+    using System;
     using System.Linq;
-    using ConsoleApplication3;
     using System.Collections.Generic;
-    using System.Linq;
+    using Models;
     class Startup
     {
         static void Main()
@@ -36,7 +19,7 @@ namespace ConsoleApplication3
     class ConsoleReaderProvider
     {
         // TODO: make ConsoleReaderProvider implement IReader
-        public string PadhanaLine()
+        public string ReadLine()
         {
             return Console.ReadLine();
         }
@@ -49,7 +32,7 @@ namespace ConsoleApplication3
         {
             read = readed;
         }
-        public void BrumBrum()
+        public void Start()
         {
             while (true)
             {
@@ -88,9 +71,11 @@ namespace ConsoleApplication3
 
         private ConsoleReaderProvider read;
 
-        void WriteLine(string m)
+        void WriteLine(string message)
         {
-            var p = m.Split(); var s = string.Join(" ", p); var c = 0d;
+            var p = message.Split();
+            var s = string.Join(" ", p);
+            var c = 0d;
             for (double i = 0; i < 0x105; i++)
             {
                 try
@@ -99,13 +84,13 @@ namespace ConsoleApplication3
                 }
                 catch (Exception)
                 {
-                    //who cares?
+                    throw new ArgumentException($@"Invalid parse: {message} ");
                 }
             }
             Console.Write("\n");
-            Thread.Sleep(350);
+        }
 
-        internal static Dictionary<int, Teachers> teachers { get; set; } = new Dictionary<int, Teachers>();
+        internal static Dictionary<int, Teacher> teachers { get; set; } = new Dictionary<int, Teacher>();
         internal static Dictionary<int, Student> students { get; set; } = new Dictionary<int, Student>();
     }
 }
