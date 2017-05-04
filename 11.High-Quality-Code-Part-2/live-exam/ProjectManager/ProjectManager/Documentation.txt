@@ -1,0 +1,11 @@
+﻿Bugs:
+
+#1 Removed for-loop in the class Engine ()
+#2 Removed while-loop in the CommandFactory [(var end = DateTime.Now + TimeSpan.FromSeconds(1);while (DateTime.Now < end);)]
+#3 Removed from CommandProccesor (if (input.Split(' ').Count() > 10){throw new ArgumentException();})
+#4 Removed for-loop from CommandFactory [for (int i = 0; i < parameters.Length; i++){command += parameters[i].ToString().ToLower();}
+#5 When printing on the console task doesnt have Owner now its implemented in ToString of Class Task
+
+Bottleneck:
+
+#1
