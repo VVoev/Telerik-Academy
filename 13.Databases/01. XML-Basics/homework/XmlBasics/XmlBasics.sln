@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFiles", "{8D08E3AF-2047-42BA-81CA-94D47997E3E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlBasicsHomework", "XmlBasicsHomework\XmlBasicsHomework.csproj", "{2D488205-DA8A-4C9B-9425-F4EBC80868B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D488205-DA8A-4C9B-9425-F4EBC80868B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D488205-DA8A-4C9B-9425-F4EBC80868B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D488205-DA8A-4C9B-9425-F4EBC80868B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D488205-DA8A-4C9B-9425-F4EBC80868B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

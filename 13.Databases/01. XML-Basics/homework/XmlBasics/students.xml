@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<students xmlns:student="urn:students">
+  <student faculty-number="12345">
+    <name>Petar</name>
+    <gender>Male</gender>
+    <birthday>7/17/1985</birthday>
+    <phone>09888232313</phone>
+    <email>Kiro@abv.bg</email>
+    <course>First</course>
+    <specialty>BackEnd</specialty>
+    <taken-exams />
+  </student>
+  <student faculty-number="66666">
+    <name>Pepa</name>
+    <gender>Female</gender>
+    <birthday>5/12/1932</birthday>
+    <phone>0834827382</phone>
+    <email>Popa@abv.bg</email>
+    <course>Second</course>
+    <specialty>FrontEnd</specialty>
+    <taken-exams />
+  </student>
+  <student faculty-number="66666">
+    <name>VirtualJiraff</name>
+    <gender>Alien</gender>
+    <birthday>5/16/1992</birthday>
+    <phone>0834827382</phone>
+    <email>bigP@abv.bg</email>
+    <course>Fourth</course>
+    <specialty>FullStack</specialty>
+    <taken-exams />
+  </student>
+</students>
