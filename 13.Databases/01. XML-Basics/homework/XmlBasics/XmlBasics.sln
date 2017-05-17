@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlBasicsHomework", "XmlBasicsHomework\XmlBasicsHomework.csproj", "{2D488205-DA8A-4C9B-9425-F4EBC80868B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workshop", "Workshop\Workshop.csproj", "{A5844788-EA3F-40D7-9C5C-9D92AD13AD3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessingXML", "ProcessingXML\ProcessingXML.csproj", "{516C8F74-071D-4D29-AE66-89B3B55E5AF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,14 @@ Global
 		{2D488205-DA8A-4C9B-9425-F4EBC80868B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D488205-DA8A-4C9B-9425-F4EBC80868B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D488205-DA8A-4C9B-9425-F4EBC80868B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5844788-EA3F-40D7-9C5C-9D92AD13AD3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5844788-EA3F-40D7-9C5C-9D92AD13AD3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5844788-EA3F-40D7-9C5C-9D92AD13AD3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5844788-EA3F-40D7-9C5C-9D92AD13AD3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{516C8F74-071D-4D29-AE66-89B3B55E5AF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{516C8F74-071D-4D29-AE66-89B3B55E5AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{516C8F74-071D-4D29-AE66-89B3B55E5AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{516C8F74-071D-4D29-AE66-89B3B55E5AF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
