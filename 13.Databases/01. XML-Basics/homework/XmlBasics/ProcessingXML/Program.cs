@@ -1,6 +1,4 @@
-﻿
-using System;
-using System.Xml;
+﻿using System.Xml;
 
 namespace ProcessingXML
 {
@@ -8,13 +6,8 @@ namespace ProcessingXML
     {
         static void Main(string[] args)
         {
-            using (XmlReader reader = XmlReader.Create("../../cars.xml"))
-            {
-                while (reader.Read())
-                {
-                    Console.WriteLine("zdr");
-                }
-            }
+            XmlDocument xmlDoc = new XmlDocument();
+             xmlDoc.Load("../../cars.xml");
 
         }
 

@@ -13,7 +13,6 @@ namespace Workshop
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("zdrasti");
             var text = File.ReadAllText(@"..\..\cars.txt");
 
 
