@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<books>
+  <book id="1">
+    <title>The name of the Wind</title>
+    <author>Patrick Rothfuss</author>
+  </book>
+  <book id="2">
+    <title>Harry Potter and the Sorcerer's Stone</title>
+    <author>J.K. Rowling</author>
+  </book>
+  <book id="3">
+    <title>Harry Potter and the Chamber of Secrets</title>
+    <author>J.K. Rowling</author>
+  </book>
+</books>
