@@ -1,0 +1,28 @@
+﻿@model Forum.Web.ViewModels.CategoryAddViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ 
+    this.ViewBag.Title = "Add Category";
+}
+
+@using (Html.BeginForm("Add", "Categories", FormMethod.Post))
+{
+    <br/>
+    <h3>
+        @Html.LabelFor(m => m.Name)
+    </h3>
+    @Html.TextBoxFor(m => m.Name)
+    @Html.ValidationMessageFor(m => m.Name)
+    <br />
+    <br />
+    @Html.DropDownListFor(m => m.ParentCategoryId, Model.Categories,"--None--")
+    <input type="submit" value="Add" />
+}
+
+@Scripts.Render("~/bundles/jqueryval")
+
+
+

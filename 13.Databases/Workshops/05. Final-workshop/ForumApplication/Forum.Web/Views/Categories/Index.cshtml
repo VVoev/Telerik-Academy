@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Forum.Web.ViewModels.CategoryViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Categories";
+}
+
+
+<h1>Categories</h1>
+@foreach (var category in Model)
+{
+    <h3>@category.Name</h3>
+}
+
