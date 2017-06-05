@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AbstractFactory", "AbstractFactory", "{3CA9FB1F-4338-4E02-87A8-9F8B01E4C973}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.ToyProject", "1.ToyProject\1.ToyProject.csproj", "{AA47B0A1-A97E-4DE6-AAFF-CEE57A85335E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleFactory", "SimpleFactory", "{A9754F56-F069-4073-B0C6-2ECA98703FDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.IceCream", "Ice-Cream\2.IceCream.csproj", "{A0061D9D-03FA-4889-93B6-B0AD1B0E7D7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA47B0A1-A97E-4DE6-AAFF-CEE57A85335E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA47B0A1-A97E-4DE6-AAFF-CEE57A85335E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA47B0A1-A97E-4DE6-AAFF-CEE57A85335E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA47B0A1-A97E-4DE6-AAFF-CEE57A85335E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0061D9D-03FA-4889-93B6-B0AD1B0E7D7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0061D9D-03FA-4889-93B6-B0AD1B0E7D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0061D9D-03FA-4889-93B6-B0AD1B0E7D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0061D9D-03FA-4889-93B6-B0AD1B0E7D7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AA47B0A1-A97E-4DE6-AAFF-CEE57A85335E} = {3CA9FB1F-4338-4E02-87A8-9F8B01E4C973}
+		{A0061D9D-03FA-4889-93B6-B0AD1B0E7D7E} = {A9754F56-F069-4073-B0C6-2ECA98703FDB}
+	EndGlobalSection
+EndGlobal
