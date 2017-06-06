@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.Facade", "1.Facade\1.Faca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.Composite", "2.Composite\2.Composite.csproj", "{F7AAA23B-439C-4186-9365-CABD5D378B0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.Proxy", "4.Proxy\4.Proxy.csproj", "{AAE9D2D3-6E22-448E-A9DE-57768429149D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.Decorator", "5.Decorator\5.Decorator.csproj", "{3A2940F0-380C-48A2-A14F-694DFD8FA7FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,14 @@ Global
 		{F7AAA23B-439C-4186-9365-CABD5D378B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7AAA23B-439C-4186-9365-CABD5D378B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7AAA23B-439C-4186-9365-CABD5D378B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAE9D2D3-6E22-448E-A9DE-57768429149D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAE9D2D3-6E22-448E-A9DE-57768429149D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAE9D2D3-6E22-448E-A9DE-57768429149D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAE9D2D3-6E22-448E-A9DE-57768429149D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A2940F0-380C-48A2-A14F-694DFD8FA7FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A2940F0-380C-48A2-A14F-694DFD8FA7FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A2940F0-380C-48A2-A14F-694DFD8FA7FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A2940F0-380C-48A2-A14F-694DFD8FA7FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,5 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AB619009-87E5-4E0D-806A-F7D930C49758} = {34D5E633-F14D-403E-8350-E9C59D4793EA}
 		{F7AAA23B-439C-4186-9365-CABD5D378B0F} = {34D5E633-F14D-403E-8350-E9C59D4793EA}
+		{AAE9D2D3-6E22-448E-A9DE-57768429149D} = {34D5E633-F14D-403E-8350-E9C59D4793EA}
+		{3A2940F0-380C-48A2-A14F-694DFD8FA7FA} = {34D5E633-F14D-403E-8350-E9C59D4793EA}
 	EndGlobalSection
 EndGlobal
