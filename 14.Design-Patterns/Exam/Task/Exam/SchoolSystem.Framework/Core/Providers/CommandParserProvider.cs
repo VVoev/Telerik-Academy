@@ -5,16 +5,42 @@ using System.Reflection;
 
 using SchoolSystem.Framework.Core.Commands.Contracts;
 using SchoolSystem.Framework.Core.Contracts;
+using SchoolSystem.Framework.Core.Commands;
+using static SchoolSystem.Framework.Core.Commands.CreateStudentCommand;
+using static SchoolSystem.Framework.Core.Commands.CreateTeacherCommand;
 
 namespace SchoolSystem.Framework.Core.Providers
 {
+    public interface ICommandFactory
+    {
+        ICommand GetCommand(Type type);
+    }
+    //public static class CommandFactory
+    //{
+    //    public static ICommand GetCommand(string command)
+    //    {
+    //        switch (command)
+    //        {
+    //            case "CreateStudent": return new CreateStudentCommand(new StudenFactory());
+    //            case "CreateTeacher": return new CreateTeacherCommand(new TeacherFactory());
+    //        }
+    //        return null;
+    //    }
+    //}
     public class CommandParserProvider : IParser
     {
+        private readonly ICommandFactory commandFactory;
+
+        public CommandParserProvider(ICommandFactory commandFactory)
+        {
+            this.commandFactory = commandFactory;
+        }
         public ICommand ParseCommand(string fullCommand)
         {
             var commandName = fullCommand.Split(' ')[0];
             var commandTypeInfo = this.FindCommand(commandName);
-            var command = Activator.CreateInstance(commandTypeInfo) as ICommand;
+
+            var command = this.commandFactory.GetCommand(commandTypeInfo);
 
             return command;
         }

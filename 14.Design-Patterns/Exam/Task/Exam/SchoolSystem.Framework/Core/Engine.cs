@@ -6,6 +6,90 @@ using SchoolSystem.Framework.Models.Contracts;
 
 namespace SchoolSystem.Framework.Core
 {
+    public interface IAddStudent
+    {
+        void AddStudent(int id, IStudent student);
+    }
+
+    public interface IRemoveStudent
+    {
+        void RemoveStudent(int id);
+    }
+
+    public interface IGetStudent
+    {
+        IStudent GetStudent(int studentId);
+    }
+
+    public interface IAddTeacher
+    {
+        void AddTeacher(int id, ITeacher teacher);
+    }
+
+    public interface IRemoveTeacher
+    {
+        void RemoveTeacher(int id);
+
+    }
+
+    public interface IGetTeacher
+    {
+        ITeacher GetTeacher(int teacherId);
+    }
+
+    public interface IGetTeacherAndStudent : IGetStudent,IGetTeacher
+    {
+    }
+
+    public interface ISchool : IAddStudent,IRemoveStudent,IAddTeacher,IRemoveTeacher,IGetTeacherAndStudent,IGetStudent,IGetTeacher
+    {
+    }
+
+    public class School : ISchool
+    {
+        private readonly IDictionary<int, ITeacher> teachers;
+                                                            
+        private readonly IDictionary<int, IStudent> students;
+
+        public School()
+        {
+            this.teachers = new Dictionary<int, ITeacher>();
+            this.students = new Dictionary<int, IStudent>();
+        }
+
+        public void AddStudent(int id, IStudent student)
+        {
+            this.students.Add(id, student);
+        }
+
+        public void AddTeacher(int id, ITeacher teacher)
+        {
+            this.teachers.Add(id, teacher);
+        }
+
+        public void RemoveStudent(int id)
+        {
+            this.students.Remove(id);
+        }
+
+        public void RemoveTeacher(int id)
+        {
+            this.teachers.Remove(id);
+        }
+
+        public IStudent GetStudent(int id)
+        {
+            return this.students[id];
+        }
+
+        public ITeacher GetTeacher(int id)
+        {
+            return this.teachers[id];
+        }
+
+
+    }
+
     public class Engine
     {
         private const string TerminationCommand = "End";
@@ -38,14 +122,7 @@ namespace SchoolSystem.Framework.Core
             this.reader = readerProvider;
             this.writer = writerProvider;
             this.parser = parserProvider;
-
-            Teachers = new Dictionary<int, ITeacher>();
-            Students = new Dictionary<int, IStudent>();
         }
-
-        public static IDictionary<int, ITeacher> Teachers { get; set; }
-
-        public static IDictionary<int, IStudent> Students { get; set; }
 
         public void Start()
         {
