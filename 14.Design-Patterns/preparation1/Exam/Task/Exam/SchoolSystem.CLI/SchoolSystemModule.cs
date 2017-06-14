@@ -1,14 +1,18 @@
 ﻿using Ninject;
 using Ninject.Extensions.Conventions;
 using Ninject.Extensions.Factory;
+using Ninject.Extensions.Interception.Infrastructure.Language;
 using Ninject.Modules;
 using SchoolSystem.Cli.Configuration;
+using SchoolSystem.Cli.Interceptor;
 using SchoolSystem.Framework.Core;
 using SchoolSystem.Framework.Core.Commands;
 using SchoolSystem.Framework.Core.Commands.Contracts;
 using SchoolSystem.Framework.Core.Contracts;
 using SchoolSystem.Framework.Core.Providers;
 using SchoolSystem.Framework.Models;
+using SchoolSystem.Framework.Models.Contracts;
+using Ninject.Extensions.Interception.Infrastructure.Language;
 using System;
 using System.IO;
 using System.Linq;
@@ -26,12 +30,6 @@ namespace SchoolSystem.Cli
                 .SelectAllClasses()
                 .BindDefaultInterface();
             });
-
-            IConfigurationProvider configurationProvider = Kernel.Get<IConfigurationProvider>();
-            if (configurationProvider.IsTestEnvironment)
-            {
-            }
-
             Kernel.Bind<IEngine>().To<Engine>().InSingletonScope();
 
             //Registering first three dependacies for engine to start
@@ -42,8 +40,14 @@ namespace SchoolSystem.Cli
             //Registering factories in order to work with command and studentfactory,teacherFactory and markFactory
             var commandFactoryBinding = Kernel.Bind<ICommandFactory>().ToFactory().InSingletonScope();
             var studentFactoryBinding = Kernel.Bind<IStudentFactory>().ToFactory().InSingletonScope();
-            var teacherFactoryBinding = Kernel.Bind<ITeacherFactory>().ToFactory().InSingletonScope();
             var markFactoryBinding = Kernel.Bind<IMarkFactory>().ToFactory().InSingletonScope();
+            Kernel.Bind<ITeacherFactory>().ToFactory().InSingletonScope();
+
+
+            //Registering AllComands
+            Kernel.Bind(typeof(IAddStudent), typeof(IAddTeacher), typeof(IRemoveStudent), typeof(IRemoveTeacher), typeof(IGetStudent), typeof(IGetTeacher), typeof(IGetTeacherAndStudent))
+               .To<School>()
+               .InSingletonScope();
 
             //Important paramers should be 1 to 1 example firstName = firstName
             Bind<ICommand>().ToMethod(context =>
@@ -51,6 +55,16 @@ namespace SchoolSystem.Cli
                 Type commandType = (Type)context.Parameters.Single().GetValue(context, null);
                 return (ICommand)context.Kernel.Get(commandType);
             }).NamedLikeFactoryMethod((ICommandFactory commandFactory) => commandFactory.GetCommand(null));
+
+            //for Interception Nuget => Ninject.Extensions.Interception.DynamicProxy
+
+            IConfigurationProvider configurationProvider = Kernel.Get<IConfigurationProvider>();
+            if (configurationProvider.IsTestEnvironment)
+            {
+                commandFactoryBinding.Intercept().With<PerformanceWatch>();
+                studentFactoryBinding.Intercept().With<PerformanceWatch>();
+                markFactoryBinding.Intercept().With<PerformanceWatch>();
+            }
         }
     }
 }

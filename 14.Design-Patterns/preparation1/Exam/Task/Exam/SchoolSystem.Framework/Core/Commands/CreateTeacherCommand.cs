@@ -16,10 +16,12 @@ namespace SchoolSystem.Framework.Core.Commands
     {
         private static int currentTeacherId = 0;
         private readonly ITeacherFactory teacherFactory;
+        private readonly IAddTeacher addTeacher;
 
-        public CreateTeacherCommand(ITeacherFactory teacherFactory)
+        public CreateTeacherCommand(ITeacherFactory teacherFactory, IAddTeacher addTeacher)
         {
             this.teacherFactory = teacherFactory;
+            this.addTeacher = addTeacher;
         }
 
         public string Execute(IList<string> parameters)
@@ -29,7 +31,7 @@ namespace SchoolSystem.Framework.Core.Commands
             var subject = (Subject)int.Parse(parameters[2]);
 
             var teacher = this.teacherFactory.CreateTeacher(firstName, lastName, subject);
-            Engine.Teachers.Add(currentTeacherId, teacher);
+            this.addTeacher.AddTeacher(currentTeacherId, teacher);
 
             return $"A new teacher with name {firstName} {lastName}, subject {subject} and ID {currentTeacherId++} was created.";
         }
