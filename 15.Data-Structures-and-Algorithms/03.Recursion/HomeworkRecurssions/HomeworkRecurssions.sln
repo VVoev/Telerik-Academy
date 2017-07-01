@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.Variations", "5.Variation
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.Subset", "6.Subset\6.Subset.csproj", "{C32571CE-8D6B-48E6-89EE-E27EF1E94FD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.Maze", "7.Maze\7.Maze.csproj", "{2018C053-67D0-404E-9F94-EFBABF1D45ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{C32571CE-8D6B-48E6-89EE-E27EF1E94FD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C32571CE-8D6B-48E6-89EE-E27EF1E94FD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C32571CE-8D6B-48E6-89EE-E27EF1E94FD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2018C053-67D0-404E-9F94-EFBABF1D45ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2018C053-67D0-404E-9F94-EFBABF1D45ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2018C053-67D0-404E-9F94-EFBABF1D45ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2018C053-67D0-404E-9F94-EFBABF1D45ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
