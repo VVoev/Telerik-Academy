@@ -1,0 +1,7 @@
+h1{
+    text-decoration: underline;
+    color: bisque;
+}
+ul > li > a{
+    color: #58e29a;
+}

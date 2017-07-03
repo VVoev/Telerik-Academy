@@ -1,0 +1,10 @@
+extends shared/master
+
+block body
+    h1
+        | All Items
+    ul
+        each item in model
+            li
+                a(href= +item.id)
+                    | Go to #{item.name}
