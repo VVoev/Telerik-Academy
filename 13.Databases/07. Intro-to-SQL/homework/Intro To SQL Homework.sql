@@ -107,12 +107,7 @@ FROM Employees e
 WHERE e.AddressID = a.AddressID
 
 --20. Write a SQL query to find all employees along with their manager.
-SELECT
-	e.FirstName + ' ' + e.LastName AS [FullName Employee]
-   ,m.FirstName + ' ' + m.LastName AS [FullName Manager]
-FROM Employees e
-JOIN Employees m
-	ON e.ManagerID = m.EmployeeID
+
 
 --21.Write a SQL query to find all employees, along with their manager and their address.
 -- Join the 3 tables: Employees e, Employees m and Addresses a.
