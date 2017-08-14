@@ -1,0 +1,15 @@
+include _nav
+
+<!DOCTYPE html>
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    title Document
+    link(rel="stylesheet", href="/libs/bootstrap/dist/css/bootstrap.min.css")
+    script(src='/libs/jquery/dist/jquery.js')
+    link(rel="stylesheet", href="/static/css/main.css")
+    block head
+body
+    +nav()
+    .container
+        block body
