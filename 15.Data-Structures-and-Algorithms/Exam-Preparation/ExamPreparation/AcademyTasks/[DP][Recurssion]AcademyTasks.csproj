@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A4589686-8107-4F91-950A-28A2AC7DE901}</ProjectGuid>
+    <ProjectGuid>{69345887-E101-4A54-B1A3-DD52EBB574D7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_Tree_Maximal_Path</RootNamespace>
-    <AssemblyName>[Tree]Maximal-Path</AssemblyName>
+    <RootNamespace>AcademyTasks</RootNamespace>
+    <AssemblyName>AcademyTasks</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

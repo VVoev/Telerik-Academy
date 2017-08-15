@@ -49,7 +49,7 @@ namespace _Recurssion_MessageInABottle
 
             Solve(0,new StringBuilder());
             Console.WriteLine(count);
-            solutions.OrderBy((x=>x.Length));
+            solutions.Sort();
             PrintEachSolution(solutions);
         }
 
