@@ -34,34 +34,46 @@ namespace AcademyTasks
                 currentMin = Math.Min(tasks[i], currentMin);
                 currentMax = Math.Max(tasks[i], currentMax);
 
-                if(currentMax - currentMin >= variety)
+                if (currentMax - currentMin >= variety)
                 {
                     maxIndex = i;
                     break;
                 }
             }
 
-            if(maxIndex == -1)
+            if (maxIndex == -1)
             {
                 Console.WriteLine(tasks.Count);
                 return;
             }
-            //Solve(0, 1, tasks[0], tasks[0]);
-            //Console.WriteLine(bestSolution);
-            SolveDp();
 
-           
+            //Recursive
+            Solve(0, 1, tasks[0], tasks[0]);
+            Console.WriteLine(bestSolution);
+            //Dp
+            Console.WriteLine(SolveDp());
+
+
         }
 
-        private static void SolveDp()
+        private static int SolveDp()
         {
-            for (int i = 0; i < tasks.Count-1; i++)
+            int minCount = tasks.Count;
+            for (int i = 0; i < tasks.Count - 1; i++)
             {
-                for (int j = 0; j < length; j++)
+                for (int j = i + 1; j < tasks.Count; j++)
                 {
+                    if (Math.Abs(tasks[i] - tasks[j]) >= variety)
+                    {
+                        int count = 0;
+                        count += (i + 1) / 2;
+                        count += (j - i + 1) / 2 + 1;
 
+                        minCount = Math.Min(minCount, count);
+                    }
                 }
             }
+            return minCount;
         }
 
         public static void Solve(int currentIndex, int taskSolved, int currentMin, int currentMax)
@@ -79,7 +91,7 @@ namespace AcademyTasks
 
             for (int i = 1; i <= 2; i++)
             {
-                if(currentIndex +i< tasks.Count)
+                if (currentIndex + i < tasks.Count)
                 {
                     Solve(currentIndex + i, taskSolved + 1,
                         Math.Min(currentMin, tasks[currentIndex + i]),
