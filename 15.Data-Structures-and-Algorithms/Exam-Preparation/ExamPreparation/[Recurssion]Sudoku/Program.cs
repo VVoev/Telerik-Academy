@@ -46,6 +46,9 @@ namespace _Recurssion_Sudoku
             if(row == sudokuSize && col == 0)
             {
                 Print(sudoku);
+                Console.WriteLine();
+                Console.WriteLine("Press any key to kill the program");
+                Console.ReadLine();
                 return;
             }
 

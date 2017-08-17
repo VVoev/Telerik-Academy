@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[Diikstra][Graph]FriendsOfP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[Recurssion]Sudoku", "[Recurssion]Sudoku\[Recurssion]Sudoku.csproj", "{705D0D90-DC3E-465B-B54B-50ABAAD2A375}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[Recurssion]Crosswords", "[Recurssion]Crosswords\[Recurssion]Crosswords.csproj", "{09076CA7-696A-4C24-87D7-2B0742F8E2F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[Recurssion]EightQueens", "[Recurssion]EightQueens\[Recurssion]EightQueens.csproj", "{9BF2D577-09C0-4B75-AB1C-999108259A7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{705D0D90-DC3E-465B-B54B-50ABAAD2A375}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{705D0D90-DC3E-465B-B54B-50ABAAD2A375}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{705D0D90-DC3E-465B-B54B-50ABAAD2A375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09076CA7-696A-4C24-87D7-2B0742F8E2F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09076CA7-696A-4C24-87D7-2B0742F8E2F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09076CA7-696A-4C24-87D7-2B0742F8E2F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09076CA7-696A-4C24-87D7-2B0742F8E2F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BF2D577-09C0-4B75-AB1C-999108259A7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BF2D577-09C0-4B75-AB1C-999108259A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BF2D577-09C0-4B75-AB1C-999108259A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BF2D577-09C0-4B75-AB1C-999108259A7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
