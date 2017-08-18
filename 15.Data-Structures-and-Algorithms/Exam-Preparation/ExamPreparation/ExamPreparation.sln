@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[Recurssion]ChanseGenerator
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tree", "Tree\Tree.csproj", "{13017670-4A42-4207-82A3-94374D4A7F70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maximal Path", "Maximal Path\Maximal Path.csproj", "{C290D162-669C-424C-A9F3-382CB3F2F61D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{13017670-4A42-4207-82A3-94374D4A7F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13017670-4A42-4207-82A3-94374D4A7F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13017670-4A42-4207-82A3-94374D4A7F70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C290D162-669C-424C-A9F3-382CB3F2F61D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C290D162-669C-424C-A9F3-382CB3F2F61D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C290D162-669C-424C-A9F3-382CB3F2F61D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C290D162-669C-424C-A9F3-382CB3F2F61D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
