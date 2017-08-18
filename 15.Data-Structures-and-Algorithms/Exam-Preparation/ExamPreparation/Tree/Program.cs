@@ -11,7 +11,7 @@ namespace Tree
         static int N;
         static Node<int>[] nodes;
 
-        public static int FindRoot(Node<int>[] nodes)
+        public static Node<int> FindRoot(Node<int>[] nodes)
         {
             var isChild = new bool[nodes.Length];
 
@@ -23,15 +23,16 @@ namespace Tree
                 }
             }
 
-            for (int i = 0; i < isChild.Length; i++)
+            foreach (var node in nodes)
             {
-                if (!isChild[i])
+                if(node.HasParent == false)
                 {
-                    return i;
+                    return node;
                 }
             }
 
-            return int.MinValue;
+            var bug = new Node<int>();
+            return bug;
         }
 
         static void Main(string[] args)
@@ -89,7 +90,28 @@ namespace Tree
                 Console.Write(midN.Value + " ");
             }
             Console.WriteLine();
+
+            //4 Find longest path
+            var longestPath = FindLongestPath(root);
+            Console.WriteLine("The Longest Distance in the tree is {0}",longestPath);
         }
+
+        private static int FindLongestPath(Node<int> root)
+        {
+            if (root.Children.Count == 0)
+            {
+                return 0;
+            }
+
+            int maxPath = 0;
+            foreach (var node in root.Children)
+            {
+                maxPath = Math.Max(maxPath, FindLongestPath(node));
+            }
+
+            return maxPath + 1;
+        }
+
 
         private static List<Node<int>> FindAllMidNodes()
         {
@@ -105,13 +127,13 @@ namespace Tree
             return midNodes;
         }
 
-        private static List<Node<int>>FindLeafes(Node<int>[] nodes)
+        private static List<Node<int>> FindLeafes(Node<int>[] nodes)
         {
 
             List<Node<int>> leaves = new List<Node<int>>();
             foreach (var node in nodes)
             {
-                if(node.Children.Count == 0)
+                if (node.Children.Count == 0)
                 {
                     leaves.Add(node);
                 }
@@ -143,7 +165,7 @@ namespace Tree
         }
 
         public Node(T value)
-            :this()
+            : this()
         {
             this.HasParent = false;
             this.Value = value;
@@ -151,7 +173,7 @@ namespace Tree
 
         public override string ToString()
         {
-            return $"{this.Value} with children {string.Join(" ",this.Children)}";
+            return $"{this.Value} with children {string.Join(" ", this.Children)}";
         }
     }
 }
