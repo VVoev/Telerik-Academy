@@ -5,8 +5,8 @@ namespace _3.CombinationsWithoutDuplicates
 {
     class Program
     {
-        static int n = 35;
-        static int k = 5;
+        static int n = 5;
+        static int k = 35;
         static int[] arr;
 
         static void Main(string[] args)

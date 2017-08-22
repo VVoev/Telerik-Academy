@@ -35,6 +35,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[BFS]Labyrinth", "[BFS]Laby
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecoverMessage", "RecoverMessage\RecoverMessage.csproj", "{DA354ABF-6154-4220-9238-D90492218103}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[Combinatorics]DoublePassword", "[Combinatorics]DoublePassword\[Combinatorics]DoublePassword.csproj", "{A19A8FC3-FDEE-4870-9C5B-00883B024C77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[Combinatorics]ColourfullRabbits", "[Combinatorics]ColourfullRabbits\[Combinatorics]ColourfullRabbits.csproj", "{5F7ABEBC-BCDD-471C-8013-F5EA7D13C79C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[Combinatorics]GreatestDiviser", "[Combinatorics]GreatestDiviser\[Combinatorics]GreatestDiviser.csproj", "{72066E1F-2047-40C9-861A-8DF633250BF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[Combinatorics]ZigZag", "[Combinatorics]ZigZag\[Combinatorics]ZigZag.csproj", "{7ECB558C-B110-40DF-991A-E9A358EEA676}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +113,22 @@ Global
 		{DA354ABF-6154-4220-9238-D90492218103}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA354ABF-6154-4220-9238-D90492218103}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA354ABF-6154-4220-9238-D90492218103}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A19A8FC3-FDEE-4870-9C5B-00883B024C77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A19A8FC3-FDEE-4870-9C5B-00883B024C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A19A8FC3-FDEE-4870-9C5B-00883B024C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A19A8FC3-FDEE-4870-9C5B-00883B024C77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F7ABEBC-BCDD-471C-8013-F5EA7D13C79C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7ABEBC-BCDD-471C-8013-F5EA7D13C79C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7ABEBC-BCDD-471C-8013-F5EA7D13C79C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F7ABEBC-BCDD-471C-8013-F5EA7D13C79C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72066E1F-2047-40C9-861A-8DF633250BF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72066E1F-2047-40C9-861A-8DF633250BF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72066E1F-2047-40C9-861A-8DF633250BF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72066E1F-2047-40C9-861A-8DF633250BF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ECB558C-B110-40DF-991A-E9A358EEA676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ECB558C-B110-40DF-991A-E9A358EEA676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ECB558C-B110-40DF-991A-E9A358EEA676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ECB558C-B110-40DF-991A-E9A358EEA676}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

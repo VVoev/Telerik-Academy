@@ -44,7 +44,7 @@ namespace Lotto
         {
             if (index >= n)
             {
-                //Print(arr);
+                Print(arr);
                 counter++;
                 return;
             }
