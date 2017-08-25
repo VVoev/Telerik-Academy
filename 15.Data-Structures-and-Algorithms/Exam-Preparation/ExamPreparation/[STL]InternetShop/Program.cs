@@ -15,13 +15,13 @@ namespace _STL_InternetShop
             var products = new List<Product>();
             for (int i = 0; i < numberOfCommands; i++)
             {
-                var command = Console.ReadLine().Split(new char[] { ';' },StringSplitOptions.RemoveEmptyEntries);
+                var command = Console.ReadLine().Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
                 var indexOfSpace = command[0].IndexOf(' ');
                 var cuttedCommand = command[0].Substring(0, indexOfSpace);
 
-                
 
-                if(cuttedCommand == "AddProduct")
+
+                if (cuttedCommand == "AddProduct")
                 {
                     var name = command[0].Substring(indexOfSpace + 1);
                     var price = decimal.Parse(command[1]);
@@ -34,19 +34,25 @@ namespace _STL_InternetShop
                     Console.WriteLine("Product added");
                 }
 
-                if (cuttedCommand == "DeleteProducts ")
+                if (cuttedCommand == "DeleteProducts")
                 {
+                    var spaceIndex = command[0].IndexOf(' ');
+                    var searchedProducer = command[0].Substring(spaceIndex + 1);
+                    var removedProductsCounter = products.Count;
 
+                    products.RemoveAll((x => x.Producer == searchedProducer));
+                    removedProductsCounter -= products.Count;
+                    Console.WriteLine($"{removedProductsCounter} products deleted");
                 }
 
-                if(cuttedCommand == "FindProductsByName")
+                if (cuttedCommand == "FindProductsByName")
                 {
                     var spaceIndex = command[0].IndexOf(' ');
                     var searchedProduct = command[0].Substring(spaceIndex + 1);
                     bool found = false;
                     foreach (var item in products)
                     {
-                        if(item.Name == searchedProduct)
+                        if (item.Name == searchedProduct)
                         {
                             found = true;
                             Console.WriteLine($@"{item.Name};{item.Producer};{item.Price:f2}");
@@ -59,12 +65,18 @@ namespace _STL_InternetShop
                     }
                 }
 
-                if(cuttedCommand == "FindProductsByPriceRange")
+                if (cuttedCommand == "FindProductsByPriceRange")
                 {
-
+                    var spaceIndex = command[0].IndexOf(' ');
+                    var searchedProduct = command[0].Substring(spaceIndex + 1);
+                    var minRange = int.Parse(searchedProduct);
+                    var maxRange = int.Parse(command[1]);
+                    var productsByPriceRange = products.Where((x => x.Price >= minRange && x.Price <= maxRange)).ToList();
+                    Console.WriteLine(string.Join(" ",productsByPriceRange));
+                
                 }
 
-                if(cuttedCommand == "FindProductsByProducer")
+                if (cuttedCommand == "FindProductsByProducer")
                 {
                     var spaceIndex = command[0].IndexOf(' ');
                     var searchedProduct = command[0].Substring(spaceIndex + 1);
@@ -82,7 +94,7 @@ namespace _STL_InternetShop
                     if (found)
                     {
                         var items = itemsByProducer.OrderBy((x => x.Name)).ToList();
-                        Console.Write(string.Join(Environment.NewLine,items));
+                        Console.Write(string.Join(Environment.NewLine, items));
                     }
 
                     if (!found)
@@ -91,12 +103,6 @@ namespace _STL_InternetShop
                     }
                 }
             }
-
-            Console.WriteLine("-----------------------------------RESULT----------------------------------");
-            Console.WriteLine(string.Join(Environment.NewLine,products));
-
-
-
         }
     }
 
@@ -109,7 +115,7 @@ namespace _STL_InternetShop
         public string Producer { get; set; }
 
 
-        public Product(string name,decimal price,string producer)
+        public Product(string name, decimal price, string producer)
         {
             this.Name = name;
             this.Price = price;
