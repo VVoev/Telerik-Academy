@@ -6,6 +6,12 @@
     {
         public static void Main()
         {
+//5
+//1 2
+//1 4
+//3 1
+//4 1
+//2 3
             int nodes = int.Parse(Console.ReadLine());
 
             var graph = new int[nodes, nodes];

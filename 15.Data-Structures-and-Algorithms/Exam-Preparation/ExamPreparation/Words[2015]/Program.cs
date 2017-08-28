@@ -24,27 +24,19 @@ namespace Words_2015_
                 var pre = word.Substring(0, i + 1);
                 var suffix = word.Substring(i + 1);
 
-
                 if (suffix != "")
-                {
                     numberSuffix = Regex.Matches(sentence, suffix).Count;
-                }
                 numberPreffix = Regex.Matches(sentence, pre).Count;
 
                 if(numberSuffix == 0 || numberPreffix == 0)
-                {
                     combinations.Add(numberSuffix + numberPreffix);
-                }
                 if(numberPreffix > 0 && numberSuffix > 0)
-                {
                     combinations.Add(numberSuffix * numberPreffix);
-                }
 
                 numberPreffix = 0;numberSuffix = 0;
 
             }
-            var sum = combinations.Sum();
-            Console.WriteLine(sum);
+            Console.WriteLine(combinations.Sum());
         }
     }
 }

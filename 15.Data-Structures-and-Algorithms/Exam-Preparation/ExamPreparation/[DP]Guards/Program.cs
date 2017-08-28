@@ -33,21 +33,26 @@ class Program
                     continue;
                 }
 
+                //Mark every Cell for 1 second
                 if (matrix[row, col] == 0)
                 {
                     matrix[row, col] = 1;
                 }
+                
+                //You can only come from left
                 if (row == 0)
                 {
                     matrix[row, col] += matrix[row, col - 1];
                     continue;
                 }
+                //You can only come from top
                 if (col == 0)
                 {
                     matrix[row, col] += matrix[row - 1, col];
                     continue;
                 }
 
+                //Take the lo
                 matrix[row, col] += Math.Min(matrix[row - 1, col], matrix[row, col - 1]);
             }
         }
