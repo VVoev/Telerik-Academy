@@ -7,6 +7,7 @@
     {
         private static bool[] visited;
         private static int[,] graph;
+        private static int[] array;
 
         public static void Bfs(int node)
         {
@@ -33,6 +34,7 @@
         {
             const int Nodes = 6;
 
+            array = new int []{ 2, 3, 4, 5 };
             visited = new bool[Nodes];
 
             graph = new[,]
@@ -45,7 +47,8 @@
                             { 1, 0, 1, 0, 1, 0 }
                         };
 
-            Bfs(1);
+           //Bfs(1);
+            Bfs(array[0]);
         }
     }
 }

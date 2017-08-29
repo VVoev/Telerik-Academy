@@ -23,7 +23,7 @@
                 {"blagoevgrad", new List<string> {"sofiq", "kyustendil", "dupnica"} },
             };
 
-            DFS("burgas");
+            DFS("dupnica");
         }
 
         public static void DFS(string node)

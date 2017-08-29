@@ -41,7 +41,7 @@
             graph.AddConnection("I", "J", 10, true);
 
             var calculator = new DistanceCalculator();
-            var distances = calculator.CalculateDistances(graph, "G");  // Start from "G"
+            var distances = calculator.CalculateDistances(graph, "C");  // Start from "G"
 
             foreach (var d in distances)
             {
