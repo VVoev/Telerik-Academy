@@ -111,6 +111,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[STL]AquaPark", "[STL]\[STL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[TopoSort]Doglovespaper", "[TopoSort]Doglovespaper\[TopoSort]Doglovespaper.csproj", "{8F12FFD2-3B27-4D9E-91F1-2CF551923DE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[STL][BigList]PlayerRanking", "[STL][BigList]PlayerRanking\[STL][BigList]PlayerRanking.csproj", "{7CBEE853-5EAA-4B71-A309-580AE2A5501D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -333,6 +335,10 @@ Global
 		{8F12FFD2-3B27-4D9E-91F1-2CF551923DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F12FFD2-3B27-4D9E-91F1-2CF551923DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F12FFD2-3B27-4D9E-91F1-2CF551923DE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CBEE853-5EAA-4B71-A309-580AE2A5501D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CBEE853-5EAA-4B71-A309-580AE2A5501D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CBEE853-5EAA-4B71-A309-580AE2A5501D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CBEE853-5EAA-4B71-A309-580AE2A5501D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

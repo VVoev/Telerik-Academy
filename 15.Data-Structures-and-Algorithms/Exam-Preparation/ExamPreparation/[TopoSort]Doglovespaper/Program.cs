@@ -1,105 +1,96 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-/// <summary>
-/// The problem is solved using graphs and the Topological Sort algorithm
-/// </summary>
-public class Program
+namespace Task5
 {
-    private static readonly bool[] ToBeUsed = new bool[10]; // [i] is true when digit i is part of the original number
-    private static readonly bool[,] Graph = new bool[10, 10]; // [i, j] is true when i is before j
-
-    public static void Main()
+    class Node
     {
-        Input();
-        var answer = RecoverNumber();
-        Console.WriteLine(answer);
+        public int Predecessors = 0;
+        public List<char> Successors = new List<char>();
     }
 
-    private static void Input()
+    class Program
     {
-        int n = int.Parse(Console.ReadLine());
-        for (int i = 0; i < n; i++)
+        static void Main(string[] args)
         {
-            var line = Console.ReadLine();
-            var firstNumber = line[0] - '0';
-            var secondNumber = line[line.Length - 1] - '0';
-            if (line.Contains("before"))
-            {
-                // firstNumber is before secondNumber
-                AddRelation(firstNumber, secondNumber);
-            }
-            else
-            {
-                // firstNumber is after secondNumber so secondNumber is before firstNumber
-                AddRelation(secondNumber, firstNumber);
-            }
-        }
-        Console.WriteLine();
-    }
+            int n = int.Parse(Console.ReadLine());
 
-    private static void AddRelation(int firstNumber, int secondNumber)
-    {
-        ToBeUsed[firstNumber] = true;
-        ToBeUsed[secondNumber] = true;
-        Graph[firstNumber, secondNumber] = true;
-    }
+            var graph = new Dictionary<char, Node>();
 
-    private static long RecoverNumber()
-    {
-        int toBeUsedCount = 0; // ToBeUsed.Count(x => x)
-        for (int i = 0; i <= 9; i++)
-        {
-            if (ToBeUsed[i])
+            for (int i = 0; i < n; i++)
             {
-                toBeUsedCount++;
-            }
-        }
+                var line = Console.ReadLine().Split(' ');
+                char x = line[0].ToCharArray()[0];
+                char y = line[3].ToCharArray()[0];
 
-        long number = 0;
-        for (int i = 0; i < toBeUsedCount; i++)
-        {
-            for (int candidate = 0; candidate <= 9; candidate++)
-            {
-                if (candidate == 0 && number == 0)
+                if (!graph.ContainsKey(x))
                 {
-                    // No leading zeros allowed.
-                    continue;
+                    graph.Add(x, new Node());
+                }
+                if (!graph.ContainsKey(y))
+                {
+                    graph.Add(y, new Node());
                 }
 
-                if (ToBeUsed[candidate] && !HasParent(candidate))
+                if (line[2] == "after")
                 {
-                    // candidate is the smallest digit that has no precedent and is part of the original number
-                    number *= 10;
-                    number += candidate;
-
-                    ToBeUsed[candidate] = false;
-                    RemoveAllDescendents(candidate);
-                    break;
+                    graph[x].Predecessors++;
+                    graph[y].Successors.Add(x);
+                }
+                else
+                {
+                    graph[y].Predecessors++;
+                    graph[x].Successors.Add(y);
                 }
             }
+
+            TS(graph);
         }
 
-        return number;
-    }
-
-    private static void RemoveAllDescendents(int node)
-    {
-        for (int i = 0; i <= 9; i++)
+        static void TS(Dictionary<char, Node> graph)
         {
-            Graph[node, i] = false;
-        }
-    }
+            var result = new List<char>();
 
-    private static bool HasParent(int node)
-    {
-        for (int i = 0; i <= 9; i++)
-        {
-            if (Graph[i, node])
+            var noIncoming = new SortedDictionary<char, Node>();
+
+            foreach (var node in graph)
             {
-                return true;
+                if (node.Value.Predecessors == 0)
+                {
+                    noIncoming.Add(node.Key, node.Value);
+                }
             }
-        }
 
-        return false;
+            while (noIncoming.Count != 0)
+            {
+                var tmp = noIncoming.First();
+
+                var current = noIncoming.First();
+                noIncoming.Remove(current.Key);
+
+                if (current.Key == '0' && result.Count == 0)
+                {
+                    current = noIncoming.First();
+                    noIncoming.Remove(current.Key);
+                    noIncoming.Add(tmp.Key, tmp.Value);
+                }
+
+                result.Add(current.Key);
+
+                foreach (var node in current.Value.Successors)
+                {
+                    graph[node].Predecessors--;
+                    if (graph[node].Predecessors == 0)
+                    {
+                        noIncoming.Add(node, graph[node]);
+                    }
+                }
+            }
+
+            Console.WriteLine(string.Join("", result));
+        }
     }
 }
