@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Election", "Election\Election.csproj", "{C00FAB6B-E58E-4B92-9DF5-23D945655058}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Renewal", "Renewal\Renewal.csproj", "{C2481993-8842-400C-AEBA-946D59D1151A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortestPath", "ShortestPath\ShortestPath.csproj", "{98B428B0-D212-4195-8FCB-E8F1AE48A340}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C00FAB6B-E58E-4B92-9DF5-23D945655058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C00FAB6B-E58E-4B92-9DF5-23D945655058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C00FAB6B-E58E-4B92-9DF5-23D945655058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C00FAB6B-E58E-4B92-9DF5-23D945655058}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2481993-8842-400C-AEBA-946D59D1151A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2481993-8842-400C-AEBA-946D59D1151A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2481993-8842-400C-AEBA-946D59D1151A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2481993-8842-400C-AEBA-946D59D1151A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98B428B0-D212-4195-8FCB-E8F1AE48A340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98B428B0-D212-4195-8FCB-E8F1AE48A340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98B428B0-D212-4195-8FCB-E8F1AE48A340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98B428B0-D212-4195-8FCB-E8F1AE48A340}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

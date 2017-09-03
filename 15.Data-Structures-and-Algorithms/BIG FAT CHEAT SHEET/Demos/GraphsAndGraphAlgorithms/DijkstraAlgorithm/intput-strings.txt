@@ -1,0 +1,17 @@
+5
+Vidin Lom 2
+Vidin Sofia 10
+Lom Sofia 7
+Lom Montana 3
+Montana Vraca 1
+Vraca Sofia 2
+End
+
+5
+Vidin Lom 11
+Vidin Sofia 10
+Lom Sofia 32
+Lom Montana 3
+Montana Vraca 2
+Vraca Sofia 2
+End

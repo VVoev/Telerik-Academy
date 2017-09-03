@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphsAndGraphAlgorithms", "GraphsAndGraphAlgorithms\GraphsAndGraphAlgorithms.csproj", "{65802727-7566-4E9D-BEEB-9269F83692C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DijkstraAlgorithm", "DijkstraAlgorithm\DijkstraAlgorithm.csproj", "{56A35DB9-7754-4C04-9A60-4C3E6392AE4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopologicalSorting", "TopologicalSorting\TopologicalSorting.csproj", "{328F35CB-0E9B-4CE0-92A8-D7F675A19B1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimumSpanningTreePrim", "MinimumSpanningTree\MinimumSpanningTreePrim.csproj", "{9FCC5B64-4D31-496D-84AA-E0CC5C0A4824}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinumimSpanningTreeKruskal", "MinumimSpanningTreeKruskal\MinumimSpanningTreeKruskal.csproj", "{99661285-8570-4442-8D7A-98AA8243EA85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65802727-7566-4E9D-BEEB-9269F83692C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65802727-7566-4E9D-BEEB-9269F83692C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65802727-7566-4E9D-BEEB-9269F83692C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65802727-7566-4E9D-BEEB-9269F83692C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56A35DB9-7754-4C04-9A60-4C3E6392AE4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56A35DB9-7754-4C04-9A60-4C3E6392AE4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56A35DB9-7754-4C04-9A60-4C3E6392AE4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56A35DB9-7754-4C04-9A60-4C3E6392AE4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{328F35CB-0E9B-4CE0-92A8-D7F675A19B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{328F35CB-0E9B-4CE0-92A8-D7F675A19B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{328F35CB-0E9B-4CE0-92A8-D7F675A19B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{328F35CB-0E9B-4CE0-92A8-D7F675A19B1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FCC5B64-4D31-496D-84AA-E0CC5C0A4824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FCC5B64-4D31-496D-84AA-E0CC5C0A4824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FCC5B64-4D31-496D-84AA-E0CC5C0A4824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FCC5B64-4D31-496D-84AA-E0CC5C0A4824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99661285-8570-4442-8D7A-98AA8243EA85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99661285-8570-4442-8D7A-98AA8243EA85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99661285-8570-4442-8D7A-98AA8243EA85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99661285-8570-4442-8D7A-98AA8243EA85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

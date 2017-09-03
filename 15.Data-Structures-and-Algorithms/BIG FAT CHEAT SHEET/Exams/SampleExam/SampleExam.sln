@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersSystem", "OrdersSystem\OrdersSystem.csproj", "{204B3EC6-9678-48F4-9953-84575013D907}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DogLovesPaper", "DogLovesPaper\DogLovesPaper.csproj", "{B40AD788-DBBE-4F24-A6DB-F1FEBAA9C99F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeganBodybuilder", "VeganBodybuilder\VeganBodybuilder.csproj", "{61855888-F795-4EC1-A515-C286B2611539}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AquaPark", "AquaPark\AquaPark.csproj", "{CA3FF2FE-7661-4B65-808C-2C5D21A99BB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{204B3EC6-9678-48F4-9953-84575013D907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{204B3EC6-9678-48F4-9953-84575013D907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{204B3EC6-9678-48F4-9953-84575013D907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{204B3EC6-9678-48F4-9953-84575013D907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B40AD788-DBBE-4F24-A6DB-F1FEBAA9C99F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B40AD788-DBBE-4F24-A6DB-F1FEBAA9C99F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B40AD788-DBBE-4F24-A6DB-F1FEBAA9C99F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B40AD788-DBBE-4F24-A6DB-F1FEBAA9C99F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61855888-F795-4EC1-A515-C286B2611539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61855888-F795-4EC1-A515-C286B2611539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61855888-F795-4EC1-A515-C286B2611539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61855888-F795-4EC1-A515-C286B2611539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA3FF2FE-7661-4B65-808C-2C5D21A99BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA3FF2FE-7661-4B65-808C-2C5D21A99BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA3FF2FE-7661-4B65-808C-2C5D21A99BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA3FF2FE-7661-4B65-808C-2C5D21A99BB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
