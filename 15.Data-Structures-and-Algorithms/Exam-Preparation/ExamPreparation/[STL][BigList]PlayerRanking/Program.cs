@@ -4,28 +4,73 @@ using System.Linq;
 using System.Text;
 using Wintellect.PowerCollections;
 
-namespace _STL__BigList_PlayerRanking
+namespace PlayerRanking
 {
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Ranklist ranklist = new Ranklist();
+            StringBuilder finalResult = new StringBuilder();
+
+            string line = Console.ReadLine();
+            while (line != "end")
+            {
+                Command command = Command.Parse(line);
+
+                switch (command.Name)
+                {
+                    case "add":
+                        Player player = Player.Parse(command.Arguments);
+                        ranklist.Add(player);
+                        finalResult.AppendLine(string.Format("Added player {0} to position {1}", player.Name, player.Position));
+
+                        break;
+
+                    case "find":
+                        string type = command.Arguments[0];
+                        IEnumerable<Player> players = ranklist.FindByType(type);
+                        finalResult.AppendLine(string.Format("Type {0}: {1}", type, string.Join("; ", players)));
+
+                        break;
+
+                    case "ranklist":
+                        int startPosition = int.Parse(command.Arguments[0]) - 1;
+                        int endPosition = int.Parse(command.Arguments[1]) - 1;
+                        var playersRanklist = ranklist.GetRanklist(startPosition, endPosition).Select(p => new { Position = ++startPosition, Player = p }).ToList();
+                        finalResult.AppendLine(string.Join("; ", playersRanklist.Select(r => string.Format("{0}. {1}", r.Position, r.Player))));
+
+                        break;
+                    default:
+                        throw new InvalidOperationException();
+                }
+
+                line = Console.ReadLine();
+            }
+
+            Console.WriteLine(finalResult.ToString().Trim());
+        }
+    }
+
     public class Player : IComparable<Player>
     {
-        public int Age { get; set; }
-        public string Name { get; set; }
-        public int Position { get; set; }
-        public string Type { get; set; }
+        public string Name { get; private set; }
 
-        public Player(string name, string type, int age, int position)
+        public string Type { get; private set; }
+
+        public int Age { get; private set; }
+
+        public int Position { get; private set; }
+
+        public static Player Parse(IList<string> playerParts)
         {
-            this.Name = name;
-            this.Type = type;
-            this.Age = age;
-            this.Position = position;
-        }
-
-       
-
-        public override string ToString()
-        {
-            return string.Format("{0}({1})", this.Name, this.Age);
+            return new Player
+            {
+                Name = playerParts[0],
+                Type = playerParts[1],
+                Age = int.Parse(playerParts[2]),
+                Position = int.Parse(playerParts[3])
+            };
         }
 
         public int CompareTo(Player other)
@@ -39,85 +84,73 @@ namespace _STL__BigList_PlayerRanking
             return result;
         }
 
+        public override string ToString()
+        {
+            return string.Format("{0}({1})", this.Name, this.Age);
+        }
     }
-    public class Ranking
+
+    public class Command
     {
-        private Dictionary<string, SortedSet<Player>> playersByType;
+        public string Name { get; private set; }
+
+        public IList<string> Arguments { get; private set; }
+
+        public static Command Parse(string commandAsString)
+        {
+            var commandParts = commandAsString.Split(' ');
+
+            var name = commandParts[0];
+
+            var arguments = new List<string>();
+            for (int i = 1; i < commandParts.Length; i++)
+            {
+                arguments.Add(commandParts[i]);
+            }
+
+            return new Command
+            {
+                Name = name,
+                Arguments = arguments
+            };
+        }
+    }
+
+    public class Ranklist
+    {
+        private readonly IDictionary<string, SortedSet<Player>> playerByType;
         private readonly BigList<Player> ranklist;
 
-        public Ranking()
+        public Ranklist()
         {
-            this.playersByType = new Dictionary<string, SortedSet<Player>>();
+            this.playerByType = new Dictionary<string, SortedSet<Player>>();
             this.ranklist = new BigList<Player>();
         }
 
         public void Add(Player player)
         {
-            if (!this.playersByType.ContainsKey(player.Type))
+            if (!this.playerByType.ContainsKey(player.Type))
             {
-                this.playersByType[player.Type] = new SortedSet<Player>();
+                this.playerByType[player.Type] = new SortedSet<Player>();
             }
 
-            this.playersByType[player.Type].Add(player);
+            this.playerByType[player.Type].Add(player);
             this.ranklist.Insert(player.Position - 1, player);
         }
 
         public IEnumerable<Player> FindByType(string type)
         {
-            if (this.playersByType.ContainsKey(type) == false)
+            if (!this.playerByType.ContainsKey(type))
             {
                 return Enumerable.Empty<Player>();
             }
-            return this.playersByType[type].Take(5);
+
+            return this.playerByType[type].Take(5);
         }
 
-        public IEnumerable<Player> FindByRank(int from, int to)
+        public IEnumerable<Player> GetRanklist(int startPosition, int endPosition)
         {
-            return this.ranklist.Range(from, to - from + 1);
+            return this.ranklist.Range(startPosition, endPosition - startPosition + 1);
         }
-    }
-    public class Program
-    {
-        static void Main(string[] args)
-        {
-            var ranklist = new Ranking();
-            var sb = new StringBuilder();
-            var line = Console.ReadLine();
-
-            while (line != "end")
-            {
-                var commandArguments = line.Split(' ');
-                var command = commandArguments[0];
-
-                switch (command)
-                {
-                    case "add":
-                        var name = commandArguments[1];
-                        var type = commandArguments[2];
-                        var age = int.Parse(commandArguments[3]);
-                        var position = int.Parse(commandArguments[4]);
-                        var player = new Player(name, type, age, position);
-                        ranklist.Add(player);
-                        sb.AppendLine(string.Format("Added player {0} to position {1}", player.Name, player.Position));
-                        break;
-                    case "find":
-                        var searchedType = commandArguments[1];
-                        var finded = ranklist.FindByType(searchedType);
-                        sb.AppendLine(string.Format("Type {0}: {1}", searchedType, string.Join("; ", finded)));
-                        break;
-                    case "ranklist":
-                        var from = int.Parse(commandArguments[1]);
-                        var to = int.Parse(commandArguments[2]);
-                        var playersRanklist = ranklist.FindByRank(from, to).Select(p => new { Position = ++from, Player = p }).ToList();
-                        sb.AppendLine(string.Join("; ", playersRanklist.Select(r => string.Format("{0}. {1}", r.Position, r.Player))));
-                        break;
-                    default:
-                        break;
-                }
-                line = Console.ReadLine();
-            }
-            Console.WriteLine(sb.ToString());
-        }
-
     }
 }
