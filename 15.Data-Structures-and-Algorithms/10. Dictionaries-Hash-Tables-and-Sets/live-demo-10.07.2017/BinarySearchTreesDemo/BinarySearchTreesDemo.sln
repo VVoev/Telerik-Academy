@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinarySearchTreesDemo", "BinarySearchTreesDemo\BinarySearchTreesDemo.csproj", "{BACE01AD-0ACB-408D-9EB9-2EA89B1FABB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvlTreeIterative", "AvlTree\AvlTreeIterative.csproj", "{FFBC4ACF-B7C0-4A65-8DFD-DF44C9BEC927}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvlTreeRecursive", "AvlTreeRecursive\AvlTreeRecursive.csproj", "{380B9053-1EAE-400A-851D-7291A437AA82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BACE01AD-0ACB-408D-9EB9-2EA89B1FABB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BACE01AD-0ACB-408D-9EB9-2EA89B1FABB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BACE01AD-0ACB-408D-9EB9-2EA89B1FABB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BACE01AD-0ACB-408D-9EB9-2EA89B1FABB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFBC4ACF-B7C0-4A65-8DFD-DF44C9BEC927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFBC4ACF-B7C0-4A65-8DFD-DF44C9BEC927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFBC4ACF-B7C0-4A65-8DFD-DF44C9BEC927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFBC4ACF-B7C0-4A65-8DFD-DF44C9BEC927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{380B9053-1EAE-400A-851D-7291A437AA82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{380B9053-1EAE-400A-851D-7291A437AA82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{380B9053-1EAE-400A-851D-7291A437AA82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{380B9053-1EAE-400A-851D-7291A437AA82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreedyDemo", "GreedyDemo\GreedyDemo.csproj", "{6475B333-8ABF-4AB1-BE31-BA8F58AB2460}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Train", "Train\Train.csproj", "{9991CB37-7E6D-44E7-B029-D12430606800}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuffmanCoding", "HuffmanCoding\HuffmanCoding.csproj", "{7CF28F3E-7045-42DF-A309-8D5258EDF23E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6475B333-8ABF-4AB1-BE31-BA8F58AB2460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6475B333-8ABF-4AB1-BE31-BA8F58AB2460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6475B333-8ABF-4AB1-BE31-BA8F58AB2460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6475B333-8ABF-4AB1-BE31-BA8F58AB2460}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9991CB37-7E6D-44E7-B029-D12430606800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9991CB37-7E6D-44E7-B029-D12430606800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9991CB37-7E6D-44E7-B029-D12430606800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9991CB37-7E6D-44E7-B029-D12430606800}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CF28F3E-7045-42DF-A309-8D5258EDF23E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CF28F3E-7045-42DF-A309-8D5258EDF23E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CF28F3E-7045-42DF-A309-8D5258EDF23E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CF28F3E-7045-42DF-A309-8D5258EDF23E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

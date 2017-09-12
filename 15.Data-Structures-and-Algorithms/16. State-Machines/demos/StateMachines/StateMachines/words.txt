@@ -1,0 +1,517 @@
+a
+a ba
+a ba ba
+a ba baa
+a ba bal
+a baa
+a baa ba
+a baaa
+a baaaa
+a baaaaa
+a baaaal
+a baaaba
+a baaal
+a baaala
+a baaba
+a baabaa
+a baabal
+a baal
+a baala
+a baalaa
+a baalal
+a baba
+a babaa
+a babaaa
+a babaal
+a bababa
+a babal
+a babala
+a bal
+a bala
+a balaa
+a balaaa
+a balaal
+a balaba
+a balal
+a balala
+aa
+aa ba
+aa ba ba
+aa baa
+aa baaa
+aa baaaa
+aa baaal
+aa baaba
+aa baal
+aa baala
+aa baba
+aa babaa
+aa babal
+aa bal
+aa bala
+aa balaa
+aa balal
+aaa
+aaa ba
+aaa baa
+aaa baaa
+aaa baal
+aaa baba
+aaa bal
+aaa bala
+aaaa
+aaaa ba
+aaaa baa
+aaaa bal
+aaaaa
+aaaaa ba
+aaaaaa
+aaaaaaa
+aaaaaaaa
+aaaaaaal
+aaaaaaba
+aaaaaal
+aaaaaala
+aaaaaba
+aaaaabaa
+aaaaabal
+aaaaal
+aaaaala
+aaaaalaa
+aaaaalal
+aaaaba
+aaaabaa
+aaaabaaa
+aaaabaal
+aaaababa
+aaaabal
+aaaabala
+aaaal
+aaaala
+aaaalaa
+aaaalaaa
+aaaalaal
+aaaalaba
+aaaalal
+aaaalala
+aaaba
+aaaba ba
+aaabaa
+aaabaaa
+aaabaaaa
+aaabaaal
+aaabaaba
+aaabaal
+aaabaala
+aaababa
+aaababaa
+aaababal
+aaabal
+aaabala
+aaabalaa
+aaabalal
+aaal
+aaala
+aaala ba
+aaalaa
+aaalaaa
+aaalaaaa
+aaalaaal
+aaalaaba
+aaalaal
+aaalaala
+aaalaba
+aaalabaa
+aaalabal
+aaalal
+aaalala
+aaalalaa
+aaalalal
+aaba
+aaba ba
+aaba baa
+aaba bal
+aabaa
+aabaa ba
+aabaaa
+aabaaaa
+aabaaaaa
+aabaaaal
+aabaaaba
+aabaaal
+aabaaala
+aabaaba
+aabaabaa
+aabaabal
+aabaal
+aabaala
+aabaalaa
+aabaalal
+aababa
+aababaa
+aababaaa
+aababaal
+aabababa
+aababal
+aababala
+aabal
+aabala
+aabalaa
+aabalaaa
+aabalaal
+aabalaba
+aabalal
+aabalala
+aal
+aala
+aala ba
+aala baa
+aala bal
+aalaa
+aalaa ba
+aalaaa
+aalaaaa
+aalaaaaa
+aalaaaal
+aalaaaba
+aalaaal
+aalaaala
+aalaaba
+aalaabaa
+aalaabal
+aalaal
+aalaala
+aalaalaa
+aalaalal
+aalaba
+aalabaa
+aalabaaa
+aalabaal
+aalababa
+aalabal
+aalabala
+aalal
+aalala
+aalalaa
+aalalaaa
+aalalaal
+aalalaba
+aalalal
+aalalala
+aba
+aba ba
+aba baa
+aba baaa
+aba baal
+aba baba
+aba bal
+aba bala
+abaa
+abaa ba
+abaa baa
+abaa bal
+abaaa
+abaaa ba
+abaaaa
+abaaaaa
+abaaaaaa
+abaaaaal
+abaaaaba
+abaaaal
+abaaaala
+abaaaba
+abaaabaa
+abaaabal
+abaaal
+abaaala
+abaaalaa
+abaaalal
+abaaba
+abaabaa
+abaabaaa
+abaabaal
+abaababa
+abaabal
+abaabala
+abaal
+abaala
+abaalaa
+abaalaaa
+abaalaal
+abaalaba
+abaalal
+abaalala
+ababa
+ababa ba
+ababaa
+ababaaa
+ababaaaa
+ababaaal
+ababaaba
+ababaal
+ababaala
+abababa
+abababaa
+abababal
+ababal
+ababala
+ababalaa
+ababalal
+abal
+abala
+abala ba
+abalaa
+abalaaa
+abalaaaa
+abalaaal
+abalaaba
+abalaal
+abalaala
+abalaba
+abalabaa
+abalabal
+abalal
+abalala
+abalalaa
+abalalal
+al
+ala
+ala ba
+ala baa
+ala baaa
+ala baal
+ala baba
+ala bal
+ala bala
+alaa
+alaa ba
+alaa baa
+alaa bal
+alaaa
+alaaa ba
+alaaaa
+alaaaaa
+alaaaaaa
+alaaaaal
+alaaaaba
+alaaaal
+alaaaala
+alaaaba
+alaaabaa
+alaaabal
+alaaal
+alaaala
+alaaalaa
+alaaalal
+alaaba
+alaabaa
+alaabaaa
+alaabaal
+alaababa
+alaabal
+alaabala
+alaal
+alaala
+alaalaa
+alaalaaa
+alaalaal
+alaalaba
+alaalal
+alaalala
+alaba
+alaba ba
+alabaa
+alabaaa
+alabaaaa
+alabaaal
+alabaaba
+alabaal
+alabaala
+alababa
+alababaa
+alababal
+alabal
+alabala
+alabalaa
+alabalal
+alal
+alala
+alala ba
+alalaa
+alalaaa
+alalaaaa
+alalaaal
+alalaaba
+alalaal
+alalaala
+alalaba
+alalabaa
+alalabal
+alalal
+alalala
+alalalaa
+alalalal
+ba
+ba ba
+ba ba ba
+ba baa
+ba baaa
+ba baaaa
+ba baaal
+ba baaba
+ba baal
+ba baala
+ba baba
+ba babaa
+ba babal
+ba bal
+ba bala
+ba balaa
+ba balal
+baa
+baa ba
+baa baa
+baa baaa
+baa baal
+baa baba
+baa bal
+baa bala
+baaa
+baaa ba
+baaa baa
+baaa bal
+baaaa
+baaaa ba
+baaaaa
+baaaaaa
+baaaaaaa
+baaaaaal
+baaaaaba
+baaaaal
+baaaaala
+baaaaba
+baaaabaa
+baaaabal
+baaaal
+baaaala
+baaaalaa
+baaaalal
+baaaba
+baaabaa
+baaabaaa
+baaabaal
+baaababa
+baaabal
+baaabala
+baaal
+baaala
+baaalaa
+baaalaaa
+baaalaal
+baaalaba
+baaalal
+baaalala
+baaba
+baaba ba
+baabaa
+baabaaa
+baabaaaa
+baabaaal
+baabaaba
+baabaal
+baabaala
+baababa
+baababaa
+baababal
+baabal
+baabala
+baabalaa
+baabalal
+baal
+baala
+baala ba
+baalaa
+baalaaa
+baalaaaa
+baalaaal
+baalaaba
+baalaal
+baalaala
+baalaba
+baalabaa
+baalabal
+baalal
+baalala
+baalalaa
+baalalal
+baba
+baba ba
+baba baa
+baba bal
+babaa
+babaa ba
+babaaa
+babaaaa
+babaaaaa
+babaaaal
+babaaaba
+babaaal
+babaaala
+babaaba
+babaabaa
+babaabal
+babaal
+babaala
+babaalaa
+babaalal
+bababa
+bababaa
+bababaaa
+bababaal
+babababa
+bababal
+bababala
+babal
+babala
+babalaa
+babalaaa
+babalaal
+babalaba
+babalal
+babalala
+bal
+bala
+bala ba
+bala baa
+bala bal
+balaa
+balaa ba
+balaaa
+balaaaa
+balaaaaa
+balaaaal
+balaaaba
+balaaal
+balaaala
+balaaba
+balaabaa
+balaabal
+balaal
+balaala
+balaalaa
+balaalal
+balaba
+balabaa
+balabaaa
+balabaal
+balababa
+balabal
+balabala
+balal
+balala
+balalaa
+balalaaa
+balalaal
+balalaba
+balalal
+balalala
